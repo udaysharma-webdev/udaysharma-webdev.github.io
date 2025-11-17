@@ -1,79 +1,186 @@
-<!-- Paste index.html content from canvas here --><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uday Sharma — Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Uday Sharma — Portfolio</title>
+  <meta name="description" content="Uday Sharma — Full Stack Developer, WordPress & UI/UX specialist. CRM & marketing automation.">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <h1>Uday Sharma</h1>
-            <p class="subtitle">Full Stack Developer • WordPress Expert • UI/UX Designer • CRM Automation Specialist</p>
+
+  <header class="hero" id="home">
+    <div class="wrap">
+      <div class="intro">
+        <h1 class="title">Uday Sharma</h1>
+        <p class="lead">Full-Stack Developer • WordPress • UI/UX • CRM Automation</p>
+        <div class="cta">
+          <a href="#projects" class="btn">View Projects</a>
+          <a href="#contact" class="btn ghost">Contact Me</a>
         </div>
-    </header>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="card-blob"></div>
+      </div>
+    </div>
+  </header>
 
-    <section class="section">
-        <div class="container">
-            <h2>Services</h2>
-            <ul>
-                <li>Web Development, Custom Theme & Plugin Development, E-commerce stores, Full Stack Development</li>
-                <li>Custom Web App, Website Speed Optimization, API Integration</li>
-                <li>WordPress, Shopify, Wix, PSD/Figma to HTML, ACF, PHP, React</li>
-                <li>Graphic Design, UI/UX Design</li>
-                <li>CRM & Automation Setup (GHL, HubSpot)</li>
-            </ul>
-        </div>
-    </section>
+  <main>
+    <!-- Services -->
+    <section class="section" id="services" data-animate>
+      <div class="wrap">
+        <h2>Services I Offer</h2>
+        <div class="services-grid">
+          <article class="service">
+            <h3>Web & App Development</h3>
+            <p>Custom themes, plugins, e-commerce stores, speed optimization, API integrations, full stack apps.</p>
+          </article>
 
-    <section class="section alt">
-        <div class="container">
-            <h2>Skill Set</h2>
+          <article class="service">
+            <h3>Platforms</h3>
+            <p>WordPress · Shopify · Wix · PSD / Figma → HTML · ACF · PHP · React</p>
+          </article>
 
-            <h3>WordPress Development</h3>
-            <p>Frontend + Backend — HTML, CSS, Bootstrap, JavaScript, AJAX, jQuery, Core PHP</p>
+          <article class="service">
+            <h3>Design & Media</h3>
+            <p>Branding, UI/UX, marketing collateral, video editing, motion graphics.</p>
+          </article>
 
-            <h3>Graphic Design, UI & UX</h3>
-            <ul>
-                <li>Branding — Logo, Rebranding, Stationery, Brand Guidelines</li>
-                <li>Marketing Collateral — Brochures, Catalogs, Social Media Posts, Leaflets, Event Designs, Whitepapers</li>
-                <li>UI/UX — Website Design, App Design, Web Banners</li>
-                <li>Video Editing — Footage editing, animated videos, motion graphics</li>
-            </ul>
-
-            <h3>Full Stack Development</h3>
-            <p>Frontend: Angular, React | Backend: Node.js | Database: MySQL, MongoDB</p>
-
+          <article class="service">
             <h3>CRM & Automation</h3>
-            <p>GoHighLevel (GHL), HubSpot</p>
+            <p>GoHighLevel (GHL), HubSpot — automation, funnels, CRM setup.</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <h2>Projects</h2>
-            <ul class="projects">
-                <li><a href="https://www.myglobalshield.com/" target="_blank">My Global Shield</a></li>
-                <li><a href="https://doggydoolittleshop.com/" target="_blank">Doggy Doo Little Shop</a></li>
-                <li><a href="https://www.reposition.co.uk/" target="_blank">Reposition</a></li>
-                <li><a href="https://www.capresebags.com/" target="_blank">Caprese</a></li>
-                <li><a href="https://worldupfoundation.org/" target="_blank">WorldUp Foundation</a></li>
-                <li><a href="https://rosecole.com/" target="_blank">Rose Cole</a></li>
-                <li><a href="https://addhealthtoday.com/" target="_blank">Add Health</a></li>
-                <li><a href="https://romediadigital.com/" target="_blank">Romedia Digital</a></li>
-                <li><a href="https://overnightsmile.com/" target="_blank">OverNight Smile</a></li>
-                <li><a href="https://eevolver.com/" target="_blank">Eevolver</a></li>
+    <!-- Skills -->
+    <section class="section alt" id="skills" data-animate>
+      <div class="wrap">
+        <h2>Skill Set</h2>
+        <div class="chips">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Angular</span><span>React</span>
+          <span>Node.js</span><span>MySQL</span><span>MongoDB</span><span>PHP</span><span>ACF</span>
+        </div>
+        <div class="skill-columns">
+          <div>
+            <h4>WordPress</h4>
+            <p>Frontend, backend, custom themes & plugins, ACF, performance tuning.</p>
+          </div>
+          <div>
+            <h4>Design</h4>
+            <p>Brand identity, marketing collateral, UI/UX, prototypes & motion graphics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects" data-animate>
+      <div class="wrap">
+        <h2>Selected Projects</h2>
+        <div class="projects-grid">
+          <!-- Project card template (animated) -->
+          <a class="project-card" href="https://www.myglobalshield.com/" target="_blank" rel="noopener">
+            <div class="p-left">
+              <h3>My Global Shield</h3>
+              <p>Security services website — WP + performance and integrations.</p>
+            </div>
+            <span class="p-cta">Visit</span>
+          </a>
+
+          <a class="project-card" href="https://doggydoolittleshop.com/" target="_blank" rel="noopener">
+            <div class="p-left">
+              <h3>Doggy Doo Little Shop</h3>
+              <p>E-commerce UI and store optimization.</p>
+            </div>
+            <span class="p-cta">Visit</span>
+          </a>
+
+          <a class="project-card" href="https://www.reposition.co.uk/" target="_blank" rel="noopener">
+            <div class="p-left">
+              <h3>Reposition</h3>
+              <p>Agency site rebuild with custom WP tooling.</p>
+            </div>
+            <span class="p-cta">Visit</span>
+          </a>
+
+          <a class="project-card" href="https://www.capresebags.com/" target="_blank" rel="noopener">
+            <div class="p-left">
+              <h3>Caprese</h3>
+              <p>Retail site optimization & theme customisation.</p>
+            </div>
+            <span class="p-cta">Visit</span>
+          </a>
+
+          <a class="project-card" href="https://worldupfoundation.org/" target="_blank" rel="noopener">
+            <div class="p-left">
+              <h3>WorldUp Foundation</h3>
+              <p>NGO website design and CMS management.</p>
+            </div>
+            <span class="p-cta">Visit</span>
+          </a>
+
+          <a class="project-card" href="https://eevolver.com/" target="_blank" rel="noopener">
+            <div class="p-left">
+              <h3>Eevolver</h3>
+              <p>Platform UX and frontend implementation.</p>
+            </div>
+            <span class="p-cta">Visit</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact-section" id="contact" data-animate>
+      <div class="wrap">
+        <h2>Contact Me</h2>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Let's build something</h3>
+            <p>Send a quick message and I'll reply within 24–48 hours.</p>
+            <ul class="contact-info">
+              <li><strong>Email:</strong> <a href="mailto:Udaysharma561@gmail.com">Udaysharma561@gmail.com</a></li>
+              <li><strong>GitHub:</strong> <a href="https://github.com/udaysharma-webdev" target="_blank" rel="noopener">udaysharma-webdev</a></li>
             </ul>
+          </div>
+
+          <form id="contactForm" class="form-card" novalidate>
+            <input type="hidden" name="access_key" id="access_key" value="">
+            <input type="hidden" name="subject" value="New portfolio inquiry">
+            <input type="hidden" name="reply_to" value="Udaysharma561@gmail.com">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" id="name" required placeholder="Your name">
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" id="email" required placeholder="your@email.com">
+            </label>
+
+            <label>
+              <span>Message</span>
+              <textarea name="message" id="message" rows="6" required placeholder="Tell me about your project..."></textarea>
+            </label>
+
+            <div class="form-row">
+              <button type="submit" class="btn">Send Message</button>
+              <div id="formStatus" class="form-status" aria-live="polite"></div>
+            </div>
+          </form>
         </div>
+      </div>
     </section>
+  </main>
 
-    <footer>
-        <p>Contact: <a href="mailto:Udaysharma561@gmail.com">Udaysharma561@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/udaysharma-webdev" target="_blank">udaysharma-webdev</a></p>
-    </footer>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> Uday Sharma — Built with care.</p>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
