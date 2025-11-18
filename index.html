@@ -13,17 +13,17 @@
   <!-- HEADER -->
   <header class="header">
     <div class="wrap header-inner">
-      <div class="brand" aria-hidden="false">
+      <div class="brand">
         <h1 class="brand-title">Uday Sharma</h1>
         <p class="brand-sub">Full Stack Developer · WordPress Expert · UI/UX Designer · Automation Specialist</p>
+        <p class="intro">
+          With <strong>10+ years</strong> designing and building modern websites, web apps and automated systems, I help businesses increase conversions, reduce manual work and ship reliable digital products.
+        </p>
       </div>
 
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu" title="Open menu">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
-
-      <nav id="navMenu" class="nav" aria-label="Primary navigation">
-        <ul class="nav-list">
+      <!-- centered pill nav (inside header block) -->
+      <nav class="pill-nav" aria-label="Primary navigation">
+        <ul class="pill-list" id="pillList">
           <li><a href="#services">Services</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#expertise">Expertise</a></li>
@@ -31,195 +31,328 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
+      <!-- mobile hamburger (hidden on desktop) -->
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="pillList" title="Toggle navigation">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
     </div>
   </header>
 
-  <!-- SUMMARY -->
-  <section class="summary">
-    <div class="wrap">
-      <p class="summary-text">
-        With <strong>10+ years</strong> designing and building modern websites, web apps and automated systems, I help businesses increase conversions, reduce manual work and ship reliable digital products.
-      </p>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
+  <!-- SERVICES (big gradient cards) -->
   <section id="services" class="section">
     <div class="wrap">
-      <h2 class="eyebrow">Offered Services</h2>
+      <h2 class="section-title">Offered Services</h2>
+
       <div class="services-grid">
-        <article class="svc card-in">
-          <h3>Web Development</h3>
-          <p>Production-ready frontends and maintainable backends with performance-first architecture.</p>
+        <article class="svc-card">
+          <div class="svc-head" style="background:linear-gradient(135deg,#f0f7ff,#dbe9ff);">
+            <div class="svc-icon">🌐</div>
+            <h3>Web Development</h3>
+          </div>
+          <div class="svc-body">
+            <p class="muted">Responsive, fast & maintainable websites.</p>
+            <ul>
+              <li>Frontend: HTML, CSS, React/Angular</li>
+              <li>Backend: Node.js, PHP (WordPress)</li>
+              <li>Performance & accessibility focused</li>
+            </ul>
+          </div>
         </article>
-        <article class="svc card-in">
-          <h3>E-commerce Setup</h3>
-          <p>Shopify & WooCommerce stores built for conversion and stability.</p>
+
+        <article class="svc-card">
+          <div class="svc-head" style="background:linear-gradient(135deg,#fff8f0,#ffe9d1);">
+            <div class="svc-icon">🛒</div>
+            <h3>E-commerce Setup</h3>
+          </div>
+          <div class="svc-body">
+            <p class="muted">Shopify & WooCommerce — optimized for conversion.</p>
+            <ul>
+              <li>Theme customization & checkout UX</li>
+              <li>Payment, shipping & external integrations</li>
+              <li>Catalog & performance tuning</li>
+            </ul>
+          </div>
         </article>
-        <article class="svc card-in">
-          <h3>Custom Web App</h3>
-          <p>React / Angular frontends, Node.js backends and well-designed APIs.</p>
+
+        <article class="svc-card">
+          <div class="svc-head" style="background:linear-gradient(135deg,#f7fff4,#e6ffe8);">
+            <div class="svc-icon">🧩</div>
+            <h3>Custom Web App</h3>
+          </div>
+          <div class="svc-body">
+            <p class="muted">Scalable single-page apps & APIs.</p>
+            <ul>
+              <li>React / Angular frontends</li>
+              <li>Node.js backends, REST/GraphQL APIs</li>
+              <li>Deployment, CI/CD & monitoring</li>
+            </ul>
+          </div>
         </article>
-        <article class="svc card-in">
-          <h3>UI / UX Design</h3>
-          <p>High-fidelity design systems, prototypes and motion where it matters.</p>
+
+        <article class="svc-card">
+          <div class="svc-head" style="background:linear-gradient(135deg,#f7f8ff,#e6edff);">
+            <div class="svc-icon">🎨</div>
+            <h3>UI / UX Design</h3>
+          </div>
+          <div class="svc-body">
+            <p class="muted">High-fidelity UI and brand systems.</p>
+            <ul>
+              <li>Wireframes & prototypes</li>
+              <li>Design systems & motion</li>
+              <li>Marketing assets & video</li>
+            </ul>
+          </div>
         </article>
-        <article class="svc card-in">
-          <h3>Automation & CRM</h3>
-          <p>GHL & HubSpot workflows, webhooks and lead automation pipelines.</p>
+
+        <article class="svc-card">
+          <div class="svc-head" style="background:linear-gradient(135deg,#fff7fb,#ffeef8);">
+            <div class="svc-icon">⚙️</div>
+            <h3>Automation & CRM</h3>
+          </div>
+          <div class="svc-body">
+            <p class="muted">Lead flows, automations & integrations.</p>
+            <ul>
+              <li>GHL, HubSpot, webhooks</li>
+              <li>Sequence & funnel automation</li>
+              <li>Reporting & data hygiene</li>
+            </ul>
+          </div>
         </article>
-        <article class="svc card-in">
-          <h3>Technical Support</h3>
-          <p>Monitoring, security, maintenance and performance tuning.</p>
+
+        <article class="svc-card">
+          <div class="svc-head" style="background:linear-gradient(135deg,#f2fbff,#e6f7ff);">
+            <div class="svc-icon">🔧</div>
+            <h3>Technical Support</h3>
+          </div>
+          <div class="svc-body">
+            <p class="muted">Maintenance, backups and security.</p>
+            <ul>
+              <li>Monitoring and incident response</li>
+              <li>Performance tuning & updates</li>
+              <li>Architecture reviews</li>
+            </ul>
+          </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- SKILL SET -->
   <section id="skills" class="section alt">
     <div class="wrap">
-      <h2 class="eyebrow">Skill Set</h2>
+      <h2 class="section-title">Skill Set</h2>
+
       <div class="skills-grid">
-        <div class="skill card-in">
-          <div class="icon">🛠️</div>
+        <div class="skill-card">
+          <div class="skill-icon">🛠️</div>
           <h4>WordPress Development</h4>
           <ul>
-            <li>Custom themes & plugins, ACF, WooCommerce</li>
-            <li>Performance & security best practices</li>
+            <li>Custom themes & plugins</li>
+            <li>ACF, WooCommerce</li>
+            <li>Performance & security</li>
           </ul>
         </div>
 
-        <div class="skill card-in">
-          <div class="icon">💻</div>
+        <div class="skill-card">
+          <div class="skill-icon">💻</div>
           <h4>Full Stack</h4>
           <ul>
-            <li>React / Angular, Node.js</li>
-            <li>MySQL, MongoDB, API design</li>
+            <li>React / Angular</li>
+            <li>Node.js, REST/GraphQL</li>
+            <li>MySQL, MongoDB</li>
           </ul>
         </div>
 
-        <div class="skill card-in">
-          <div class="icon">🎨</div>
+        <div class="skill-card">
+          <div class="skill-icon">🎨</div>
           <h4>UI / UX & Design</h4>
           <ul>
-            <li>Prototypes, visual systems, motion</li>
+            <li>Prototyping & visual systems</li>
+            <li>Motion & video</li>
           </ul>
         </div>
 
-        <div class="skill card-in">
-          <div class="icon">⚙️</div>
+        <div class="skill-card">
+          <div class="skill-icon">⚙️</div>
           <h4>Automation & CRM</h4>
           <ul>
-            <li>GHL, HubSpot, webhooks & integrations</li>
+            <li>GHL, HubSpot, webhooks</li>
+            <li>Lead flows, sequences</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EXPERTISE -->
+  <!-- PLATFORM EXPERTISE -->
   <section id="expertise" class="section">
     <div class="wrap">
-      <h2 class="eyebrow">Platform Expertise</h2>
-      <div class="expert-grid">
-        <div class="expert card-in">WordPress — custom themes & plugins</div>
-        <div class="expert card-in">Shopify — theme & checkout work</div>
-        <div class="expert card-in">Custom stacks — React/Angular + Node</div>
-        <div class="expert card-in">Design — UI systems & motion</div>
+      <h2 class="section-title">Platform Expertise</h2>
+
+      <div class="expert-boxes">
+        <div class="expert-box">
+          <h4>WordPress</h4>
+          <ul>
+            <li>Custom themes & plugins</li>
+            <li>ACF, multisite, WooCommerce</li>
+          </ul>
+        </div>
+
+        <div class="expert-box">
+          <h4>Shopify</h4>
+          <ul>
+            <li>Theme customization, Liquid</li>
+            <li>Checkout & app integrations</li>
+          </ul>
+        </div>
+
+        <div class="expert-box">
+          <h4>Custom stacks</h4>
+          <ul>
+            <li>React / Angular frontends</li>
+            <li>Node.js backends & APIs</li>
+          </ul>
+        </div>
+
+        <div class="expert-box">
+          <h4>Design</h4>
+          <ul>
+            <li>UI systems, branding, motion</li>
+          </ul>
+        </div>
+
+        <div class="expert-box">
+          <h4>Other Platforms</h4>
+          <ul>
+            <li>Wix · Squarespace · BigCommerce</li>
+            <li>Infusionsoft (Keap) · ClickFunnels</li>
+            <li>Webflow & no-code integration</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- PROJECTS (stylized) -->
   <section id="projects" class="section alt">
     <div class="wrap">
-      <h2 class="eyebrow">Selected Projects</h2>
+      <h2 class="section-title">Selected Projects</h2>
 
-      <div class="carousel">
-        <button class="carousel-btn prev" aria-label="Previous">‹</button>
+      <div class="projects-wrap">
+        <button class="proj-nav prev" aria-label="Previous project">‹</button>
 
-        <div class="carousel-track" id="carouselTrack" tabindex="0" role="list">
-          <!-- Project cards (content focused, includes backend architecture) -->
-          <article class="project card-in" role="listitem">
-            <h3>My Global Shield</h3>
-            <p class="muted">Security services website</p>
-            <p class="meta"><strong>Backend:</strong> WordPress (Custom Theme) · ACF · PHP · CDN · Caching</p>
-            <a class="visit" href="https://www.myglobalshield.com/" target="_blank" rel="noopener">View project</a>
+        <div class="projects-track" id="projectsTrack" tabindex="0" role="list">
+          <!-- Project items -->
+          <article class="proj-card">
+            <div class="proj-header" style="background:linear-gradient(90deg,#f0f7ff,#dbe9ff)">
+              <h3>My Global Shield</h3>
+            </div>
+            <div class="proj-body">
+              <p class="muted">Security services website</p>
+              <p class="meta"><strong>Backend Architecture:</strong> WordPress (Custom Theme) · ACF · PHP · CDN · Caching</p>
+              <a class="cta" href="https://www.myglobalshield.com/" target="_blank" rel="noopener">View project</a>
+            </div>
           </article>
 
-          <article class="project card-in" role="listitem">
-            <h3>Doggy Doo Little Shop</h3>
-            <p class="muted">E-commerce store</p>
-            <p class="meta"><strong>Backend:</strong> WooCommerce · Custom plugins · Checkout optimizations</p>
-            <a class="visit" href="https://doggydoolittleshop.com/" target="_blank" rel="noopener">View project</a>
+          <article class="proj-card">
+            <div class="proj-header" style="background:linear-gradient(90deg,#fff8f0,#ffe9d1)">
+              <h3>Doggy Doo Little Shop</h3>
+            </div>
+            <div class="proj-body">
+              <p class="muted">E-commerce store</p>
+              <p class="meta"><strong>Backend Architecture:</strong> WooCommerce · Custom plugin work · Checkout optimization</p>
+              <a class="cta" href="https://doggydoolittleshop.com/" target="_blank" rel="noopener">View project</a>
+            </div>
           </article>
 
-          <article class="project card-in" role="listitem">
-            <h3>Reposition</h3>
-            <p class="muted">Agency site rebuild</p>
-            <p class="meta"><strong>Backend:</strong> WordPress + bespoke API integrations</p>
-            <a class="visit" href="https://www.reposition.co.uk/" target="_blank" rel="noopener">View project</a>
+          <article class="proj-card">
+            <div class="proj-header" style="background:linear-gradient(90deg,#f7fff4,#e6ffe8)">
+              <h3>Reposition</h3>
+            </div>
+            <div class="proj-body">
+              <p class="muted">Agency site rebuild</p>
+              <p class="meta"><strong>Backend Architecture:</strong> WordPress + bespoke API integrations</p>
+              <a class="cta" href="https://www.reposition.co.uk/" target="_blank" rel="noopener">View project</a>
+            </div>
           </article>
 
-          <article class="project card-in" role="listitem">
-            <h3>Caprese</h3>
-            <p class="muted">Retail site & catalog</p>
-            <p class="meta"><strong>Backend:</strong> Shopify (theme customisations) + ERP sync</p>
-            <a class="visit" href="https://www.capresebags.com/" target="_blank" rel="noopener">View project</a>
+          <!-- more project cards -->
+          <article class="proj-card">
+            <div class="proj-header" style="background:linear-gradient(90deg,#f7f8ff,#e6edff)">
+              <h3>Caprese</h3>
+            </div>
+            <div class="proj-body">
+              <p class="muted">Retail & catalog</p>
+              <p class="meta"><strong>Backend Architecture:</strong> Shopify (theme customizations) · external sync</p>
+              <a class="cta" href="https://www.capresebags.com/" target="_blank" rel="noopener">View project</a>
+            </div>
           </article>
 
-          <article class="project card-in" role="listitem">
-            <h3>Romedia Digital</h3>
-            <p class="muted">Agency & CMS tooling</p>
-            <p class="meta"><strong>Backend:</strong> WordPress with custom admin features</p>
-            <a class="visit" href="https://romediadigital.com/" target="_blank" rel="noopener">View project</a>
+          <article class="proj-card">
+            <div class="proj-header" style="background:linear-gradient(90deg,#fff7fb,#ffeef8)">
+              <h3>Romedia Digital</h3>
+            </div>
+            <div class="proj-body">
+              <p class="muted">Agency & CMS tooling</p>
+              <p class="meta"><strong>Backend Architecture:</strong> WordPress with custom admin features</p>
+              <a class="cta" href="https://romediadigital.com/" target="_blank" rel="noopener">View project</a>
+            </div>
           </article>
 
-          <article class="project card-in" role="listitem">
-            <h3>OverNight Smile</h3>
-            <p class="muted">Product funnel & marketing</p>
-            <p class="meta"><strong>Backend:</strong> WordPress + funnel integrations</p>
-            <a class="visit" href="https://overnightsmile.com/" target="_blank" rel="noopener">View project</a>
+          <article class="proj-card">
+            <div class="proj-header" style="background:linear-gradient(90deg,#f2fbff,#e6f7ff)">
+              <h3>OverNight Smile</h3>
+            </div>
+            <div class="proj-body">
+              <p class="muted">Product funnel & marketing</p>
+              <p class="meta"><strong>Backend Architecture:</strong> WordPress + funnel integrations</p>
+              <a class="cta" href="https://overnightsmile.com/" target="_blank" rel="noopener">View project</a>
+            </div>
           </article>
 
-          <article class="project card-in" role="listitem">
-            <h3>Design Xpand</h3>
-            <p class="muted">Creative studio portfolio</p>
-            <p class="meta"><strong>Backend:</strong> WordPress custom theme & media optimizations</p>
-            <a class="visit" href="https://designxpand.com/" target="_blank" rel="noopener">View project</a>
+          <article class="proj-card">
+            <div class="proj-header" style="background:linear-gradient(90deg,#fff7fb,#f7f0ff)">
+              <h3>Design Xpand</h3>
+            </div>
+            <div class="proj-body">
+              <p class="muted">Creative studio portfolio</p>
+              <p class="meta"><strong>Backend Architecture:</strong> WordPress custom theme · media optimisations</p>
+              <a class="cta" href="https://designxpand.com/" target="_blank" rel="noopener">View project</a>
+            </div>
           </article>
         </div>
 
-        <button class="carousel-btn next" aria-label="Next">›</button>
+        <button class="proj-nav next" aria-label="Next project">›</button>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT: collects name, email, phone, service, message -->
+  <!-- CONTACT -->
   <section id="contact" class="section">
-    <div class="wrap contact-area">
-      <div class="contact-col">
-        <h2 class="eyebrow">Get in touch</h2>
-
-        <form id="contactForm" class="form" novalidate>
-          <!-- Web3Forms: set access_key in script.js -->
+    <div class="wrap contact-wrap">
+      <div class="contact-form-col">
+        <h2 class="section-title">Get in touch</h2>
+        <form id="contactForm" class="contact-form" novalidate>
           <input type="hidden" id="access_key" name="access_key" value="">
+          <input type="hidden" name="subject" value="Portfolio inquiry">
 
           <label class="field">
             <span class="label">Name</span>
             <input name="name" type="text" required />
           </label>
 
-          <label class="field">
-            <span class="label">Email</span>
-            <input name="email" type="email" required />
-          </label>
+          <div class="row-2">
+            <label class="field">
+              <span class="label">Email</span>
+              <input name="email" type="email" required />
+            </label>
 
-          <label class="field">
-            <span class="label">Phone</span>
-            <input name="phone" type="tel" inputmode="tel" required />
-          </label>
+            <label class="field">
+              <span class="label">Phone</span>
+              <input name="phone" type="tel" inputmode="tel" required />
+            </label>
+          </div>
 
           <label class="field">
             <span class="label">Choose Service</span>
@@ -246,20 +379,24 @@
         </form>
       </div>
 
-      <aside class="contact-col contact-note">
+      <aside class="contact-note">
         <h3>How I work</h3>
-        <p class="muted">I read every inquiry and reply within 24–48 hours. If you prefer, include a brief scope & budget and I’ll respond with next steps.</p>
-        <div style="margin-top:18px;color:var(--muted)">Your contact details are collected only to respond to your inquiry — they are not published.</div>
+        <p class="muted">I read every inquiry and reply within 24–48 hours. If you prefer, include a short scope and budget and I’ll reply with next steps.</p>
+        <p class="muted" style="margin-top:12px;font-size:13px">Your contact details are collected only to respond to your inquiry — they are not published.</p>
       </aside>
     </div>
   </section>
+
+  <!-- BACK TO TOP -->
+  <button id="toTop" class="to-top" aria-label="Back to top">↑</button>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap">
       <div class="footer-row">
-        <div>© <span id="year"></span> Uday Sharma</div>
-        <div class="foot-links"><a href="#projects">Projects</a> · <a href="#contact">Contact</a></div>
+        <div class="footer-left">© <span id="year"></span> Uday Sharma</div>
+        <div class="footer-center">We build products that scale — modern web, automation & design.</div>
+        <div class="footer-right"><a href="#projects">Projects</a> · <a href="#contact">Contact</a></div>
       </div>
     </div>
   </footer>
