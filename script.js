@@ -1,10 +1,4 @@
-// Smooth scroll for nav links
-document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        target.scrollIntoView({ behavior: "smooth" });
-    });
+// Smooth scrolling for project slider
+document.querySelectorAll('.project-slider').forEach(slider => {
+    slider.style.scrollBehavior = 'smooth';
 });
-
-console.log("Portfolio Loaded Successfully");
