@@ -1,16 +1,16 @@
 /* ---------- CONFIG: add your Web3Forms access key here ---------- */
-const WEB3FORMS_ACCESS_KEY = ""; // <-- paste your access_key to enable form submissions
+const WEB3FORMS_ACCESS_KEY = ""; // ← paste your access_key here to enable form submissions
 
-/* small helpers */
-const $ = (s, r = document) => r.querySelector(s);
-const $$ = (s, r = document) => Array.from((r || document).querySelectorAll(s));
+/* Simple helpers */
+const $ = (sel, root = document) => root.querySelector(sel);
+const $$ = (sel, root = document) => Array.from((root || document).querySelectorAll(sel));
 
-/* MOBILE NAV toggle */
+/* Mobile nav toggle */
 const navToggle = $('#navToggle');
-const sideList = $('#sideList');
-if (navToggle && sideList) {
+const navList = $('#navList');
+if (navToggle && navList) {
   navToggle.addEventListener('click', () => {
-    const open = sideList.classList.toggle('open');
+    const open = navList.classList.toggle('open');
     navToggle.setAttribute('aria-expanded', String(open));
   });
 }
@@ -20,17 +20,17 @@ $$('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const href = a.getAttribute('href');
     if (!href || href === '#') return;
-    const target = document.querySelector(href);
-    if (target) {
+    const t = document.querySelector(href);
+    if (t) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      if (sideList && sideList.classList.contains('open')) sideList.classList.remove('open');
+      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (navList && navList.classList.contains('open')) navList.classList.remove('open');
     }
   });
 });
 
 /* Reveal on scroll */
-const revealTargets = $$('.card-in');
+const revealItems = $$('.card-in');
 const io = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -39,74 +39,64 @@ const io = new IntersectionObserver((entries, obs) => {
     }
   });
 }, { threshold: 0.12 });
-revealTargets.forEach(el => io.observe(el));
+revealItems.forEach(it => io.observe(it));
 
-/* PROJECTS: continuous/infinite scrolling implementation */
+/* Projects infinite-ish carousel by duplicating content */
 const track = document.getElementById('projectsTrack');
-const btnPrev = document.querySelector('.proj-nav.prev');
-const btnNext = document.querySelector('.proj-nav.next');
+const prevBtn = document.querySelector('.proj-nav.prev');
+const nextBtn = document.querySelector('.proj-nav.next');
 
-function duplicateTrackContent() {
+function duplicateTrack() {
   if (!track) return;
-  // if already duplicated, skip
-  if (track.dataset.dup === '1') return;
-  const items = Array.from(track.children);
-  items.forEach(item => {
-    const clone = item.cloneNode(true);
-    track.appendChild(clone);
-  });
-  track.dataset.dup = '1';
+  if (track.dataset.duplicated === '1') return;
+  const nodes = Array.from(track.children);
+  nodes.forEach(n => track.appendChild(n.cloneNode(true)));
+  track.dataset.duplicated = '1';
 }
 
-// calculate slide width
-function slideWidth() {
-  if (!track) return 420;
+function cardWidth() {
+  if (!track) return 360;
   const card = track.querySelector('.proj-card');
-  if (!card) return 420;
-  const style = getComputedStyle(track);
-  const gap = parseFloat(style.gap || 18);
+  if (!card) return 360;
+  const gap = parseFloat(getComputedStyle(track).gap || 18);
   return Math.round(card.getBoundingClientRect().width + gap);
 }
 
-let auto = null;
-function startAutoScroll() {
-  stopAutoScroll();
-  auto = setInterval(() => {
+let autoScroll = null;
+function startAuto() {
+  stopAuto();
+  autoScroll = setInterval(() => {
     if (!track) return;
-    const maxScroll = track.scrollWidth / 2; // because we duplicated
-    if (track.scrollLeft >= maxScroll) {
-      // jump back seamlessly
-      track.scrollLeft = track.scrollLeft - maxScroll;
-    }
-    track.scrollBy({ left: slideWidth(), behavior: 'smooth' });
+    const half = track.scrollWidth / 2;
+    if (track.scrollLeft >= half) track.scrollLeft = track.scrollLeft - half;
+    track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
   }, 3800);
 }
-function stopAutoScroll() {
-  if (auto) { clearInterval(auto); auto = null; }
+function stopAuto() {
+  if (autoScroll) { clearInterval(autoScroll); autoScroll = null; }
 }
 
-// manual buttons
-btnPrev && btnPrev.addEventListener('click', () => {
-  track && track.scrollBy({ left: -slideWidth(), behavior: 'smooth' });
-});
-btnNext && btnNext.addEventListener('click', () => {
-  track && track.scrollBy({ left: slideWidth(), behavior: 'smooth' });
-});
-
-// pause on hover/touch
 if (track) {
-  track.addEventListener('mouseenter', stopAutoScroll);
-  track.addEventListener('mouseleave', startAutoScroll);
-  track.addEventListener('touchstart', stopAutoScroll);
-  track.addEventListener('touchend', startAutoScroll);
-  // keyboard
-  track.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') track.scrollBy({ left: -slideWidth(), behavior: 'smooth' });
-    if (e.key === 'ArrowRight') track.scrollBy({ left: slideWidth(), behavior: 'smooth' });
+  duplicateTrack();
+  track.setAttribute('tabindex', '0');
+
+  track.addEventListener('mouseenter', stopAuto);
+  track.addEventListener('mouseleave', startAuto);
+  track.addEventListener('touchstart', stopAuto);
+  track.addEventListener('touchend', startAuto);
+
+  track.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+    if (e.key === 'ArrowRight') track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
   });
+
+  startAuto();
 }
 
-/* BACK TO TOP */
+prevBtn && prevBtn.addEventListener('click', () => { track && track.scrollBy({ left: -cardWidth(), behavior: 'smooth' }); });
+nextBtn && nextBtn.addEventListener('click', () => { track && track.scrollBy({ left: cardWidth(), behavior: 'smooth' }); });
+
+/* Back to top */
 const toTop = $('#toTop');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 600) toTop.style.display = 'block';
@@ -114,17 +104,18 @@ window.addEventListener('scroll', () => {
 });
 toTop && toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-/* Contact form: Web3Forms */
+/* Contact form (Web3Forms) */
 const form = document.getElementById('contactForm');
-const formStatus = document.getElementById('formStatus');
+const status = document.getElementById('formStatus');
+
 if (form) {
-  // set access_key if set in JS
+  // set hidden access_key if defined in JS
   const accessInput = document.getElementById('access_key');
   if (accessInput && WEB3FORMS_ACCESS_KEY) accessInput.value = WEB3FORMS_ACCESS_KEY;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    formStatus && (formStatus.textContent = 'Sending…');
+    status && (status.textContent = 'Sending…');
 
     const fd = new FormData(form);
     const name = (fd.get('name') || '').toString().trim();
@@ -134,7 +125,7 @@ if (form) {
     const message = (fd.get('message') || '').toString().trim();
 
     if (!name || !email || !phone || !service || !message) {
-      formStatus && (formStatus.textContent = 'Please complete all fields.');
+      status && (status.textContent = 'Please complete all fields.');
       return;
     }
 
@@ -144,7 +135,7 @@ if (form) {
     };
 
     if (!payload.access_key) {
-      formStatus && (formStatus.textContent = 'Tip: add Web3Forms access_key in script.js to enable submissions.');
+      status && (status.textContent = 'Tip: add Web3Forms access_key in script.js to enable submissions.');
       return;
     }
 
@@ -156,32 +147,20 @@ if (form) {
       });
       const json = await res.json();
       if (json.success) {
-        formStatus && (formStatus.textContent = 'Thanks — I will get back to you soon.');
+        status && (status.textContent = 'Thanks — I will get back to you soon.');
         form.reset();
       } else {
         console.error('web3forms:', json);
-        formStatus && (formStatus.textContent = 'Submission failed — try again.');
+        status && (status.textContent = 'Submission failed — try again.');
       }
     } catch (err) {
       console.error(err);
-      formStatus && (formStatus.textContent = 'Network error. Try again later.');
+      status && (status.textContent = 'Network error — try again later.');
     }
   });
 }
 
-/* INIT */
+/* Set current year in footer (if you later add a year span) */
 document.addEventListener('DOMContentLoaded', () => {
-  // duplicate track for infinite feel
-  duplicateTrackContent();
-
-  // ensure track focusable
-  if (track) track.setAttribute('tabindex', '0');
-
-  // start autoplay
-  startAutoScroll();
-
-  // reveal targets are observed above (already set)
-  const year = new Date().getFullYear();
-  const yEl = document.getElementById('year');
-  if (yEl) yEl.textContent = year;
+  // (Left intentionally blank for minimal JS overhead)
 });
