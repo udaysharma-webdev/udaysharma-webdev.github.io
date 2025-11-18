@@ -1,186 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Uday Sharma — Portfolio</title>
-  <meta name="description" content="Uday Sharma — Full Stack Developer, WordPress & UI/UX specialist. CRM & marketing automation.">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uday Sharma — Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
 
-  <header class="hero" id="home">
-    <div class="wrap">
-      <div class="intro">
-        <h1 class="title">Uday Sharma</h1>
-        <p class="lead">Full-Stack Developer • WordPress • UI/UX • CRM Automation</p>
-        <div class="cta">
-          <a href="#projects" class="btn">View Projects</a>
-          <a href="#contact" class="btn ghost">Contact Me</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="logo">Uday Sharma</h2>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="card-blob"></div>
-      </div>
-    </div>
-  </header>
+    </nav>
 
-  <main>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Hi, I'm <span class="blue">Uday Sharma</span></h1>
+            <p class="fade-in delay-1">
+                I help businesses build high-performance websites, modern designs, 
+                and automated customer workflows.
+            </p>
+        </div>
+    </header>
+
     <!-- Services -->
-    <section class="section" id="services" data-animate>
-      <div class="wrap">
-        <h2>Services I Offer</h2>
-        <div class="services-grid">
-          <article class="service">
-            <h3>Web & App Development</h3>
-            <p>Custom themes, plugins, e-commerce stores, speed optimization, API integrations, full stack apps.</p>
-          </article>
+    <section id="services" class="section">
+        <h2 class="section-title">Offered Services</h2>
+        <div class="card-container">
 
-          <article class="service">
-            <h3>Platforms</h3>
-            <p>WordPress · Shopify · Wix · PSD / Figma → HTML · ACF · PHP · React</p>
-          </article>
+            <div class="card fade-up">
+                <h3>Full Website Development</h3>
+                <p>Modern, fast, secure websites with clean architecture.</p>
+            </div>
 
-          <article class="service">
-            <h3>Design & Media</h3>
-            <p>Branding, UI/UX, marketing collateral, video editing, motion graphics.</p>
-          </article>
+            <div class="card fade-up">
+                <h3>E-Commerce Setup</h3>
+                <p>High-conversion stores with seamless user experience.</p>
+            </div>
 
-          <article class="service">
-            <h3>CRM & Automation</h3>
-            <p>GoHighLevel (GHL), HubSpot — automation, funnels, CRM setup.</p>
-          </article>
+            <div class="card fade-up">
+                <h3>Custom Web Applications</h3>
+                <p>Tailored solutions using React, Angular, Node.js.</p>
+            </div>
+
+            <div class="card fade-up">
+                <h3>UI / UX Design</h3>
+                <p>Clean, modern designs & branding systems.</p>
+            </div>
+
+            <div class="card fade-up">
+                <h3>API Integration</h3>
+                <p>Secure and scalable API connections.</p>
+            </div>
+
+            <div class="card fade-up">
+                <h3>CRM & Automation</h3>
+                <p>HubSpot & GoHighLevel automation workflows.</p>
+            </div>
+
         </div>
-      </div>
     </section>
 
-    <!-- Skills -->
-    <section class="section alt" id="skills" data-animate>
-      <div class="wrap">
-        <h2>Skill Set</h2>
-        <div class="chips">
-          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Angular</span><span>React</span>
-          <span>Node.js</span><span>MySQL</span><span>MongoDB</span><span>PHP</span><span>ACF</span>
-        </div>
-        <div class="skill-columns">
-          <div>
-            <h4>WordPress</h4>
-            <p>Frontend, backend, custom themes & plugins, ACF, performance tuning.</p>
-          </div>
-          <div>
-            <h4>Design</h4>
-            <p>Brand identity, marketing collateral, UI/UX, prototypes & motion graphics.</p>
-          </div>
-        </div>
-      </div>
+    <!-- Skill Set -->
+    <section id="skills" class="section alt">
+        <h2 class="section-title">Skill Set</h2>
+
+        <h3>WordPress Development</h3>
+        <p>Frontend + Backend — HTML, CSS, Bootstrap, JS, AJAX, jQuery, PHP</p>
+
+        <h3>Graphic Design, UI & UX</h3>
+        <p>Branding, marketing collateral, app/website design & videos.</p>
+
+        <h3>Full Stack Development</h3>
+        <p>React, Angular, Node.js, MySQL, MongoDB</p>
+
+        <h3>CRM Automation</h3>
+        <p>GoHighLevel, HubSpot</p>
     </section>
 
-    <!-- Projects -->
-    <section class="section" id="projects" data-animate>
-      <div class="wrap">
-        <h2>Selected Projects</h2>
-        <div class="projects-grid">
-          <!-- Project card template (animated) -->
-          <a class="project-card" href="https://www.myglobalshield.com/" target="_blank" rel="noopener">
-            <div class="p-left">
-              <h3>My Global Shield</h3>
-              <p>Security services website — WP + performance and integrations.</p>
-            </div>
-            <span class="p-cta">Visit</span>
-          </a>
+    <!-- Expertise Cards -->
+    <section id="expertise" class="section">
+        <h2 class="section-title">Platform Expertise</h2>
 
-          <a class="project-card" href="https://doggydoolittleshop.com/" target="_blank" rel="noopener">
-            <div class="p-left">
-              <h3>Doggy Doo Little Shop</h3>
-              <p>E-commerce UI and store optimization.</p>
-            </div>
-            <span class="p-cta">Visit</span>
-          </a>
+        <div class="expertise-cards">
 
-          <a class="project-card" href="https://www.reposition.co.uk/" target="_blank" rel="noopener">
-            <div class="p-left">
-              <h3>Reposition</h3>
-              <p>Agency site rebuild with custom WP tooling.</p>
+            <div class="expert-card fade-up">
+                <h3>WordPress</h3>
+                <p>Custom themes, plugins, ACF, performance optimization.</p>
             </div>
-            <span class="p-cta">Visit</span>
-          </a>
 
-          <a class="project-card" href="https://www.capresebags.com/" target="_blank" rel="noopener">
-            <div class="p-left">
-              <h3>Caprese</h3>
-              <p>Retail site optimization & theme customisation.</p>
+            <div class="expert-card fade-up">
+                <h3>Shopify</h3>
+                <p>Store setup, theme customization, conversion optimization.</p>
             </div>
-            <span class="p-cta">Visit</span>
-          </a>
 
-          <a class="project-card" href="https://worldupfoundation.org/" target="_blank" rel="noopener">
-            <div class="p-left">
-              <h3>WorldUp Foundation</h3>
-              <p>NGO website design and CMS management.</p>
+            <div class="expert-card fade-up">
+                <h3>Custom Development</h3>
+                <p>React, Angular, Node.js, API integrations.</p>
             </div>
-            <span class="p-cta">Visit</span>
-          </a>
 
-          <a class="project-card" href="https://eevolver.com/" target="_blank" rel="noopener">
-            <div class="p-left">
-              <h3>Eevolver</h3>
-              <p>Platform UX and frontend implementation.</p>
+            <div class="expert-card fade-up">
+                <h3>Design</h3>
+                <p>Branding, UI/UX, web & app design, motion graphics.</p>
             </div>
-            <span class="p-cta">Visit</span>
-          </a>
+
         </div>
-      </div>
+    </section>
+
+    <!-- Projects Slider -->
+    <section id="projects" class="section alt">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="slider">
+            <div class="slide-track">
+
+                <a href="https://www.myglobalshield.com/" class="slide" target="_blank">My Global Shield</a>
+                <a href="https://doggydoolittleshop.com/" class="slide" target="_blank">Doggy Doo Little Shop</a>
+                <a href="https://www.reposition.co.uk/" class="slide" target="_blank">Reposition</a>
+                <a href="https://www.capresebags.com/" class="slide" target="_blank">Caprese</a>
+                <a href="https://romediadigital.com/" class="slide" target="_blank">Romedia Digital</a>
+                <a href="https://overnightsmile.com/" class="slide" target="_blank">OverNight Smile</a>
+                <a href="https://designxpand.com/" class="slide" target="_blank">Design Xpand</a>
+
+            </div>
+        </div>
+
     </section>
 
     <!-- Contact -->
-    <section class="section contact-section" id="contact" data-animate>
-      <div class="wrap">
-        <h2>Contact Me</h2>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Let's build something</h3>
-            <p>Send a quick message and I'll reply within 24–48 hours.</p>
-            <ul class="contact-info">
-              <li><strong>Email:</strong> <a href="mailto:Udaysharma561@gmail.com">Udaysharma561@gmail.com</a></li>
-              <li><strong>GitHub:</strong> <a href="https://github.com/udaysharma-webdev" target="_blank" rel="noopener">udaysharma-webdev</a></li>
-            </ul>
-          </div>
+    <section id="contact" class="section">
+        <h2 class="section-title">Contact Me</h2>
 
-          <form id="contactForm" class="form-card" novalidate>
-            <input type="hidden" name="access_key" id="access_key" value="">
-            <input type="hidden" name="subject" value="New portfolio inquiry">
-            <input type="hidden" name="reply_to" value="Udaysharma561@gmail.com">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" id="name" required placeholder="Your name">
-            </label>
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form fade-up">
+            <input type="hidden" name="access_key" value="ea522fd4-6ab7-4d2d-8f3b-38e93d0f2b81">
 
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" id="email" required placeholder="your@email.com">
-            </label>
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
 
-            <label>
-              <span>Message</span>
-              <textarea name="message" id="message" rows="6" required placeholder="Tell me about your project..."></textarea>
-            </label>
+            <button type="submit">Send Message</button>
+        </form>
 
-            <div class="form-row">
-              <button type="submit" class="btn">Send Message</button>
-              <div id="formStatus" class="form-status" aria-live="polite"></div>
-            </div>
-          </form>
-        </div>
-      </div>
+        <p class="contact-info">📩 Email: <a href="mailto:Udaysharma561@gmail.com">Udaysharma561@gmail.com</a></p>
+        <p class="contact-info">📱 WhatsApp: <a href="https://wa.me/918679891989" target="_blank">+91 867 989 1989</a></p>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>© <span id="year"></span> Uday Sharma — Built with care.</p>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Uday Sharma — All Rights Reserved</p>
+    </footer>
 
-  <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
