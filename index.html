@@ -3,26 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Uday Sharma — Portfolio</title>
+  <title>Uday Sharma — Senior Full Stack Developer</title>
   <meta name="description" content="Uday Sharma — Full Stack Developer, WordPress Expert, UI/UX Designer, Automation Specialist. 10+ years experience." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- HEADER / NAV -->
-  <header class="site-header">
-    <div class="wrap header-grid">
-      <div class="brand">
-        <h1 class="brand-name">Uday Sharma</h1>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="wrap header-inner">
+      <div class="brand" aria-hidden="false">
+        <h1 class="brand-title">Uday Sharma</h1>
         <p class="brand-sub">Full Stack Developer · WordPress Expert · UI/UX Designer · Automation Specialist</p>
       </div>
 
-      <button id="navToggle" aria-controls="navList" aria-expanded="false" class="nav-toggle" title="Toggle navigation">
-        <span class="hamburger"></span>
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu" title="Open menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
 
-      <nav id="navList" class="nav">
-        <ul class="nav-links">
+      <nav id="navMenu" class="nav" aria-label="Primary navigation">
+        <ul class="nav-list">
           <li><a href="#services">Services</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#expertise">Expertise</a></li>
@@ -33,12 +34,11 @@
     </div>
   </header>
 
-  <!-- SUMMARY (Short refined summary, no hero image) -->
-  <section class="summary-bleed">
-    <div class="wrap summary">
-      <p class="lead">
-        With <strong>10+ years</strong> building modern websites, web applications, automations and brands,
-        I help businesses improve conversion, reduce manual work through automation and ship robust web platforms.
+  <!-- SUMMARY -->
+  <section class="summary">
+    <div class="wrap">
+      <p class="summary-text">
+        With <strong>10+ years</strong> designing and building modern websites, web apps and automated systems, I help businesses increase conversions, reduce manual work and ship reliable digital products.
       </p>
     </div>
   </section>
@@ -46,106 +46,72 @@
   <!-- SERVICES -->
   <section id="services" class="section">
     <div class="wrap">
-      <h2 class="title">Offered Services</h2>
-      <div class="cards-grid">
-        <article class="card">
-          <div class="card-head">🌐 Web Development</div>
-          <p>Frontend & backend, performance-first architecture, responsive & accessible builds.</p>
+      <h2 class="eyebrow">Offered Services</h2>
+      <div class="services-grid">
+        <article class="svc card-in">
+          <h3>Web Development</h3>
+          <p>Production-ready frontends and maintainable backends with performance-first architecture.</p>
         </article>
-
-        <article class="card">
-          <div class="card-head">🛒 E-commerce Setup</div>
-          <p>Shopify & WooCommerce stores — fast, high-conversion checkouts & integrations.</p>
+        <article class="svc card-in">
+          <h3>E-commerce Setup</h3>
+          <p>Shopify & WooCommerce stores built for conversion and stability.</p>
         </article>
-
-        <article class="card">
-          <div class="card-head">🧩 Custom Web App</div>
-          <p>React / Angular frontends with Node.js backends, well-structured APIs and deployment pipelines.</p>
+        <article class="svc card-in">
+          <h3>Custom Web App</h3>
+          <p>React / Angular frontends, Node.js backends and well-designed APIs.</p>
         </article>
-
-        <article class="card">
-          <div class="card-head">🎨 UI / UX Design</div>
-          <p>Wireframes, high-fidelity UI, brand systems and motion where it matters.</p>
+        <article class="svc card-in">
+          <h3>UI / UX Design</h3>
+          <p>High-fidelity design systems, prototypes and motion where it matters.</p>
         </article>
-
-        <article class="card">
-          <div class="card-head">⚙️ Automation & CRM</div>
-          <p>GHL & HubSpot automations, funnels, lead flows and webhook integrations.</p>
+        <article class="svc card-in">
+          <h3>Automation & CRM</h3>
+          <p>GHL & HubSpot workflows, webhooks and lead automation pipelines.</p>
         </article>
-
-        <article class="card">
-          <div class="card-head">🔧 Technical Support</div>
-          <p>Monitoring, security hardening, backups, performance tuning and incident response.</p>
+        <article class="svc card-in">
+          <h3>Technical Support</h3>
+          <p>Monitoring, security, maintenance and performance tuning.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS (Icon card style) -->
+  <!-- SKILLS -->
   <section id="skills" class="section alt">
     <div class="wrap">
-      <h2 class="title">Skill Set</h2>
-
+      <h2 class="eyebrow">Skill Set</h2>
       <div class="skills-grid">
-        <div class="skill">
-          <div class="skill-icon">🛠️</div>
-          <h3>WordPress Development</h3>
+        <div class="skill card-in">
+          <div class="icon">🛠️</div>
+          <h4>WordPress Development</h4>
           <ul>
-            <li>Custom themes & plugins</li>
-            <li>ACF, WooCommerce</li>
-            <li>Speed & SEO optimization</li>
-            <li>PHP, JS, HTML & CSS</li>
+            <li>Custom themes & plugins, ACF, WooCommerce</li>
+            <li>Performance & security best practices</li>
           </ul>
         </div>
 
-        <div class="skill">
-          <div class="skill-icon">💻</div>
-          <h3>Full Stack</h3>
+        <div class="skill card-in">
+          <div class="icon">💻</div>
+          <h4>Full Stack</h4>
           <ul>
-            <li>React / Angular</li>
-            <li>Node.js, Express</li>
-            <li>MySQL / MongoDB</li>
-            <li>API design & auth</li>
+            <li>React / Angular, Node.js</li>
+            <li>MySQL, MongoDB, API design</li>
           </ul>
         </div>
 
-        <div class="skill">
-          <div class="skill-icon">🛒</div>
-          <h3>E-commerce</h3>
+        <div class="skill card-in">
+          <div class="icon">🎨</div>
+          <h4>UI / UX & Design</h4>
           <ul>
-            <li>Shopify theme & app work</li>
-            <li>WooCommerce architecture</li>
-            <li>Checkout & payment flows</li>
+            <li>Prototypes, visual systems, motion</li>
           </ul>
         </div>
 
-        <div class="skill">
-          <div class="skill-icon">🎨</div>
-          <h3>Design & Motion</h3>
+        <div class="skill card-in">
+          <div class="icon">⚙️</div>
+          <h4>Automation & CRM</h4>
           <ul>
-            <li>UI/UX design & prototyping</li>
-            <li>Branding & marketing assets</li>
-            <li>Motion graphics & videos</li>
-          </ul>
-        </div>
-
-        <div class="skill">
-          <div class="skill-icon">⚙️</div>
-          <h3>Automation & CRM</h3>
-          <ul>
-            <li>GHL, HubSpot workflows</li>
-            <li>Webhooks & integrations</li>
-            <li>Email/SMS automation</li>
-          </ul>
-        </div>
-
-        <div class="skill">
-          <div class="skill-icon">🔒</div>
-          <h3>Support & Ops</h3>
-          <ul>
-            <li>Monitoring & backups</li>
-            <li>Security & performance tuning</li>
-            <li>Release & rollback strategies</li>
+            <li>GHL, HubSpot, webhooks & integrations</li>
           </ul>
         </div>
       </div>
@@ -155,87 +121,73 @@
   <!-- EXPERTISE -->
   <section id="expertise" class="section">
     <div class="wrap">
-      <h2 class="title">Platform Expertise</h2>
-      <div class="expertise-grid">
-        <div class="expert">WordPress — themes, plugins, ACF</div>
-        <div class="expert">Shopify — Liquid, theme work</div>
-        <div class="expert">Custom — React/Angular + Node.js</div>
-        <div class="expert">Design — UI/UX, branding, motion</div>
+      <h2 class="eyebrow">Platform Expertise</h2>
+      <div class="expert-grid">
+        <div class="expert card-in">WordPress — custom themes & plugins</div>
+        <div class="expert card-in">Shopify — theme & checkout work</div>
+        <div class="expert card-in">Custom stacks — React/Angular + Node</div>
+        <div class="expert card-in">Design — UI systems & motion</div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS: horizontal carousel with auto + manual -->
+  <!-- PROJECTS -->
   <section id="projects" class="section alt">
     <div class="wrap">
-      <h2 class="title">Selected Projects</h2>
+      <h2 class="eyebrow">Selected Projects</h2>
 
       <div class="carousel">
         <button class="carousel-btn prev" aria-label="Previous">‹</button>
 
         <div class="carousel-track" id="carouselTrack" tabindex="0" role="list">
-          <!-- Each project card (bigger with backend architecture) -->
-          <article class="project" role="listitem">
-            <div class="project-inner">
-              <h3>My Global Shield</h3>
-              <p class="muted">Security services website & integrations</p>
-              <p class="meta"><strong>Backend Architecture:</strong> WordPress (Custom Theme), ACF, PHP, Cloudflare CDN, object cache</p>
-              <a class="visit" href="https://www.myglobalshield.com/" target="_blank" rel="noopener">Visit Project</a>
-            </div>
+          <!-- Project cards (content focused, includes backend architecture) -->
+          <article class="project card-in" role="listitem">
+            <h3>My Global Shield</h3>
+            <p class="muted">Security services website</p>
+            <p class="meta"><strong>Backend:</strong> WordPress (Custom Theme) · ACF · PHP · CDN · Caching</p>
+            <a class="visit" href="https://www.myglobalshield.com/" target="_blank" rel="noopener">View project</a>
           </article>
 
-          <article class="project" role="listitem">
-            <div class="project-inner">
-              <h3>Doggy Doo Little Shop</h3>
-              <p class="muted">E-commerce store with conversion improvements</p>
-              <p class="meta"><strong>Backend Architecture:</strong> WooCommerce, custom plugin for product flows, caching</p>
-              <a class="visit" href="https://doggydoolittleshop.com/" target="_blank" rel="noopener">Visit Project</a>
-            </div>
+          <article class="project card-in" role="listitem">
+            <h3>Doggy Doo Little Shop</h3>
+            <p class="muted">E-commerce store</p>
+            <p class="meta"><strong>Backend:</strong> WooCommerce · Custom plugins · Checkout optimizations</p>
+            <a class="visit" href="https://doggydoolittleshop.com/" target="_blank" rel="noopener">View project</a>
           </article>
 
-          <article class="project" role="listitem">
-            <div class="project-inner">
-              <h3>Reposition</h3>
-              <p class="muted">Agency platform migration & features</p>
-              <p class="meta"><strong>Backend Architecture:</strong> WordPress + bespoke API integrations</p>
-              <a class="visit" href="https://www.reposition.co.uk/" target="_blank" rel="noopener">Visit Project</a>
-            </div>
+          <article class="project card-in" role="listitem">
+            <h3>Reposition</h3>
+            <p class="muted">Agency site rebuild</p>
+            <p class="meta"><strong>Backend:</strong> WordPress + bespoke API integrations</p>
+            <a class="visit" href="https://www.reposition.co.uk/" target="_blank" rel="noopener">View project</a>
           </article>
 
-          <article class="project" role="listitem">
-            <div class="project-inner">
-              <h3>Caprese</h3>
-              <p class="muted">Retail site and checkout flows</p>
-              <p class="meta"><strong>Backend Architecture:</strong> Shopify (theme customisations) + external ERP sync</p>
-              <a class="visit" href="https://www.capresebags.com/" target="_blank" rel="noopener">Visit Project</a>
-            </div>
+          <article class="project card-in" role="listitem">
+            <h3>Caprese</h3>
+            <p class="muted">Retail site & catalog</p>
+            <p class="meta"><strong>Backend:</strong> Shopify (theme customisations) + ERP sync</p>
+            <a class="visit" href="https://www.capresebags.com/" target="_blank" rel="noopener">View project</a>
           </article>
 
-          <article class="project" role="listitem">
-            <div class="project-inner">
-              <h3>Romedia Digital</h3>
-              <p class="muted">Digital agency website & admin tools</p>
-              <p class="meta"><strong>Backend Architecture:</strong> WordPress with custom admin tooling</p>
-              <a class="visit" href="https://romediadigital.com/" target="_blank" rel="noopener">Visit Project</a>
-            </div>
+          <article class="project card-in" role="listitem">
+            <h3>Romedia Digital</h3>
+            <p class="muted">Agency & CMS tooling</p>
+            <p class="meta"><strong>Backend:</strong> WordPress with custom admin features</p>
+            <a class="visit" href="https://romediadigital.com/" target="_blank" rel="noopener">View project</a>
           </article>
 
-          <article class="project" role="listitem">
-            <div class="project-inner">
-              <h3>OverNight Smile</h3>
-              <p class="muted">Product funnel & marketing site</p>
-              <p class="meta"><strong>Backend Architecture:</strong> WordPress + funnel integrations & optimized forms</p>
-              <a class="visit" href="https://overnightsmile.com/" target="_blank" rel="noopener">Visit Project</a>
-            </div>
+          <article class="project card-in" role="listitem">
+            <h3>OverNight Smile</h3>
+            <p class="muted">Product funnel & marketing</p>
+            <p class="meta"><strong>Backend:</strong> WordPress + funnel integrations</p>
+            <a class="visit" href="https://overnightsmile.com/" target="_blank" rel="noopener">View project</a>
           </article>
 
-          <article class="project" role="listitem">
-            <div class="project-inner">
-              <h3>Design Xpand</h3>
-              <p class="muted">Creative studio portfolio</p>
-              <p class="meta"><strong>Backend Architecture:</strong> WordPress custom theme & media optimisations</p>
-              <a class="visit" href="https://designxpand.com/" target="_blank" rel="noopener">Visit Project</a>
-            </div>
+          <article class="project card-in" role="listitem">
+            <h3>Design Xpand</h3>
+            <p class="muted">Creative studio portfolio</p>
+            <p class="meta"><strong>Backend:</strong> WordPress custom theme & media optimizations</p>
+            <a class="visit" href="https://designxpand.com/" target="_blank" rel="noopener">View project</a>
           </article>
         </div>
 
@@ -244,23 +196,33 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACT: collects name, email, phone, service, message -->
   <section id="contact" class="section">
-    <div class="wrap contact-grid">
+    <div class="wrap contact-area">
       <div class="contact-col">
-        <h2 class="title">Contact Me</h2>
+        <h2 class="eyebrow">Get in touch</h2>
 
-        <form id="contactForm" class="contact-form" novalidate>
+        <form id="contactForm" class="form" novalidate>
+          <!-- Web3Forms: set access_key in script.js -->
           <input type="hidden" id="access_key" name="access_key" value="">
-          <input type="hidden" name="subject" value="Portfolio inquiry">
 
-          <label class="label">
-            <span class="label-title">Name</span>
+          <label class="field">
+            <span class="label">Name</span>
             <input name="name" type="text" required />
           </label>
 
-          <label class="label">
-            <span class="label-title">Choose Service</span>
+          <label class="field">
+            <span class="label">Email</span>
+            <input name="email" type="email" required />
+          </label>
+
+          <label class="field">
+            <span class="label">Phone</span>
+            <input name="phone" type="tel" inputmode="tel" required />
+          </label>
+
+          <label class="field">
+            <span class="label">Choose Service</span>
             <select name="service" required>
               <option value="">— Select a service —</option>
               <option>Web Development</option>
@@ -272,40 +234,36 @@
             </select>
           </label>
 
-          <label class="label">
-            <span class="label-title">Message</span>
+          <label class="field">
+            <span class="label">Message</span>
             <textarea name="message" rows="6" required></textarea>
           </label>
 
           <div class="form-row">
-            <button class="btn primary" type="submit">Send Message</button>
+            <button class="btn primary" type="submit">Send message</button>
             <div id="formStatus" class="form-status" aria-live="polite"></div>
           </div>
         </form>
       </div>
 
-      <aside class="contact-col contact-info">
-        <h3>Reach me</h3>
-        <p>📩 Email: <a href="mailto:Udaysharma561@gmail.com">Udaysharma561@gmail.com</a></p>
-        <p>📱 WhatsApp: <a href="https://wa.me/918679891989" target="_blank">+91 867 989 1989</a></p>
-
-        <div style="margin-top:18px;color:#6b7280;font-size:14px;">
-          Prefer not to use the form? Message me on WhatsApp or email directly.
-        </div>
+      <aside class="contact-col contact-note">
+        <h3>How I work</h3>
+        <p class="muted">I read every inquiry and reply within 24–48 hours. If you prefer, include a brief scope & budget and I’ll respond with next steps.</p>
+        <div style="margin-top:18px;color:var(--muted)">Your contact details are collected only to respond to your inquiry — they are not published.</div>
       </aside>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="wrap">
-      <div class="foot-row">
+      <div class="footer-row">
         <div>© <span id="year"></span> Uday Sharma</div>
-        <div class="foot-links"><a href="#services">Services</a> · <a href="#projects">Projects</a></div>
+        <div class="foot-links"><a href="#projects">Projects</a> · <a href="#contact">Contact</a></div>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
