@@ -1,50 +1,59 @@
-/* CONFIG: Paste your Web3Forms access key here to enable form submissions */
-const WEB3FORMS_ACCESS_KEY = ""; // <-- paste access_key if you have it
+/* ---------- CONFIG: add your Web3Forms access key here ---------- */
+const WEB3FORMS_ACCESS_KEY = ""; // <-- paste your access_key to enable form submissions
 
-// helpers
+/* small DOM helpers */
 const $ = (sel, root = document) => root.querySelector(sel);
-const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+const $$ = (sel, root = document) => Array.from((root || document).querySelectorAll(sel));
 
-// NAV toggle
+/* NAV toggle */
 const navToggle = $('#navToggle');
-const navList = $('#navList');
-navToggle && navToggle.addEventListener('click', () => {
-  const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-  navToggle.setAttribute('aria-expanded', String(!expanded));
-  navList && navList.classList.toggle('open');
-});
+const navList = $('#navMenu .nav-list') || document.querySelector('#navMenu .nav-list');
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    if (!navList) return;
+    const open = navList.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(open));
+  });
+}
 
-// smooth scroll for internal links
+/* Smooth anchor scroll */
 $$('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
-    e.preventDefault();
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) t.scrollIntoView({behavior:'smooth', block:'start'});
-    if (navList && navList.classList.contains('open')) navList.classList.remove('open');
+    const href = a.getAttribute('href');
+    if (!href || href === '#') return;
+    const t = document.querySelector(href);
+    if (t) {
+      e.preventDefault();
+      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (navList && navList.classList.contains('open')) navList.classList.remove('open');
+    }
   });
 });
 
-// reveal on scroll (IntersectionObserver)
-const revealEls = $$('.wrap .card, .wrap .project, .wrap .skill');
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in');
-      obs.unobserve(entry.target);
+/* Reveal-on-scroll */
+const itemsToReveal = $$('.card-in');
+const io = new IntersectionObserver((entries, obs) => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      en.target.classList.add('in');
+      obs.unobserve(en.target);
     }
   });
-}, {threshold: 0.12});
-revealEls.forEach(el => obs.observe(el));
+}, { threshold: 0.12 });
+itemsToReveal.forEach(it => io.observe(it));
 
-// PROJECT CAROUSEL (auto + manual + touch)
-const track = $('#carouselTrack');
-const btnPrev = $('.carousel-btn.prev');
-const btnNext = $('.carousel-btn.next');
-let autoTimer = null;
-const cardWidth = () => {
-  const card = track && track.querySelector('.project');
-  return card ? card.getBoundingClientRect().width + 18 : 420;
-};
+/* CAROUSEL: manual + autoplay + keyboard + touch */
+const track = document.getElementById('carouselTrack');
+const btnPrev = document.querySelector('.carousel-btn.prev');
+const btnNext = document.querySelector('.carousel-btn.next');
+
+function cardWidth() {
+  if (!track) return 420;
+  const card = track.querySelector('.project');
+  if (!card) return 420;
+  const gap = parseFloat(getComputedStyle(track).gap || 18);
+  return Math.round(card.getBoundingClientRect().width + gap);
+}
 
 function scrollByOffset(offset) {
   if (!track) return;
@@ -54,12 +63,20 @@ function scrollByOffset(offset) {
 btnPrev && btnPrev.addEventListener('click', () => scrollByOffset(-cardWidth()));
 btnNext && btnNext.addEventListener('click', () => scrollByOffset(cardWidth()));
 
+// keyboard
+if (track) {
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') scrollByOffset(-cardWidth());
+    if (e.key === 'ArrowRight') scrollByOffset(cardWidth());
+  });
+}
+
 // autoplay
+let autoplay = null;
 function startAuto() {
   stopAuto();
-  autoTimer = setInterval(() => {
+  autoplay = setInterval(() => {
     if (!track) return;
-    // if near end, snap to start
     if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
       track.scrollTo({ left: 0, behavior: 'smooth' });
     } else {
@@ -67,34 +84,32 @@ function startAuto() {
     }
   }, 4200);
 }
-function stopAuto() { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
+function stopAuto() { if (autoplay) { clearInterval(autoplay); autoplay = null; } }
 track && track.addEventListener('mouseenter', stopAuto);
 track && track.addEventListener('mouseleave', startAuto);
 track && track.addEventListener('touchstart', stopAuto);
 track && track.addEventListener('touchend', startAuto);
 
-// initialize autoplay
+/* INIT */
 document.addEventListener('DOMContentLoaded', () => {
-  // insert year
-  const y = new Date().getFullYear();
+  // year
   const yEl = document.getElementById('year');
-  if (yEl) yEl.textContent = y;
+  if (yEl) yEl.textContent = new Date().getFullYear();
 
-  if (track) {
-    // allow arrow-key navigation
-    track.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') scrollByOffset(-cardWidth());
-      if (e.key === 'ArrowRight') scrollByOffset(cardWidth());
-    });
-    startAuto();
-  }
+  // focusable track for keyboard
+  if (track) track.setAttribute('tabindex', '0');
+
+  // set web3forms access key if provided
+  const access = document.getElementById('access_key');
+  if (access && WEB3FORMS_ACCESS_KEY) access.value = WEB3FORMS_ACCESS_KEY;
+
+  // start carousel autoplay
+  if (track) startAuto();
 });
 
-// CONTACT FORM: Web3Forms integration (no email/phone in form)
+/* CONTACT FORM (Web3Forms) */
 const form = document.getElementById('contactForm');
 const status = document.getElementById('formStatus');
-const accessInput = document.getElementById('access_key');
-if (accessInput && WEB3FORMS_ACCESS_KEY) accessInput.value = WEB3FORMS_ACCESS_KEY;
 
 if (form) {
   form.addEventListener('submit', async (e) => {
@@ -102,22 +117,24 @@ if (form) {
     status && (status.textContent = 'Sending…');
 
     const fd = new FormData(form);
-    // basic validation
     const name = (fd.get('name') || '').toString().trim();
+    const email = (fd.get('email') || '').toString().trim();
+    const phone = (fd.get('phone') || '').toString().trim();
     const service = (fd.get('service') || '').toString().trim();
     const message = (fd.get('message') || '').toString().trim();
-    if (!name || !service || !message) {
+
+    if (!name || !email || !phone || !service || !message) {
       status && (status.textContent = 'Please complete all fields.');
       return;
     }
 
     const payload = {
-      access_key: accessInput ? accessInput.value : '',
-      name, service, message, subject: 'Portfolio inquiry'
+      access_key: (document.getElementById('access_key') || {}).value || '',
+      name, email, phone, service, message, subject: 'Portfolio inquiry'
     };
 
     if (!payload.access_key) {
-      status && (status.textContent = 'Tip: Add Web3Forms access_key in script.js to enable submissions.');
+      status && (status.textContent = 'Tip: add Web3Forms access_key in script.js to enable form submissions.');
       return;
     }
 
@@ -133,7 +150,7 @@ if (form) {
         form.reset();
       } else {
         console.error('web3forms:', json);
-        status && (status.textContent = 'Error sending. Try again or contact directly.');
+        status && (status.textContent = 'Submission failed — try again or contact directly.');
       }
     } catch (err) {
       console.error(err);
