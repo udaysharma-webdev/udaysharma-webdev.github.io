@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#ffffff" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <!-- versioned to bust cache -->
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -17,14 +17,14 @@
     <div class="wrap header-inner">
       <div class="brand-left" aria-hidden="false">
         <h1 class="brand-title">Uday Sharma</h1>
-        <p class="brand-sub">Full Stack Developer | WordPress Expert | UI/UX Designer | Automation Specialist</p>
+        <p class="brand-sub tagline">Full Stack Developer | WordPress Expert | UI/UX Designer | Automation Specialist</p>
       </div>
 
       <!-- Right-side pill nav: SERVICES | PROJECTS | CONTACT -->
       <nav class="nav-pill" aria-label="Primary">
         <ul class="nav-pill-list" id="navList">
           <li><a href="#services">Services</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#projects">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -141,91 +141,138 @@
       <div class="wrap">
         <h2 class="section-title">Skills & Expertise</h2>
 
-        <div class="skills-grid">
-          <div class="skill-card card-in">
-            <div class="skill-head gradient-purple-blue">WordPress Development</div>
-            <ul>
-              <li>Custom themes & plugins</li>
-              <li>ACF, WooCommerce</li>
-              <li>Performance & security</li>
-            </ul>
+        <p class="skills-lead">Here are the frameworks, libraries, services and platforms I have experience with. This is not a complete list — I'm constantly gaining new skills.</p>
+
+        <!-- Icon grid (white background) -->
+        <div class="skills-icons-grid card-in" aria-hidden="false">
+          <!-- Each item is an SVG icon placeholder + label. Replace SVGs with real icons if you want. -->
+          <div class="skill-item">
+            <div class="skill-ico">HTML</div>
+            <div class="skill-label">HTML</div>
           </div>
 
-          <div class="skill-card card-in">
-            <div class="skill-head gradient-sky">Full Stack</div>
-            <ul>
-              <li>React / Angular</li>
-              <li>Node.js, REST / GraphQL</li>
-              <li>MySQL, MongoDB</li>
-            </ul>
+          <div class="skill-item">
+            <div class="skill-ico">Next.js</div>
+            <div class="skill-label">Next.js</div>
           </div>
 
-          <div class="skill-card card-in">
-            <div class="skill-head gradient-ice">UI / UX & Design</div>
-            <ul>
-              <li>Prototyping & visual systems</li>
-              <li>Motion & video</li>
-            </ul>
+          <div class="skill-item">
+            <div class="skill-ico">TS</div>
+            <div class="skill-label">TypeScript</div>
           </div>
 
-          <div class="skill-card card-in">
-            <div class="skill-head gradient-pink">Automation & CRM</div>
-            <ul>
-              <li>GHL, HubSpot, webhooks</li>
-              <li>Lead flows & sequences</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Platform expertise moved under same section -->
-        <div class="expert-grid small-gap card-in">
-          <div class="expert-box">
-            <h4>WordPress</h4>
-            <ul>
-              <li>Custom themes & plugins</li>
-              <li>ACF, multisite, WooCommerce</li>
-            </ul>
+          <div class="skill-item">
+            <div class="skill-ico">JS</div>
+            <div class="skill-label">JavaScript</div>
           </div>
 
-          <div class="expert-box">
-            <h4>Shopify</h4>
-            <ul>
-              <li>Theme customization (Liquid)</li>
-              <li>Checkout & app integrations</li>
-            </ul>
+          <div class="skill-item">
+            <div class="skill-ico">PHP</div>
+            <div class="skill-label">PHP</div>
           </div>
 
-          <div class="expert-box">
-            <h4>Custom stacks</h4>
-            <ul>
-              <li>React / Angular frontends</li>
-              <li>Node.js backends & APIs</li>
-            </ul>
+          <div class="skill-item">
+            <div class="skill-ico">React</div>
+            <div class="skill-label">React</div>
           </div>
 
-          <div class="expert-box">
-            <h4>Design</h4>
-            <ul>
-              <li>UI systems, branding, motion</li>
-            </ul>
+          <div class="skill-item">
+            <div class="skill-ico">Angular</div>
+            <div class="skill-label">Angular</div>
           </div>
 
-          <div class="expert-box">
-            <h4>Other Platforms</h4>
-            <ul>
-              <li>Wix · Squarespace · BigCommerce</li>
-              <li>Infusionsoft (Keap) · ClickFunnels</li>
-              <li>Webflow & no-code integrations</li>
-            </ul>
+          <div class="skill-item">
+            <div class="skill-ico">Node</div>
+            <div class="skill-label">Node</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">Tail</div>
+            <div class="skill-label">Tailwind</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">SQL</div>
+            <div class="skill-label">SQL</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">Mongo</div>
+            <div class="skill-label">MongoDB</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">Dock</div>
+            <div class="skill-label">Docker</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">Git</div>
+            <div class="skill-label">Git</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">GH</div>
+            <div class="skill-label">GitHub</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">WP</div>
+            <div class="skill-label">WordPress</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">Shop</div>
+            <div class="skill-label">Shopify</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">Webf</div>
+            <div class="skill-label">Webflow</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">Wix</div>
+            <div class="skill-label">Wix</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">Sq</div>
+            <div class="skill-label">Squarespace</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">F</div>
+            <div class="skill-label">Figma</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">CF</div>
+            <div class="skill-label">ClickFunnels</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">GHL</div>
+            <div class="skill-label">GHL</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">HS</div>
+            <div class="skill-label">HubSpot</div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-ico">Keap</div>
+            <div class="skill-label">Keap</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects: manual slider only, larger cards -->
+    <!-- Projects -->
     <section id="projects" class="section projects-section">
       <div class="wrap">
-        <h2 class="section-title">Selected Projects</h2>
+        <h2 class="section-title">Portfolio / Recent Projects</h2>
 
         <div class="projects-wrap">
           <button class="proj-nav prev" aria-label="Previous">‹</button>
@@ -242,34 +289,7 @@
             </article>
 
             <article class="proj-card card-in">
-              <div class="proj-header gradient-peach"><h3>Doggy Doo Little Shop</h3></div>
-              <div class="proj-body">
-                <p class="muted">E-commerce store</p>
-                <p class="meta"><strong>Backend Architecture:</strong> WooCommerce · Custom plugin work</p>
-                <a class="cta" href="https://doggydoolittleshop.com/" target="_blank" rel="noopener">View project</a>
-              </div>
-            </article>
-
-            <article class="proj-card card-in">
-              <div class="proj-header gradient-green"><h3>Reposition</h3></div>
-              <div class="proj-body">
-                <p class="muted">Agency site rebuild</p>
-                <p class="meta"><strong>Backend Architecture:</strong> WordPress + bespoke API integrations</p>
-                <a class="cta" href="https://www.reposition.co.uk/" target="_blank" rel="noopener">View project</a>
-              </div>
-            </article>
-
-            <article class="proj-card card-in">
-              <div class="proj-header gradient-ice"><h3>Caprese</h3></div>
-              <div class="proj-body">
-                <p class="muted">Retail site & catalog</p>
-                <p class="meta"><strong>Backend Architecture:</strong> Shopify (theme customisations)</p>
-                <a class="cta" href="https://www.capresebags.com/" target="_blank" rel="noopener">View project</a>
-              </div>
-            </article>
-
-            <article class="proj-card card-in">
-              <div class="proj-header gradient-pink"><h3>Romedia Digital</h3></div>
+              <div class="proj-header gradient-peach"><h3>Romedia Digital</h3></div>
               <div class="proj-body">
                 <p class="muted">Agency & CMS tooling</p>
                 <p class="meta"><strong>Backend Architecture:</strong> WordPress with custom admin features</p>
@@ -286,14 +306,7 @@
               </div>
             </article>
 
-            <article class="proj-card card-in">
-              <div class="proj-header gradient-ice"><h3>Design Xpand</h3></div>
-              <div class="proj-body">
-                <p class="muted">Creative studio portfolio</p>
-                <p class="meta"><strong>Backend Architecture:</strong> WordPress custom theme · media optimisations</p>
-                <a class="cta" href="https://designxpand.com/" target="_blank" rel="noopener">View project</a>
-              </div>
-            </article>
+            <!-- add rest as needed -->
           </div>
 
           <button class="proj-nav next" aria-label="Next">›</button>
@@ -301,7 +314,7 @@
       </div>
     </section>
 
-    <!-- Contact: aligned to right -->
+    <!-- Contact -->
     <section id="contact" class="section">
       <div class="wrap contact-wrap">
         <div class="contact-left blank-side"></div>
@@ -310,7 +323,7 @@
           <h2 class="section-title">Get in touch</h2>
           <p class="contact-note center-note">We read and respond to every inquiry — we'll get back to you within 24 hours.</p>
 
-          <form id="contactForm" class="contact-form" novalidate>
+          <form id="contactForm" class="contact-form full" novalidate>
             <input type="hidden" id="access_key" name="access_key" value="">
             <input type="hidden" name="subject" value="Portfolio inquiry">
 
@@ -372,10 +385,9 @@
   </footer>
 
   <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <!-- site script (versioned) -->
-  <script src="script.js?v=2" defer></script>
+  <script src="script.js?v=3" defer></script>
 </body>
 </html>
