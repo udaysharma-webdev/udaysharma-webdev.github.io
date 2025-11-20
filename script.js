@@ -1,13 +1,13 @@
-/* v4 script - left nav, GSAP animations, manual project slider, form handling */
+/* v5 script: improved free-scroll portfolio, GSAP reveals, contact form (Web3Forms) */
 
 /* ---------- CONFIG: add your Web3Forms access key here ---------- */
-const WEB3FORMS_ACCESS_KEY = ""; // ← paste your access_key here to enable form submissions
+const WEB3FORMS_ACCESS_KEY = ""; // <-- paste your access_key here to enable form submissions
 
-/* Helpers */
+/* SMALL HELPERS */
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from((r || document).querySelectorAll(s));
 
-/* Mobile nav toggle */
+/* MOBILE NAV toggle */
 const navToggle = $('#navToggle');
 const navList = $('#navList');
 if (navToggle && navList) {
@@ -22,31 +22,30 @@ $$('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const href = a.getAttribute('href');
     if (!href || href === '#') return;
-    const t = document.querySelector(href);
-    if (t) {
+    const target = document.querySelector(href);
+    if (target) {
       e.preventDefault();
-      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      if (navList.classList.contains('open')) navList.classList.remove('open');
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (navList && navList.classList.contains('open')) navList.classList.remove('open');
     }
   });
 });
 
-/* GSAP Animations (if available) */
+/* GSAP animations (if available) */
 if (window.gsap && window.gsap.registerPlugin) {
   gsap.registerPlugin(ScrollTrigger);
-
   gsap.from('.brand-title', { y: -8, opacity: 0, duration: .7, ease: 'power2.out' });
   gsap.from('.brand-sub', { y: -6, opacity: 0, duration: .6, delay: .08 });
-
   gsap.from('.nav-left-list li', { y: 6, opacity: 0, duration: .6, stagger: .06, ease: 'power2.out' });
 
   gsap.utils.toArray('.card-in').forEach((el, i) => {
     gsap.fromTo(el, { y: 14, opacity: 0 }, {
-      y: 0, opacity: 1, duration: .8, delay: i * 0.03,
-      scrollTrigger: { trigger: el, start: 'top 88%' , once: true}
+      y: 0, opacity: 1, duration: .7, delay: i * 0.02,
+      scrollTrigger: { trigger: el, start: 'top 88%', once: true }
     });
   });
 
+  // micro parallax on project cards
   $$('.proj-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const r = card.getBoundingClientRect();
@@ -54,7 +53,7 @@ if (window.gsap && window.gsap.registerPlugin) {
       const cy = r.top + r.height / 2;
       const dx = (e.clientX - cx) / r.width;
       const dy = (e.clientY - cy) / r.height;
-      gsap.to(card, { rotationY: dx * 4, rotationX: dy * -4, transformPerspective: 800, duration: .4, ease: 'power3.out' });
+      gsap.to(card, { rotationY: dx * 4, rotationX: dy * -4, transformPerspective: 800, duration: .35, ease: 'power3.out' });
     });
     card.addEventListener('mouseleave', () => {
       gsap.to(card, { rotationY: 0, rotationX: 0, duration: .6, ease: 'power3.out' });
@@ -62,29 +61,40 @@ if (window.gsap && window.gsap.registerPlugin) {
   });
 }
 
-/* Projects manual slider (horizontal scroll with buttons) */
-const pTrack = document.getElementById('projectsTrack');
-const btnPrev = document.querySelector('.proj-nav.prev');
-const btnNext = document.querySelector('.proj-nav.next');
+/* Projects free scroll + buttons */
+const track = document.getElementById('projectsTrack');
+const prevBtn = document.querySelector('.proj-nav.prev');
+const nextBtn = document.querySelector('.proj-nav.next');
 
-function cardWidth(el = pTrack) {
-  if (!el) return 420;
-  const card = el.querySelector('.proj-card');
+function computeScrollOffset() {
+  if (!track) return 420;
+  const card = track.querySelector('.proj-card');
   if (!card) return 420;
-  const gap = parseFloat(getComputedStyle(el).gap || 22);
+  const style = getComputedStyle(track);
+  const gap = parseFloat(style.gap || 18);
   return Math.round(card.getBoundingClientRect().width + gap);
 }
 
-btnPrev && btnPrev.addEventListener('click', () => {
-  if (!pTrack) return;
-  pTrack.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+if (prevBtn) prevBtn.addEventListener('click', () => {
+  if (!track) return;
+  const offset = computeScrollOffset();
+  track.scrollBy({ left: -offset, behavior: 'smooth' });
 });
-btnNext && btnNext.addEventListener('click', () => {
-  if (!pTrack) return;
-  pTrack.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+if (nextBtn) nextBtn.addEventListener('click', () => {
+  if (!track) return;
+  const offset = computeScrollOffset();
+  track.scrollBy({ left: offset, behavior: 'smooth' });
 });
 
-/* Back to top */
+/* Keyboard left/right for track */
+if (track) {
+  track.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') track.scrollBy({ left: computeScrollOffset(), behavior: 'smooth' });
+    if (e.key === 'ArrowLeft') track.scrollBy({ left: -computeScrollOffset(), behavior: 'smooth' });
+  });
+}
+
+/* show/hide back-to-top */
 const toTop = $('#toTop');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 600) toTop.style.display = 'block';
@@ -92,37 +102,35 @@ window.addEventListener('scroll', () => {
 });
 toTop && toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-/* Contact form: Web3Forms */
+/* Contact form using Web3Forms (paste your access key) */
 const form = document.getElementById('contactForm');
-const status = document.getElementById('formStatus');
-
+const formStatus = document.getElementById('formStatus');
 if (form) {
   const accessInput = document.getElementById('access_key');
   if (accessInput && WEB3FORMS_ACCESS_KEY) accessInput.value = WEB3FORMS_ACCESS_KEY;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    status && (status.textContent = 'Sending…');
+    formStatus && (formStatus.textContent = 'Sending…');
 
     const fd = new FormData(form);
-    const name = (fd.get('name') || '').toString().trim();
-    const email = (fd.get('email') || '').toString().trim();
-    const phone = (fd.get('phone') || '').toString().trim();
-    const service = (fd.get('service') || '').toString().trim();
-    const message = (fd.get('message') || '').toString().trim();
+    const payload = {
+      access_key: (document.getElementById('access_key') || {}).value || '',
+      name: (fd.get('name') || '').toString().trim(),
+      email: (fd.get('email') || '').toString().trim(),
+      phone: (fd.get('phone') || '').toString().trim(),
+      service: (fd.get('service') || '').toString().trim(),
+      message: (fd.get('message') || '').toString().trim(),
+      subject: 'Portfolio inquiry'
+    };
 
-    if (!name || !email || !phone || !service || !message) {
-      status && (status.textContent = 'Please complete all fields.');
+    if (!payload.name || !payload.email || !payload.phone || !payload.service || !payload.message) {
+      formStatus && (formStatus.textContent = 'Please complete all fields.');
       return;
     }
 
-    const payload = {
-      access_key: (document.getElementById('access_key') || {}).value || '',
-      name, email, phone, service, message, subject: 'Portfolio inquiry'
-    };
-
     if (!payload.access_key) {
-      status && (status.textContent = 'Tip: add Web3Forms access_key in script.js to enable submissions.');
+      formStatus && (formStatus.textContent = 'Tip: add Web3Forms access_key in script.js to enable submissions.');
       return;
     }
 
@@ -134,15 +142,26 @@ if (form) {
       });
       const json = await res.json();
       if (json.success) {
-        status && (status.textContent = 'Thanks — I will get back to you soon.');
+        formStatus && (formStatus.textContent = 'Thanks — I will get back to you soon.');
         form.reset();
       } else {
         console.error('web3forms:', json);
-        status && (status.textContent = 'Submission failed — try again.');
+        formStatus && (formStatus.textContent = 'Submission failed — try again.');
       }
     } catch (err) {
       console.error(err);
-      status && (status.textContent = 'Network error — try again later.');
+      formStatus && (formStatus.textContent = 'Network error — try again later.');
     }
   });
 }
+
+/* On DOM ready: ensure project track is focusable for keyboard control */
+document.addEventListener('DOMContentLoaded', () => {
+  if (track) track.setAttribute('tabindex', '0');
+  // reveal initial items if GSAP not present
+  if (!window.gsap) {
+    $$('.card-in').forEach((el, idx) => {
+      setTimeout(()=> el.classList.add('in'), idx * 40);
+    });
+  }
+});
