@@ -1,12 +1,11 @@
-/* Purple-accented premium UI (final) */
+/* Final update v3 - purple + white skills grid, refined layout */
 
-/* Prevent horizontal overflow */
+/* Ensure no horizontal overflow */
 html,body{overflow-x:hidden}
 
-/* VARIABLES */
+/* Vars */
 :root{
-  --purple:#6b3fa0; /* primary accent (purple) */
-  --blue:#0056D2;
+  --purple:#6b3fa0;
   --muted:#6b7280;
   --bg:#ffffff;
   --card:#ffffff;
@@ -19,21 +18,20 @@ html,body{overflow-x:hidden}
 body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;color:#071428;background:var(--bg);-webkit-font-smoothing:antialiased}
 .wrap{width:92%;max-width:var(--maxw);margin:0 auto}
 
-/* HEADER */
+/* Header */
 .header{position:sticky;top:0;background:linear-gradient(180deg,#fff,#fbfbff);backdrop-filter:blur(4px);z-index:100;border-bottom:1px solid #eef6ff}
 .header-inner{display:flex;align-items:center;gap:20px;padding:18px 0;justify-content:space-between;flex-wrap:wrap}
 .brand-left{flex:1;min-width:220px}
-.brand-title{margin:0;font-size:28px;color:var(--purple);font-weight:900;line-height:1}
-.brand-sub{margin:6px 0 0;color:var(--muted);font-size:13px}
+.brand-title{margin:0;font-size:30px;color:var(--purple);font-weight:900;line-height:1}
+.brand-sub{margin:8px 0 0;color:var(--muted);font-size:14px}
+.tagline{font-size:15px} /* increased tagline font */
 
 /* Nav: right side visually, pill with purple hover */
 .nav-pill{flex:0 0 auto;display:flex;justify-content:flex-end;align-items:center}
 .nav-pill-list{display:flex;gap:8px;list-style:none;margin:12px 0 0;padding:6px;background:linear-gradient(180deg,#fff,#fbfbff);border-radius:999px;border:1px solid #eef6ff;box-shadow:0 10px 30px rgba(6,12,34,0.03)}
 .nav-pill-list li{display:inline-block;position:relative}
-.nav-pill-list a{display:inline-block;padding:10px 14px;border-radius:999px;text-decoration:none;color:#243; font-weight:700; color:#334}
-.nav-pill-list a::after{
-  content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-8px;width:0;height:3px;border-radius:2px;background:var(--purple);transition:width .28s ease;
-}
+.nav-pill-list a{display:inline-block;padding:10px 14px;border-radius:999px;text-decoration:none;color:#334;font-weight:700}
+.nav-pill-list a::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-8px;width:0;height:3px;border-radius:2px;background:var(--purple);transition:width .28s ease}
 .nav-pill-list a:hover::after{width:60%}
 .nav-pill-list a:hover{color:var(--purple);transform:translateY(-3px)}
 
@@ -41,10 +39,11 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
 .nav-toggle{display:none;border:0;background:transparent;padding:8px;cursor:pointer}
 .nav-toggle .bar{display:block;height:2px;background:#0b1220;margin:5px 0;border-radius:2px}
 
-/* SECTION BASE */
+/* Sections */
 .section{padding:64px 0}
 .section.alt{background:#fbfdff}
 .section-title{font-size:20px;color:var(--purple);margin:0 0 18px;font-weight:800;border-left:6px solid var(--purple);padding-left:12px;display:inline-block}
+.skills-lead{margin:10px 0 18px;color:var(--muted);max-width:900px}
 
 /* SERVICES */
 .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:20px}
@@ -56,7 +55,7 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
 .muted{color:var(--muted)}
 .svc-body ul{margin:8px 0 0;padding-left:18px;color:#1f2937}
 
-/* Purple gradients used for accents */
+/* Gradients */
 .gradient-purple-blue{background:linear-gradient(135deg,#f3ecff 0%, #e5ddff 100%)}
 .gradient-peach{background:linear-gradient(135deg,#fff5eb 0%, #ffebd6 100%)}
 .gradient-green{background:linear-gradient(135deg,#f0fff4 0%, #e6ffea 100%)}
@@ -64,18 +63,13 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
 .gradient-pink{background:linear-gradient(135deg,#fff6fb 0%, #ffedf7 100%)}
 .gradient-sky{background:linear-gradient(135deg,#f2fbff 0%, #e6f7ff 100%)}
 
-/* SKILLS & EXPERT GRID */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:16px}
-.skill-card{background:var(--card);padding:14px;border-radius:12px;border:1px solid #eef6ff;box-shadow:0 8px 26px rgba(2,6,23,0.04)}
-.skill-head{padding:8px;border-radius:10px 10px 0 0;margin-bottom:8px;font-weight:800}
-.skill-card ul{margin:8px 0 0;padding-left:18px;color:#1f2937}
+/* SKILLS ICON GRID (white style) */
+.skills-icons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:16px;background:transparent;padding:12px;border-radius:10px}
+.skill-item{display:flex;flex-direction:column;align-items:center;padding:12px;background:#fff;border-radius:10px;border:1px solid #f0eff8;box-shadow:0 10px 30px rgba(6,12,34,0.03)}
+.skill-ico{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,#fff,#fbfbff);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--purple);margin-bottom:8px}
+.skill-label{font-size:13px;font-weight:700;color:#0b1220}
 
-.expert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:18px}
-.expert-box{background:var(--card);padding:12px;border-radius:10px;border:1px solid #eef6ff;box-shadow:0 10px 30px rgba(2,6,23,0.04)}
-.expert-box h4{margin:0 0 8px;color:var(--purple);font-weight:800}
-.expert-box ul{margin:0;padding-left:18px;color:#1f2937}
-
-/* PROJECTS: manual slider, larger cards and increased height */
+/* PROJECTS */
 .projects-section .projects-wrap{display:flex;align-items:center;gap:12px;position:relative}
 .proj-nav{background:#fff;border:1px solid #eef6ff;border-radius:10px;padding:10px 12px;cursor:pointer;box-shadow:0 12px 30px rgba(2,6,23,0.06);font-size:20px}
 .projects-track-noauto{display:flex;gap:22px;overflow:auto;padding:12px 6px;scroll-behavior:smooth;scroll-snap-type:x mandatory}
@@ -86,11 +80,11 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
 .meta{font-size:13px;margin:8px 0 14px}
 .cta{display:inline-block;padding:8px 12px;background:var(--purple);color:#fff;border-radius:10px;text-decoration:none;font-weight:700}
 
-/* CONTACT: align right */
-.contact-wrap{display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:start}
-.blank-side{}
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:1fr 520px;gap:28px;align-items:start}
 .contact-right{background:transparent}
 .contact-note{margin-bottom:18px;color:var(--muted);font-size:15px}
+.contact-form.full{width:100%}
 .contact-form{background:var(--card);padding:18px;border-radius:12px;border:1px solid #eef6ff;box-shadow:0 12px 30px rgba(2,6,23,0.04)}
 .field{display:block;margin-bottom:12px}
 .label{display:block;font-weight:700;margin-bottom:6px;color:#071428}
@@ -103,7 +97,7 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
 .to-top{position:fixed;right:18px;bottom:18px;background:var(--purple);color:#fff;border:0;padding:10px;border-radius:10px;box-shadow:0 12px 30px rgba(2,6,23,0.12);cursor:pointer;display:none}
 
 /* Footer */
-.footer{padding:28px 0;background:linear-gradient(90deg,#fbf5ff,#ffffff);border-top:1px solid #eef6ff;margin-top:36px}
+.footer{padding:34px 0;background:linear-gradient(90deg,#fbf5ff,#ffffff);border-top:1px solid #eef6ff;margin-top:36px}
 .footer-row{display:flex;justify-content:center;align-items:center;gap:12px;color:var(--muted)}
 .footer-center{font-weight:700;color:#071428}
 
@@ -116,6 +110,7 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
   .contact-wrap{grid-template-columns:1fr}
   .projects-track-noauto{gap:18px}
   .proj-card{min-width:340px;height:300px}
+  .contact-right{order:2}
 }
 @media (max-width:800px){
   .header-inner{flex-direction:column;align-items:flex-start}
@@ -123,8 +118,7 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
   .nav-pill{width:100%;order:3}
   .nav-pill-list{justify-content:center;flex-wrap:wrap}
   .services-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-  .skills-grid{grid-template-columns:1fr}
-  .expert-grid{grid-template-columns:1fr}
+  .skills-icons-grid{grid-template-columns:repeat(auto-fit,minmax(100px,1fr))}
   .proj-card{min-width:300px;height:300px}
   .brand-title{font-size:22px}
   .row-2{flex-direction:column}
