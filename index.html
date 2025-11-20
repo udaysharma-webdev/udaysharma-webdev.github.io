@@ -7,7 +7,8 @@
   <meta name="description" content="Uday Sharma — Full Stack Developer, WordPress Expert, UI/UX Designer, Automation Specialist. 10+ years experience." />
   <meta name="theme-color" content="#ffffff" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <!-- versioned to bust cache -->
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -19,12 +20,10 @@
         <p class="brand-sub">Full Stack Developer | WordPress Expert | UI/UX Designer | Automation Specialist</p>
       </div>
 
-      <!-- Centered rounded nav pill (desktop shows left-aligned visually via layout) -->
+      <!-- Right-side pill nav: SERVICES | PROJECTS | CONTACT -->
       <nav class="nav-pill" aria-label="Primary">
         <ul class="nav-pill-list" id="navList">
           <li><a href="#services">Services</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#expertise">Expertise</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -37,15 +36,15 @@
     </div>
   </header>
 
-  <!-- Services -->
   <main>
+    <!-- Services -->
     <section id="services" class="section">
       <div class="wrap">
         <h2 class="section-title">Offered Services</h2>
 
         <div class="services-grid">
           <article class="svc-card card-in">
-            <div class="svc-head gradient-blue">
+            <div class="svc-head gradient-purple-blue">
               <div class="svc-icon" aria-hidden="true">🌐</div>
               <h3>Web Development</h3>
             </div>
@@ -137,13 +136,14 @@
       </div>
     </section>
 
-    <!-- Skill set -->
+    <!-- Skills & Expertise (merged) -->
     <section id="skills" class="section alt">
       <div class="wrap">
-        <h2 class="section-title">Skill Set</h2>
+        <h2 class="section-title">Skills & Expertise</h2>
+
         <div class="skills-grid">
           <div class="skill-card card-in">
-            <div class="skill-head gradient-blue">WordPress Development</div>
+            <div class="skill-head gradient-purple-blue">WordPress Development</div>
             <ul>
               <li>Custom themes & plugins</li>
               <li>ACF, WooCommerce</li>
@@ -176,15 +176,10 @@
             </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Platform Expertise -->
-    <section id="expertise" class="section">
-      <div class="wrap">
-        <h2 class="section-title">Platform Expertise</h2>
-        <div class="expert-grid">
-          <div class="expert-box card-in">
+        <!-- Platform expertise moved under same section -->
+        <div class="expert-grid small-gap card-in">
+          <div class="expert-box">
             <h4>WordPress</h4>
             <ul>
               <li>Custom themes & plugins</li>
@@ -192,7 +187,7 @@
             </ul>
           </div>
 
-          <div class="expert-box card-in">
+          <div class="expert-box">
             <h4>Shopify</h4>
             <ul>
               <li>Theme customization (Liquid)</li>
@@ -200,7 +195,7 @@
             </ul>
           </div>
 
-          <div class="expert-box card-in">
+          <div class="expert-box">
             <h4>Custom stacks</h4>
             <ul>
               <li>React / Angular frontends</li>
@@ -208,14 +203,14 @@
             </ul>
           </div>
 
-          <div class="expert-box card-in">
+          <div class="expert-box">
             <h4>Design</h4>
             <ul>
               <li>UI systems, branding, motion</li>
             </ul>
           </div>
 
-          <div class="expert-box card-in">
+          <div class="expert-box">
             <h4>Other Platforms</h4>
             <ul>
               <li>Wix · Squarespace · BigCommerce</li>
@@ -227,18 +222,18 @@
       </div>
     </section>
 
-    <!-- Projects (infinite scroll-like) -->
-    <section id="projects" class="section alt">
+    <!-- Projects: manual slider only, larger cards -->
+    <section id="projects" class="section projects-section">
       <div class="wrap">
         <h2 class="section-title">Selected Projects</h2>
 
         <div class="projects-wrap">
           <button class="proj-nav prev" aria-label="Previous">‹</button>
 
-          <div class="projects-track" id="projectsTrack" tabindex="0" role="list" aria-live="polite">
+          <div class="projects-track-noauto" id="projectsTrack" tabindex="0" role="list" aria-live="polite">
             <!-- project cards -->
             <article class="proj-card card-in">
-              <div class="proj-header gradient-blue"><h3>My Global Shield</h3></div>
+              <div class="proj-header gradient-purple-blue"><h3>My Global Shield</h3></div>
               <div class="proj-body">
                 <p class="muted">Security services website</p>
                 <p class="meta"><strong>Backend Architecture:</strong> WordPress (Custom Theme) · ACF · PHP · CDN · Caching</p>
@@ -306,10 +301,12 @@
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact: aligned to right -->
     <section id="contact" class="section">
       <div class="wrap contact-wrap">
-        <div class="contact-left">
+        <div class="contact-left blank-side"></div>
+
+        <div class="contact-right">
           <h2 class="section-title">Get in touch</h2>
           <p class="contact-note center-note">We read and respond to every inquiry — we'll get back to you within 24 hours.</p>
 
@@ -374,6 +371,11 @@
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- site script (versioned) -->
+  <script src="script.js?v=2" defer></script>
 </body>
 </html>
