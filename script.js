@@ -37,7 +37,7 @@ if (window.gsap && window.gsap.registerPlugin) {
   gsap.from('.brand-title', { y: -8, opacity: 0, duration: .7, ease: 'power2.out' });
   gsap.from('.brand-sub', { y: -6, opacity: 0, duration: .6, delay: .08 });
 
-  // nav pill hover underline handled by CSS; add subtle nav float
+  // nav items
   gsap.from('.nav-pill-list li', { y: 6, opacity: 0, duration: .6, stagger: .06, ease: 'power2.out' });
 
   // reveal cards on scroll
