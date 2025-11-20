@@ -5,22 +5,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Uday Sharma — Senior Full Stack Developer</title>
   <meta name="description" content="Uday Sharma — Full Stack Developer, WordPress Expert, UI/UX Designer, Automation Specialist. 10+ years experience." />
-  <meta name="theme-color" content="#ffffff" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <!-- versioned to bust cache -->
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="header" role="banner">
     <div class="wrap header-inner">
-      <div class="brand-left">
-        <h1 class="brand-title">Uday Sharma</h1>
-        <p class="brand-sub tagline">Full Stack Developer | WordPress Expert | UI/UX Designer | Automation Specialist</p>
-      </div>
-
-      <!-- Left-aligned nav visually (placed before brand in DOM for accessibility) -->
       <nav class="nav-left" aria-label="Primary">
         <ul class="nav-left-list" id="navList">
           <li><a href="#services">Services</a></li>
@@ -29,7 +21,11 @@
         </ul>
       </nav>
 
-      <!-- mobile toggle -->
+      <div class="brand-left">
+        <h1 class="brand-title">Uday Sharma</h1>
+        <p class="brand-sub tagline">Full Stack Developer | WordPress Expert | UI/UX Designer | Automation Specialist</p>
+      </div>
+
       <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navList" title="Toggle navigation">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
@@ -37,16 +33,16 @@
   </header>
 
   <main>
-    <!-- Services -->
+    <!-- SERVICES -->
     <section id="services" class="section">
       <div class="wrap">
         <h2 class="section-title">Offered Services</h2>
 
         <div class="services-grid">
-          <!-- cards same as before -->
+          <!-- Cards (same as earlier) -->
           <article class="svc-card card-in">
             <div class="svc-head gradient-purple-blue">
-              <div class="svc-icon" aria-hidden="true">🌐</div>
+              <div class="svc-icon">🌐</div>
               <h3>Web Development</h3>
             </div>
             <div class="svc-body">
@@ -61,7 +57,7 @@
 
           <article class="svc-card card-in">
             <div class="svc-head gradient-peach">
-              <div class="svc-icon" aria-hidden="true">🛒</div>
+              <div class="svc-icon">🛒</div>
               <h3>E-commerce Setup</h3>
             </div>
             <div class="svc-body">
@@ -76,7 +72,7 @@
 
           <article class="svc-card card-in">
             <div class="svc-head gradient-green">
-              <div class="svc-icon" aria-hidden="true">🧩</div>
+              <div class="svc-icon">🧩</div>
               <h3>Custom Web App</h3>
             </div>
             <div class="svc-body">
@@ -91,7 +87,7 @@
 
           <article class="svc-card card-in">
             <div class="svc-head gradient-ice">
-              <div class="svc-icon" aria-hidden="true">🎨</div>
+              <div class="svc-icon">🎨</div>
               <h3>UI / UX Design</h3>
             </div>
             <div class="svc-body">
@@ -106,7 +102,7 @@
 
           <article class="svc-card card-in">
             <div class="svc-head gradient-pink">
-              <div class="svc-icon" aria-hidden="true">⚙️</div>
+              <div class="svc-icon">⚙️</div>
               <h3>Automation & CRM</h3>
             </div>
             <div class="svc-body">
@@ -121,7 +117,7 @@
 
           <article class="svc-card card-in">
             <div class="svc-head gradient-sky">
-              <div class="svc-icon" aria-hidden="true">🔧</div>
+              <div class="svc-icon">🔧</div>
               <h3>Technical Support</h3>
             </div>
             <div class="svc-body">
@@ -137,163 +133,138 @@
       </div>
     </section>
 
-    <!-- Skills & Expertise (white icons grid) -->
+    <!-- Skills & Expertise (colored logos via Simple Icons CDN) -->
     <section id="skills" class="section alt">
       <div class="wrap">
         <h2 class="section-title">Skills & Expertise</h2>
-
         <p class="skills-lead">Here are the frameworks, libraries, services and platforms I have experience with. This is not a complete list — I'm constantly gaining new skills.</p>
 
-        <!-- Icon grid with monochrome SVG icons -->
         <div class="skills-icons-grid card-in" aria-hidden="false">
-          <!-- HTML -->
+          <!-- Using cdn.simpleicons.org for colored SVGs -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2l1.8 18.2L12 22l7.2-1.8L21 2H3zM8.8 8.6H11v-2H6.2l.2 2h2.4v2.2H6.4L6 8.6h2.8zm5.4 0h-1.8v4.4H15v-1.4h-1.4V8.6z" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" class="skill-img">
             <div class="skill-label">HTML</div>
           </div>
 
-          <!-- Next.js -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.5 3h-8v4.3h8V3zM21 7.5h-7v13h7v-13zM11 7.5H4v13h7v-13z" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="Next.js" class="skill-img">
             <div class="skill-label">Next.js</div>
           </div>
 
-          <!-- TypeScript -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" class="skill-img">
             <div class="skill-label">TypeScript</div>
           </div>
 
-          <!-- JavaScript -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h20v18H2V3zm13.5 14.3c.8.9 1.8 1.6 3.2 1.6 1.2 0 1.9-.6 1.9-1.4 0-.9-.7-1.2-2-1.8l-.7-.3c-.7-.3-1.2-.6-1.2-1.3 0-.7.6-1.2 1.5-1.2.9 0 1.5.3 2 .9l1.3-.8c-.8-1.1-1.8-1.6-3.4-1.6-1.5 0-2.5.9-2.5 2.1 0 1.5.9 1.9 1.9 2.4l.7.3c.8.4 1.4.7 1.4 1.5 0 .9-.8 1.4-1.9 1.4-1 0-1.7-.4-2.3-1.1l-1.2.8z" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" class="skill-img">
             <div class="skill-label">JavaScript</div>
           </div>
 
-          <!-- PHP -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="12" rx="9" ry="6" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP" class="skill-img">
             <div class="skill-label">PHP</div>
           </div>
 
-          <!-- React -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1.6" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" class="skill-img">
             <div class="skill-label">React</div>
           </div>
 
-          <!-- Angular -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l2.2 11L12 22l7.8-4L22 7 12 2z" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/angular/DD0031" alt="Angular" class="skill-img">
             <div class="skill-label">Angular</div>
           </div>
 
-          <!-- Node -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" class="skill-img">
             <div class="skill-label">Node</div>
           </div>
 
-          <!-- Tailwind -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6S2 12 2 12z" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind" class="skill-img">
             <div class="skill-label">Tailwind</div>
           </div>
 
-          <!-- SQL -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="6" rx="2" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/postgresql/336791" alt="SQL" class="skill-img">
             <div class="skill-label">SQL</div>
           </div>
 
-          <!-- MongoDB -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2s3 3 3 6-3 7-3 7-3-4-3-7 3-6 3-6z" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="MongoDB" class="skill-img">
             <div class="skill-label">MongoDB</div>
           </div>
 
-          <!-- Docker -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="12" rx="1.5" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" class="skill-img">
             <div class="skill-label">Docker</div>
           </div>
 
-          <!-- Git -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l9-9 9 9-9 9L3 12z" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" class="skill-img">
             <div class="skill-label">Git</div>
           </div>
 
-          <!-- GitHub -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-3 19.5c.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.2-3.5-1.2-.5-1.2-1.2-1.6-1.2-1.6-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.4-.3-4.9-1.2-4.9-5.5 0-1.2.4-2.1 1-2.9-.1-.3-.4-1.5.1-3.1 0 0 .8-.3 3 .9a10.4 10.4 0 015.5 0c2.2-1.2 3-.9 3-.9.5 1.6.2 2.8.1 3.1.6.8 1 1.7 1 2.9 0 4.3-2.5 5.2-4.9 5.5.4.3.8 1 .8 2v3c0 .3.2.6.7.5A10 10 0 0012 2z" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="skill-img">
             <div class="skill-label">GitHub</div>
           </div>
 
-          <!-- WordPress -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress" class="skill-img">
             <div class="skill-label">WordPress</div>
           </div>
 
-          <!-- Shopify -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24"><path d="M3 3h18v18H3z" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify" class="skill-img">
             <div class="skill-label">Shopify</div>
           </div>
 
-          <!-- Webflow -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24"><path d="M3 3h18v18H3z" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/webflow/FF3E00" alt="Webflow" class="skill-img">
             <div class="skill-label">Webflow</div>
           </div>
 
-          <!-- Wix -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24"><path d="M2 12h20" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+            <img src="https://cdn.simpleicons.org/wix/232323" alt="Wix" class="skill-img">
             <div class="skill-label">Wix</div>
           </div>
 
-          <!-- Squarespace -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/squarespace/111827" alt="Squarespace" class="skill-img">
             <div class="skill-label">Squarespace</div>
           </div>
 
-          <!-- Figma -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24"><circle cx="8" cy="6" r="2" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" class="skill-img">
             <div class="skill-label">Figma</div>
           </div>
 
-          <!-- ClickFunnels -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/clickfunnels/FF6A00" alt="ClickFunnels" class="skill-img">
             <div class="skill-label">ClickFunnels</div>
           </div>
 
-          <!-- GHL -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24"><path d="M12 2l8 4v8l-8 4-8-4V6z" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/gohighlevel/6b3fa0" alt="GHL" class="skill-img">
             <div class="skill-label">GHL</div>
           </div>
 
-          <!-- HubSpot -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot" class="skill-img">
             <div class="skill-label">HubSpot</div>
           </div>
 
-          <!-- Keap -->
           <div class="skill-item">
-            <svg class="skill-svg" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor"/></svg>
+            <img src="https://cdn.simpleicons.org/keap/11A85B" alt="Keap" class="skill-img">
             <div class="skill-label">Keap</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- Projects: free-scroll momentum -->
     <section id="projects" class="section projects-section">
       <div class="wrap">
         <h2 class="section-title">Portfolio / Recent Projects</h2>
@@ -301,22 +272,58 @@
         <div class="projects-wrap">
           <button class="proj-nav prev" aria-label="Previous">‹</button>
 
-          <div class="projects-track-noauto" id="projectsTrack" tabindex="0" role="list" aria-live="polite">
-            <!-- project cards (manual slider only) -->
+          <div class="projects-track-free" id="projectsTrack" tabindex="0" role="list" aria-live="polite">
+            <!-- 8 project cards -->
             <article class="proj-card card-in">
               <div class="proj-header gradient-purple-blue"><h3>My Global Shield</h3></div>
               <div class="proj-body">
                 <p class="muted">Security services website</p>
-                <p class="meta"><strong>Backend Architecture:</strong> WordPress (Custom Theme) · ACF · PHP · CDN · Caching</p>
+                <p class="meta"><strong>Back-end:</strong> WordPress (Custom Theme) · ACF · PHP · CDN</p>
                 <a class="cta" href="https://www.myglobalshield.com/" target="_blank" rel="noopener">View project</a>
               </div>
             </article>
 
             <article class="proj-card card-in">
-              <div class="proj-header gradient-peach"><h3>Romedia Digital</h3></div>
+              <div class="proj-header gradient-peach"><h3>Doggy Doo Little Shop</h3></div>
+              <div class="proj-body">
+                <p class="muted">E-commerce store</p>
+                <p class="meta"><strong>Back-end:</strong> WooCommerce · Custom plugins</p>
+                <a class="cta" href="https://doggydoolittleshop.com/" target="_blank" rel="noopener">View project</a>
+              </div>
+            </article>
+
+            <article class="proj-card card-in">
+              <div class="proj-header gradient-green"><h3>Reposition</h3></div>
+              <div class="proj-body">
+                <p class="muted">Agency site rebuild</p>
+                <p class="meta"><strong>Back-end:</strong> WordPress + bespoke API integrations</p>
+                <a class="cta" href="https://www.reposition.co.uk/" target="_blank" rel="noopener">View project</a>
+              </div>
+            </article>
+
+            <article class="proj-card card-in">
+              <div class="proj-header gradient-ice"><h3>Caprese</h3></div>
+              <div class="proj-body">
+                <p class="muted">Retail & catalog</p>
+                <p class="meta"><strong>Back-end:</strong> Shopify (theme fixes)</p>
+                <a class="cta" href="https://www.capresebags.com/" target="_blank" rel="noopener">View project</a>
+              </div>
+            </article>
+
+            <article class="proj-card card-in">
+              <div class="proj-header gradient-pink"><h3>Rose Cole</h3></div>
+              <div class="proj-body">
+                <p class="muted">Brand & e-commerce</p>
+                <p class="meta"><strong>Back-end:</strong> WordPress & WooCommerce</p>
+                <a class="cta" href="https://rosecole.com/" target="_blank" rel="noopener">View project</a>
+              </div>
+            </article>
+
+            <article class="proj-card card-in">
+              <div class="proj-header gradient-purple-blue"><h3>Romedia Digital</h3></div>
               <div class="proj-body">
                 <p class="muted">Agency & CMS tooling</p>
-                <p class="meta"><strong>Backend Architecture:</strong> WordPress with custom admin features</p>
+                <p class="meta"><strong>Back-end:</strong> WordPress (custom admin)</p>
                 <a class="cta" href="https://romediadigital.com/" target="_blank" rel="noopener">View project</a>
               </div>
             </article>
@@ -325,8 +332,17 @@
               <div class="proj-header gradient-sky"><h3>OverNight Smile</h3></div>
               <div class="proj-body">
                 <p class="muted">Product funnel & marketing</p>
-                <p class="meta"><strong>Backend Architecture:</strong> WordPress + funnel integrations</p>
+                <p class="meta"><strong>Back-end:</strong> WordPress + funnel integrations</p>
                 <a class="cta" href="https://overnightsmile.com/" target="_blank" rel="noopener">View project</a>
+              </div>
+            </article>
+
+            <article class="proj-card card-in">
+              <div class="proj-header gradient-ice"><h3>DesignXpand</h3></div>
+              <div class="proj-body">
+                <p class="muted">Creative studio portfolio</p>
+                <p class="meta"><strong>Back-end:</strong> WordPress custom theme</p>
+                <a class="cta" href="https://designxpand.com/" target="_blank" rel="noopener">View project</a>
               </div>
             </article>
           </div>
@@ -336,7 +352,7 @@
       </div>
     </section>
 
-    <!-- Contact (form aligned left and full width) -->
+    <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="wrap contact-wrap">
         <div class="contact-left">
@@ -389,16 +405,13 @@
           </form>
         </div>
 
-        <!-- optional right column kept empty for balance -->
         <div class="contact-right blank-side"></div>
       </div>
     </section>
   </main>
 
-  <!-- Back to top -->
   <button id="toTop" class="to-top" aria-label="Back to top">↑</button>
 
-  <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="wrap">
       <div class="footer-row">
@@ -407,10 +420,10 @@
     </div>
   </footer>
 
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- GSAP (optional) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
 
-  <script src="script.js?v=4" defer></script>
+  <script src="script.js?v=5" defer></script>
 </body>
 </html>
