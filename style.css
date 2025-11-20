@@ -1,6 +1,6 @@
-/* Final update v3 - purple + white skills grid, refined layout */
+/* v4 - left nav, mono icons, purple nav/footer, contact left full form, white skills grid */
 
-/* Ensure no horizontal overflow */
+/* Prevent horizontal overflow */
 html,body{overflow-x:hidden}
 
 /* Vars */
@@ -24,16 +24,13 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
 .brand-left{flex:1;min-width:220px}
 .brand-title{margin:0;font-size:30px;color:var(--purple);font-weight:900;line-height:1}
 .brand-sub{margin:8px 0 0;color:var(--muted);font-size:14px}
-.tagline{font-size:15px} /* increased tagline font */
+.tagline{font-size:15px}
 
-/* Nav: right side visually, pill with purple hover */
-.nav-pill{flex:0 0 auto;display:flex;justify-content:flex-end;align-items:center}
-.nav-pill-list{display:flex;gap:8px;list-style:none;margin:12px 0 0;padding:6px;background:linear-gradient(180deg,#fff,#fbfbff);border-radius:999px;border:1px solid #eef6ff;box-shadow:0 10px 30px rgba(6,12,34,0.03)}
-.nav-pill-list li{display:inline-block;position:relative}
-.nav-pill-list a{display:inline-block;padding:10px 14px;border-radius:999px;text-decoration:none;color:#334;font-weight:700}
-.nav-pill-list a::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-8px;width:0;height:3px;border-radius:2px;background:var(--purple);transition:width .28s ease}
-.nav-pill-list a:hover::after{width:60%}
-.nav-pill-list a:hover{color:var(--purple);transform:translateY(-3px)}
+/* NAV LEFT (visually left) */
+.nav-left{order:0;flex:0 0 auto;margin-right:24px}
+.nav-left-list{display:flex;gap:8px;list-style:none;margin:0;padding:8px;background:linear-gradient(90deg,#fff,#f8f6ff);border-radius:999px;border:1px solid rgba(107,63,160,0.12);box-shadow:0 8px 20px rgba(107,63,160,0.03)}
+.nav-left-list a{display:inline-block;padding:10px 14px;border-radius:999px;text-decoration:none;color:#333;font-weight:700;background:transparent}
+.nav-left-list a:hover{background:linear-gradient(90deg, rgba(107,63,160,0.06), rgba(107,63,160,0.03));color:var(--purple);transform:translateY(-3px)}
 
 /* Mobile toggle */
 .nav-toggle{display:none;border:0;background:transparent;padding:8px;cursor:pointer}
@@ -63,10 +60,10 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
 .gradient-pink{background:linear-gradient(135deg,#fff6fb 0%, #ffedf7 100%)}
 .gradient-sky{background:linear-gradient(135deg,#f2fbff 0%, #e6f7ff 100%)}
 
-/* SKILLS ICON GRID (white style) */
+/* SKILLS ICON GRID (white, monochrome icons) */
 .skills-icons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:16px;background:transparent;padding:12px;border-radius:10px}
-.skill-item{display:flex;flex-direction:column;align-items:center;padding:12px;background:#fff;border-radius:10px;border:1px solid #f0eff8;box-shadow:0 10px 30px rgba(6,12,34,0.03)}
-.skill-ico{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,#fff,#fbfbff);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--purple);margin-bottom:8px}
+.skill-item{display:flex;flex-direction:column;align-items:center;padding:18px;background:#fff;border-radius:12px;border:1px solid #f0eff8;box-shadow:0 10px 30px rgba(6,12,34,0.03)}
+.skill-svg{width:48px;height:48px;display:block;margin-bottom:10px;color:var(--purple)}
 .skill-label{font-size:13px;font-weight:700;color:#0b1220}
 
 /* PROJECTS */
@@ -80,8 +77,9 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
 .meta{font-size:13px;margin:8px 0 14px}
 .cta{display:inline-block;padding:8px 12px;background:var(--purple);color:#fff;border-radius:10px;text-decoration:none;font-weight:700}
 
-/* CONTACT */
-.contact-wrap{display:grid;grid-template-columns:1fr 520px;gap:28px;align-items:start}
+/* CONTACT: left aligned, full form width */
+.contact-wrap{display:grid;grid-template-columns:620px 1fr;gap:28px;align-items:start}
+.contact-left{}
 .contact-right{background:transparent}
 .contact-note{margin-bottom:18px;color:var(--muted);font-size:15px}
 .contact-form.full{width:100%}
@@ -96,8 +94,8 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
 /* Back to top */
 .to-top{position:fixed;right:18px;bottom:18px;background:var(--purple);color:#fff;border:0;padding:10px;border-radius:10px;box-shadow:0 12px 30px rgba(2,6,23,0.12);cursor:pointer;display:none}
 
-/* Footer */
-.footer{padding:34px 0;background:linear-gradient(90deg,#fbf5ff,#ffffff);border-top:1px solid #eef6ff;margin-top:36px}
+/* Footer purple background */
+.footer{padding:34px 0;background:linear-gradient(90deg,#efe6fb,#ffffff);border-top:1px solid rgba(107,63,160,0.08);margin-top:36px}
 .footer-row{display:flex;justify-content:center;align-items:center;gap:12px;color:var(--muted)}
 .footer-center{font-weight:700;color:#071428}
 
@@ -115,10 +113,10 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
 @media (max-width:800px){
   .header-inner{flex-direction:column;align-items:flex-start}
   .nav-toggle{display:inline-block}
-  .nav-pill{width:100%;order:3}
-  .nav-pill-list{justify-content:center;flex-wrap:wrap}
+  .nav-left{order:3;width:100%}
+  .nav-left-list{justify-content:center;flex-wrap:wrap}
   .services-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-  .skills-icons-grid{grid-template-columns:repeat(auto-fit,minmax(100px,1fr))}
+  .skills-icons-grid{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
   .proj-card{min-width:300px;height:300px}
   .brand-title{font-size:22px}
   .row-2{flex-direction:column}
