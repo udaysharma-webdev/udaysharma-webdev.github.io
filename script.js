@@ -1,3 +1,5 @@
+/* v4 script - left nav, GSAP animations, manual project slider, form handling */
+
 /* ---------- CONFIG: add your Web3Forms access key here ---------- */
 const WEB3FORMS_ACCESS_KEY = ""; // ← paste your access_key here to enable form submissions
 
@@ -20,27 +22,24 @@ $$('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const href = a.getAttribute('href');
     if (!href || href === '#') return;
-    const target = document.querySelector(href);
-    if (target) {
+    const t = document.querySelector(href);
+    if (t) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
       if (navList.classList.contains('open')) navList.classList.remove('open');
     }
   });
 });
 
-/* GSAP Animations (ScrollTrigger) */
+/* GSAP Animations (if available) */
 if (window.gsap && window.gsap.registerPlugin) {
   gsap.registerPlugin(ScrollTrigger);
 
-  // header entrance
   gsap.from('.brand-title', { y: -8, opacity: 0, duration: .7, ease: 'power2.out' });
   gsap.from('.brand-sub', { y: -6, opacity: 0, duration: .6, delay: .08 });
 
-  // nav items
-  gsap.from('.nav-pill-list li', { y: 6, opacity: 0, duration: .6, stagger: .06, ease: 'power2.out' });
+  gsap.from('.nav-left-list li', { y: 6, opacity: 0, duration: .6, stagger: .06, ease: 'power2.out' });
 
-  // reveal cards on scroll
   gsap.utils.toArray('.card-in').forEach((el, i) => {
     gsap.fromTo(el, { y: 14, opacity: 0 }, {
       y: 0, opacity: 1, duration: .8, delay: i * 0.03,
@@ -48,7 +47,6 @@ if (window.gsap && window.gsap.registerPlugin) {
     });
   });
 
-  // project card hover micro-parallax
   $$('.proj-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const r = card.getBoundingClientRect();
@@ -64,7 +62,7 @@ if (window.gsap && window.gsap.registerPlugin) {
   });
 }
 
-/* Projects manual slider (no auto) - horizontal scroll with buttons */
+/* Projects manual slider (horizontal scroll with buttons) */
 const pTrack = document.getElementById('projectsTrack');
 const btnPrev = document.querySelector('.proj-nav.prev');
 const btnNext = document.querySelector('.proj-nav.next');
@@ -86,7 +84,7 @@ btnNext && btnNext.addEventListener('click', () => {
   pTrack.scrollBy({ left: cardWidth(), behavior: 'smooth' });
 });
 
-/* show/hide back-to-top */
+/* Back to top */
 const toTop = $('#toTop');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 600) toTop.style.display = 'block';
@@ -99,7 +97,6 @@ const form = document.getElementById('contactForm');
 const status = document.getElementById('formStatus');
 
 if (form) {
-  // set hidden access_key if defined in JS
   const accessInput = document.getElementById('access_key');
   if (accessInput && WEB3FORMS_ACCESS_KEY) accessInput.value = WEB3FORMS_ACCESS_KEY;
 
