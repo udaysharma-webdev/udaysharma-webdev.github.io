@@ -1,9 +1,9 @@
 /* ---------- CONFIG: add your Web3Forms access key here ---------- */
 const WEB3FORMS_ACCESS_KEY = ""; // ← paste your access_key here to enable form submissions
 
-/* Simple helpers */
-const $ = (sel, root = document) => root.querySelector(sel);
-const $$ = (sel, root = document) => Array.from((root || document).querySelectorAll(sel));
+/* Helpers */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from((r || document).querySelectorAll(s));
 
 /* Mobile nav toggle */
 const navToggle = $('#navToggle');
@@ -20,83 +20,73 @@ $$('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const href = a.getAttribute('href');
     if (!href || href === '#') return;
-    const t = document.querySelector(href);
-    if (t) {
+    const target = document.querySelector(href);
+    if (target) {
       e.preventDefault();
-      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      if (navList && navList.classList.contains('open')) navList.classList.remove('open');
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (navList.classList.contains('open')) navList.classList.remove('open');
     }
   });
 });
 
-/* Reveal on scroll */
-const revealItems = $$('.card-in');
-const io = new IntersectionObserver((entries, obs) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in');
-      obs.unobserve(entry.target);
-    }
+/* GSAP Animations (ScrollTrigger) */
+if (window.gsap && window.gsap.registerPlugin) {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // header entrance
+  gsap.from('.brand-title', { y: -8, opacity: 0, duration: .7, ease: 'power2.out' });
+  gsap.from('.brand-sub', { y: -6, opacity: 0, duration: .6, delay: .08 });
+
+  // nav pill hover underline handled by CSS; add subtle nav float
+  gsap.from('.nav-pill-list li', { y: 6, opacity: 0, duration: .6, stagger: .06, ease: 'power2.out' });
+
+  // reveal cards on scroll
+  gsap.utils.toArray('.card-in').forEach((el, i) => {
+    gsap.fromTo(el, { y: 14, opacity: 0 }, {
+      y: 0, opacity: 1, duration: .8, delay: i * 0.03,
+      scrollTrigger: { trigger: el, start: 'top 88%' , once: true}
+    });
   });
-}, { threshold: 0.12 });
-revealItems.forEach(it => io.observe(it));
 
-/* Projects infinite-ish carousel by duplicating content */
-const track = document.getElementById('projectsTrack');
-const prevBtn = document.querySelector('.proj-nav.prev');
-const nextBtn = document.querySelector('.proj-nav.next');
-
-function duplicateTrack() {
-  if (!track) return;
-  if (track.dataset.duplicated === '1') return;
-  const nodes = Array.from(track.children);
-  nodes.forEach(n => track.appendChild(n.cloneNode(true)));
-  track.dataset.duplicated = '1';
+  // project card hover micro-parallax
+  $$('.proj-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const cx = r.left + r.width / 2;
+      const cy = r.top + r.height / 2;
+      const dx = (e.clientX - cx) / r.width;
+      const dy = (e.clientY - cy) / r.height;
+      gsap.to(card, { rotationY: dx * 4, rotationX: dy * -4, transformPerspective: 800, duration: .4, ease: 'power3.out' });
+    });
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, { rotationY: 0, rotationX: 0, duration: .6, ease: 'power3.out' });
+    });
+  });
 }
 
-function cardWidth() {
-  if (!track) return 360;
-  const card = track.querySelector('.proj-card');
-  if (!card) return 360;
-  const gap = parseFloat(getComputedStyle(track).gap || 18);
+/* Projects manual slider (no auto) - horizontal scroll with buttons */
+const pTrack = document.getElementById('projectsTrack');
+const btnPrev = document.querySelector('.proj-nav.prev');
+const btnNext = document.querySelector('.proj-nav.next');
+
+function cardWidth(el = pTrack) {
+  if (!el) return 420;
+  const card = el.querySelector('.proj-card');
+  if (!card) return 420;
+  const gap = parseFloat(getComputedStyle(el).gap || 22);
   return Math.round(card.getBoundingClientRect().width + gap);
 }
 
-let autoScroll = null;
-function startAuto() {
-  stopAuto();
-  autoScroll = setInterval(() => {
-    if (!track) return;
-    const half = track.scrollWidth / 2;
-    if (track.scrollLeft >= half) track.scrollLeft = track.scrollLeft - half;
-    track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
-  }, 3800);
-}
-function stopAuto() {
-  if (autoScroll) { clearInterval(autoScroll); autoScroll = null; }
-}
+btnPrev && btnPrev.addEventListener('click', () => {
+  if (!pTrack) return;
+  pTrack.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+});
+btnNext && btnNext.addEventListener('click', () => {
+  if (!pTrack) return;
+  pTrack.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+});
 
-if (track) {
-  duplicateTrack();
-  track.setAttribute('tabindex', '0');
-
-  track.addEventListener('mouseenter', stopAuto);
-  track.addEventListener('mouseleave', startAuto);
-  track.addEventListener('touchstart', stopAuto);
-  track.addEventListener('touchend', startAuto);
-
-  track.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft') track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
-    if (e.key === 'ArrowRight') track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
-  });
-
-  startAuto();
-}
-
-prevBtn && prevBtn.addEventListener('click', () => { track && track.scrollBy({ left: -cardWidth(), behavior: 'smooth' }); });
-nextBtn && nextBtn.addEventListener('click', () => { track && track.scrollBy({ left: cardWidth(), behavior: 'smooth' }); });
-
-/* Back to top */
+/* show/hide back-to-top */
 const toTop = $('#toTop');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 600) toTop.style.display = 'block';
@@ -104,7 +94,7 @@ window.addEventListener('scroll', () => {
 });
 toTop && toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-/* Contact form (Web3Forms) */
+/* Contact form: Web3Forms */
 const form = document.getElementById('contactForm');
 const status = document.getElementById('formStatus');
 
@@ -159,8 +149,3 @@ if (form) {
     }
   });
 }
-
-/* Set current year in footer (if you later add a year span) */
-document.addEventListener('DOMContentLoaded', () => {
-  // (Left intentionally blank for minimal JS overhead)
-});
