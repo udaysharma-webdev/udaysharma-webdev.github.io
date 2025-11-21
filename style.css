@@ -1,4 +1,4 @@
-/* style.css — final v6 palette C (#7B4FFF) */
+/* style.css — final v7 palette C (#7B4FFF) */
 
 /* prevent horizontal overflow */
 html,body{overflow-x:hidden}
@@ -64,7 +64,7 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
 /* skills grid */
 .skills-icons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:16px;background:transparent;padding:12px;border-radius:10px}
 .skill-item{display:flex;flex-direction:column;align-items:center;padding:14px;background:#fff;border-radius:12px;border:1px solid #f0eff8;box-shadow:0 10px 30px rgba(6,12,34,0.03)}
-.skill-img{width:44px;height:44px;display:block;margin-bottom:10px}
+.skill-img{width:44px;height:44px;display:block;margin-bottom:10px;object-fit:contain}
 .skill-label{font-size:13px;font-weight:700;color:#0b1220}
 
 /* projects - free scroll */
