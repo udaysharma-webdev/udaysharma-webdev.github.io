@@ -1,13 +1,13 @@
-/* v5 script: improved free-scroll portfolio, GSAP reveals, contact form (Web3Forms) */
+/* script.js — final v6 (free-scroll portfolio + GSAP reveals + form) */
 
 /* ---------- CONFIG: add your Web3Forms access key here ---------- */
 const WEB3FORMS_ACCESS_KEY = ""; // <-- paste your access_key here to enable form submissions
 
-/* SMALL HELPERS */
+/* helpers */
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from((r || document).querySelectorAll(s));
 
-/* MOBILE NAV toggle */
+/* mobile nav toggle */
 const navToggle = $('#navToggle');
 const navList = $('#navList');
 if (navToggle && navList) {
@@ -17,7 +17,7 @@ if (navToggle && navList) {
   });
 }
 
-/* Smooth anchor scrolling */
+/* smooth anchor scrolling */
 $$('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const href = a.getAttribute('href');
@@ -34,9 +34,11 @@ $$('a[href^="#"]').forEach(a => {
 /* GSAP animations (if available) */
 if (window.gsap && window.gsap.registerPlugin) {
   gsap.registerPlugin(ScrollTrigger);
+
   gsap.from('.brand-title', { y: -8, opacity: 0, duration: .7, ease: 'power2.out' });
   gsap.from('.brand-sub', { y: -6, opacity: 0, duration: .6, delay: .08 });
-  gsap.from('.nav-left-list li', { y: 6, opacity: 0, duration: .6, stagger: .06, ease: 'power2.out' });
+
+  gsap.from('.nav-right-list li', { y: 6, opacity: 0, duration: .6, stagger: .06, ease: 'power2.out' });
 
   gsap.utils.toArray('.card-in').forEach((el, i) => {
     gsap.fromTo(el, { y: 14, opacity: 0 }, {
@@ -45,7 +47,6 @@ if (window.gsap && window.gsap.registerPlugin) {
     });
   });
 
-  // micro parallax on project cards
   $$('.proj-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const r = card.getBoundingClientRect();
@@ -71,30 +72,30 @@ function computeScrollOffset() {
   const card = track.querySelector('.proj-card');
   if (!card) return 420;
   const style = getComputedStyle(track);
-  const gap = parseFloat(style.gap || 18);
+  const gap = parseFloat(style.gap || 18) || 18;
   return Math.round(card.getBoundingClientRect().width + gap);
 }
 
 if (prevBtn) prevBtn.addEventListener('click', () => {
   if (!track) return;
-  const offset = computeScrollOffset();
-  track.scrollBy({ left: -offset, behavior: 'smooth' });
+  track.scrollBy({ left: -computeScrollOffset(), behavior: 'smooth' });
 });
 if (nextBtn) nextBtn.addEventListener('click', () => {
   if (!track) return;
-  const offset = computeScrollOffset();
-  track.scrollBy({ left: offset, behavior: 'smooth' });
+  track.scrollBy({ left: computeScrollOffset(), behavior: 'smooth' });
 });
 
-/* Keyboard left/right for track */
+/* enable keyboard control on track */
 if (track) {
   track.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight') track.scrollBy({ left: computeScrollOffset(), behavior: 'smooth' });
     if (e.key === 'ArrowLeft') track.scrollBy({ left: -computeScrollOffset(), behavior: 'smooth' });
   });
+  // allow track to be focusable
+  track.setAttribute('tabindex', '0');
 }
 
-/* show/hide back-to-top */
+/* back-to-top button */
 const toTop = $('#toTop');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 600) toTop.style.display = 'block';
@@ -102,7 +103,7 @@ window.addEventListener('scroll', () => {
 });
 toTop && toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-/* Contact form using Web3Forms (paste your access key) */
+/* contact form (Web3Forms) */
 const form = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 if (form) {
@@ -155,13 +156,11 @@ if (form) {
   });
 }
 
-/* On DOM ready: ensure project track is focusable for keyboard control */
+/* DOM ready fallback reveal if GSAP missing */
 document.addEventListener('DOMContentLoaded', () => {
-  if (track) track.setAttribute('tabindex', '0');
-  // reveal initial items if GSAP not present
   if (!window.gsap) {
-    $$('.card-in').forEach((el, idx) => {
-      setTimeout(()=> el.classList.add('in'), idx * 40);
-    });
+    $$('.card-in').forEach((el, idx) => setTimeout(()=> el.classList.add('in'), idx * 40));
+  } else {
+    // GSAP will animate via ScrollTrigger
   }
 });
