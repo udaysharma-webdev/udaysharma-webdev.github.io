@@ -6,25 +6,26 @@
   <title>Uday Sharma — Senior Full Stack Developer</title>
   <meta name="description" content="Uday Sharma — Full Stack Developer, WordPress Expert, UI/UX Designer, Automation Specialist. 10+ years experience." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="header" role="banner">
     <div class="wrap header-inner">
-      <nav class="nav-left" aria-label="Primary">
-        <ul class="nav-left-list" id="navList">
+      <div class="brand-left">
+        <h1 class="brand-title">Uday Sharma</h1>
+        <p class="brand-sub tagline">Full Stack Developer | WordPress Expert | UI/UX Designer | Automation Specialist</p>
+      </div>
+
+      <!-- Nav on the RIGHT for desktop -->
+      <nav class="nav-right" aria-label="Primary">
+        <ul class="nav-right-list" id="navList">
           <li><a href="#services">Services</a></li>
           <li><a href="#projects">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-
-      <div class="brand-left">
-        <h1 class="brand-title">Uday Sharma</h1>
-        <p class="brand-sub tagline">Full Stack Developer | WordPress Expert | UI/UX Designer | Automation Specialist</p>
-      </div>
 
       <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navList" title="Toggle navigation">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
@@ -33,13 +34,22 @@
   </header>
 
   <main>
+    <!-- ABOUT (Full-width centered text, Option 1) -->
+    <section id="about" class="section about-section">
+      <div class="wrap">
+        <h2 class="section-title">About Me</h2>
+        <p class="about-text">
+          I’m Uday Sharma, a Full-Stack Developer specializing in performance-driven digital products — web, automation & scalable design. I convert business needs into powerful digital experiences.
+        </p>
+      </div>
+    </section>
+
     <!-- SERVICES -->
     <section id="services" class="section">
       <div class="wrap">
         <h2 class="section-title">Offered Services</h2>
-
         <div class="services-grid">
-          <!-- Cards (same as earlier) -->
+          <!-- (same cards as before) -->
           <article class="svc-card card-in">
             <div class="svc-head gradient-purple-blue">
               <div class="svc-icon">🌐</div>
@@ -133,138 +143,43 @@
       </div>
     </section>
 
-    <!-- Skills & Expertise (colored logos via Simple Icons CDN) -->
+    <!-- Skills -->
     <section id="skills" class="section alt">
       <div class="wrap">
         <h2 class="section-title">Skills & Expertise</h2>
         <p class="skills-lead">Here are the frameworks, libraries, services and platforms I have experience with. This is not a complete list — I'm constantly gaining new skills.</p>
 
         <div class="skills-icons-grid card-in" aria-hidden="false">
-          <!-- Using cdn.simpleicons.org for colored SVGs -->
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" class="skill-img">
-            <div class="skill-label">HTML</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="Next.js" class="skill-img">
-            <div class="skill-label">Next.js</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" class="skill-img">
-            <div class="skill-label">TypeScript</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" class="skill-img">
-            <div class="skill-label">JavaScript</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP" class="skill-img">
-            <div class="skill-label">PHP</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" class="skill-img">
-            <div class="skill-label">React</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/angular/DD0031" alt="Angular" class="skill-img">
-            <div class="skill-label">Angular</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" class="skill-img">
-            <div class="skill-label">Node</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind" class="skill-img">
-            <div class="skill-label">Tailwind</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/postgresql/336791" alt="SQL" class="skill-img">
-            <div class="skill-label">SQL</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="MongoDB" class="skill-img">
-            <div class="skill-label">MongoDB</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" class="skill-img">
-            <div class="skill-label">Docker</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" class="skill-img">
-            <div class="skill-label">Git</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="skill-img">
-            <div class="skill-label">GitHub</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress" class="skill-img">
-            <div class="skill-label">WordPress</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify" class="skill-img">
-            <div class="skill-label">Shopify</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/webflow/FF3E00" alt="Webflow" class="skill-img">
-            <div class="skill-label">Webflow</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/wix/232323" alt="Wix" class="skill-img">
-            <div class="skill-label">Wix</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/squarespace/111827" alt="Squarespace" class="skill-img">
-            <div class="skill-label">Squarespace</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" class="skill-img">
-            <div class="skill-label">Figma</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/clickfunnels/FF6A00" alt="ClickFunnels" class="skill-img">
-            <div class="skill-label">ClickFunnels</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/gohighlevel/6b3fa0" alt="GHL" class="skill-img">
-            <div class="skill-label">GHL</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot" class="skill-img">
-            <div class="skill-label">HubSpot</div>
-          </div>
-
-          <div class="skill-item">
-            <img src="https://cdn.simpleicons.org/keap/11A85B" alt="Keap" class="skill-img">
-            <div class="skill-label">Keap</div>
-          </div>
+          <!-- colored official logos (Simple Icons CDN) -->
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" class="skill-img"><div class="skill-label">HTML</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="Next.js" class="skill-img"><div class="skill-label">Next.js</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" class="skill-img"><div class="skill-label">TypeScript</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" class="skill-img"><div class="skill-label">JavaScript</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP" class="skill-img"><div class="skill-label">PHP</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" class="skill-img"><div class="skill-label">React</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/angular/DD0031" alt="Angular" class="skill-img"><div class="skill-label">Angular</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" class="skill-img"><div class="skill-label">Node</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind" class="skill-img"><div class="skill-label">Tailwind</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/postgresql/336791" alt="SQL" class="skill-img"><div class="skill-label">SQL</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/mongodb/47A248" alt="MongoDB" class="skill-img"><div class="skill-label">MongoDB</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" class="skill-img"><div class="skill-label">Docker</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/git/F05032" alt="Git" class="skill-img"><div class="skill-label">Git</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="skill-img"><div class="skill-label">GitHub</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress" class="skill-img"><div class="skill-label">WordPress</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify" class="skill-img"><div class="skill-label">Shopify</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/webflow/FF3E00" alt="Webflow" class="skill-img"><div class="skill-label">Webflow</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/wix/000000" alt="Wix" class="skill-img"><div class="skill-label">Wix</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/squarespace/111827" alt="Squarespace" class="skill-img"><div class="skill-label">Squarespace</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" class="skill-img"><div class="skill-label">Figma</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/clickfunnels/FF6A00" alt="ClickFunnels" class="skill-img"><div class="skill-label">ClickFunnels</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/gohighlevel/6b3fa0" alt="GHL" class="skill-img"><div class="skill-label">GHL</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot" class="skill-img"><div class="skill-label">HubSpot</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/keap/11A85B" alt="Keap" class="skill-img"><div class="skill-label">Keap</div></div>
         </div>
       </div>
     </section>
 
-    <!-- Projects: free-scroll momentum -->
+    <!-- Projects: free-scroll -->
     <section id="projects" class="section projects-section">
       <div class="wrap">
         <h2 class="section-title">Portfolio / Recent Projects</h2>
@@ -282,7 +197,6 @@
                 <a class="cta" href="https://www.myglobalshield.com/" target="_blank" rel="noopener">View project</a>
               </div>
             </article>
-
             <article class="proj-card card-in">
               <div class="proj-header gradient-peach"><h3>Doggy Doo Little Shop</h3></div>
               <div class="proj-body">
@@ -291,7 +205,6 @@
                 <a class="cta" href="https://doggydoolittleshop.com/" target="_blank" rel="noopener">View project</a>
               </div>
             </article>
-
             <article class="proj-card card-in">
               <div class="proj-header gradient-green"><h3>Reposition</h3></div>
               <div class="proj-body">
@@ -300,7 +213,6 @@
                 <a class="cta" href="https://www.reposition.co.uk/" target="_blank" rel="noopener">View project</a>
               </div>
             </article>
-
             <article class="proj-card card-in">
               <div class="proj-header gradient-ice"><h3>Caprese</h3></div>
               <div class="proj-body">
@@ -309,7 +221,6 @@
                 <a class="cta" href="https://www.capresebags.com/" target="_blank" rel="noopener">View project</a>
               </div>
             </article>
-
             <article class="proj-card card-in">
               <div class="proj-header gradient-pink"><h3>Rose Cole</h3></div>
               <div class="proj-body">
@@ -318,7 +229,6 @@
                 <a class="cta" href="https://rosecole.com/" target="_blank" rel="noopener">View project</a>
               </div>
             </article>
-
             <article class="proj-card card-in">
               <div class="proj-header gradient-purple-blue"><h3>Romedia Digital</h3></div>
               <div class="proj-body">
@@ -327,7 +237,6 @@
                 <a class="cta" href="https://romediadigital.com/" target="_blank" rel="noopener">View project</a>
               </div>
             </article>
-
             <article class="proj-card card-in">
               <div class="proj-header gradient-sky"><h3>OverNight Smile</h3></div>
               <div class="proj-body">
@@ -336,7 +245,6 @@
                 <a class="cta" href="https://overnightsmile.com/" target="_blank" rel="noopener">View project</a>
               </div>
             </article>
-
             <article class="proj-card card-in">
               <div class="proj-header gradient-ice"><h3>DesignXpand</h3></div>
               <div class="proj-body">
@@ -420,10 +328,8 @@
     </div>
   </footer>
 
-  <!-- GSAP (optional) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
-
-  <script src="script.js?v=5" defer></script>
+  <script src="script.js?v=6" defer></script>
 </body>
 </html>
