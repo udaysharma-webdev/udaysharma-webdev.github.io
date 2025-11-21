@@ -1,4 +1,4 @@
-/* script.js — final v6 (free-scroll portfolio + GSAP reveals + form) */
+/* script.js — final v7 (free-scroll portfolio + GSAP reveals + form) */
 
 /* ---------- CONFIG: add your Web3Forms access key here ---------- */
 const WEB3FORMS_ACCESS_KEY = ""; // <-- paste your access_key here to enable form submissions
@@ -91,7 +91,6 @@ if (track) {
     if (e.key === 'ArrowRight') track.scrollBy({ left: computeScrollOffset(), behavior: 'smooth' });
     if (e.key === 'ArrowLeft') track.scrollBy({ left: -computeScrollOffset(), behavior: 'smooth' });
   });
-  // allow track to be focusable
   track.setAttribute('tabindex', '0');
 }
 
@@ -160,7 +159,5 @@ if (form) {
 document.addEventListener('DOMContentLoaded', () => {
   if (!window.gsap) {
     $$('.card-in').forEach((el, idx) => setTimeout(()=> el.classList.add('in'), idx * 40));
-  } else {
-    // GSAP will animate via ScrollTrigger
   }
 });
