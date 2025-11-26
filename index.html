@@ -2,145 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Uday Sharma | Full Stack Developer</title>
-  <meta name="description" content="Uday Sharma — Senior Full Stack Developer, WordPress Expert, UI/UX Designer & Automation Specialist." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header class="site-header">
+<header class="top-header">
   <div class="container header-flex">
-    <div class="brand">
+    <div class="branding">
       <h1>Uday Sharma</h1>
       <p>Full Stack Developer · WordPress Expert · UI/UX · Automation</p>
     </div>
 
-    <nav class="main-nav">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+    <nav class="nav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul id="navMenu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-
-    <button class="nav-toggle" id="navToggle">☰</button>
   </div>
 </header>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container narrow">
-    <h2>About Me</h2>
-    <p>
-      I have 10+ years of experience building modern websites, web applications,
-      automations and digital products. I work closely with businesses to design,
-      build and scale solutions that are fast, secure and easy to maintain.
-      <br><br>
-      From WordPress and Shopify to custom React & Node applications and CRM
-      automation — I help teams turn ideas into reliable systems.
-    </p>
+<section class="summary container fade-up">
+  <p>
+    I bring <strong>10+ years of experience</strong> designing and building modern websites,
+    scalable web applications, automation systems, and digital brands.
+    I help businesses transform ideas into reliable, high-performing digital products.
+  </p>
+</section>
+
+<section id="services" class="container section">
+  <h2>Offered Services</h2>
+  <div class="service-grid">
+    <div class="service-card">Web Development</div>
+    <div class="service-card">E-commerce Setup</div>
+    <div class="service-card">Custom Web Applications</div>
+    <div class="service-card">UI/UX Design</div>
+    <div class="service-card">Automation & CRM Setup</div>
+    <div class="service-card">Technical Support</div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="section alt">
+<section id="skills" class="skills-section section">
   <div class="container">
-    <h2>Offered Services</h2>
-
-    <div class="grid services-grid">
-      <div class="card">Web Development</div>
-      <div class="card">E-commerce Setup</div>
-      <div class="card">Custom Web App</div>
-      <div class="card">UI / UX Design</div>
-      <div class="card">Automation & CRM Setup</div>
-      <div class="card">Technical Support</div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="section">
-  <div class="container">
-    <h2>Skills & Platforms</h2>
-    <p class="muted center">
-      Tools, frameworks and platforms I work with regularly.
+    <h2>Skills & Expertise</h2>
+    <p class="skills-desc">
+      Frameworks, platforms, and tools I actively work with.
+      This list continues to evolve as I learn and adapt.
     </p>
 
     <div class="skills-grid">
-      <!-- FRONTEND -->
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg">
-
-      <!-- BACKEND -->
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
-
-      <!-- PLATFORMS -->
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/shopify/shopify-original.svg">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+      <span>HTML</span><span>JavaScript</span><span>TypeScript</span>
+      <span>React</span><span>Angular</span><span>Node.js</span>
+      <span>PHP</span><span>SQL</span><span>MongoDB</span>
+      <span>Tailwind</span><span>Docker</span><span>Git</span>
+      <span>WordPress</span><span>Shopify</span><span>Webflow</span>
+      <span>Wix</span><span>Squarespace</span><span>Figma</span>
+      <span>ClickFunnels</span><span>GoHighLevel</span>
+      <span>HubSpot</span><span>Keap</span>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="section alt">
-  <div class="container">
-    <h2>Selected Projects</h2>
+<section id="projects" class="section container">
+  <h2>Selected Projects</h2>
 
-    <div class="carousel">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="project">My Global Shield</div>
-        <div class="project">Doggy Doo Little Shop</div>
-        <div class="project">Reposition</div>
-        <div class="project">Caprese</div>
-        <div class="project">Rose Cole</div>
-        <div class="project">Romedia Digital</div>
-        <div class="project">OverNight Smile</div>
-        <div class="project">DesignXpand</div>
-      </div>
+  <div class="project-slider">
+    <div class="project-track">
+      <a href="https://www.myglobalshield.com/" target="_blank">My Global Shield</a>
+      <a href="https://doggydoolittleshop.com/" target="_blank">Doggy Doo Little Shop</a>
+      <a href="https://www.reposition.co.uk/" target="_blank">Reposition</a>
+      <a href="https://www.capresebags.com/" target="_blank">Caprese</a>
+      <a href="https://rosecole.com/" target="_blank">Rose Cole</a>
+      <a href="https://romediadigital.com/" target="_blank">Romedia Digital</a>
+      <a href="https://overnightsmile.com/" target="_blank">OverNight Smile</a>
+      <a href="https://designxpand.com/" target="_blank">DesignXpand</a>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="container narrow">
-    <h2>Contact</h2>
+<section id="contact" class="section container">
+  <h2>Contact</h2>
 
-    <form class="contact-form">
-      <input type="text" placeholder="Name" required>
-      <input type="email" placeholder="Email" required>
-      <input type="tel" placeholder="Phone" required>
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Email Address" required />
+    <input type="tel" placeholder="Phone Number" />
 
-      <select required>
-        <option value="">Choose Service</option>
-        <option>Web Development</option>
-        <option>E-commerce</option>
-        <option>Custom App</option>
-        <option>UI/UX</option>
-        <option>Automation & CRM</option>
-      </select>
+    <select required>
+      <option value="">Choose Service</option>
+      <option>Web Development</option>
+      <option>E-commerce Setup</option>
+      <option>Custom Web App</option>
+      <option>UI/UX Design</option>
+      <option>Automation & CRM</option>
+      <option>Technical Support</option>
+    </select>
 
-      <textarea placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
+    <textarea placeholder="Project Details"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 </section>
 
-<footer class="site-footer">
-  <p>© 2025 Uday Sharma — Building scalable web solutions.</p>
+<footer class="footer">
+  © 2025 Uday Sharma. All Rights Reserved.
 </footer>
 
 <script src="script.js"></script>
