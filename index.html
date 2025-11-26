@@ -1,119 +1,365 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uday Sharma | Full Stack Developer</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Uday Sharma — Senior Full Stack Developer</title>
+  <meta name="description" content="Uday Sharma — Full Stack Developer, WordPress Expert, UI/UX Designer, Automation Specialist. 10+ years experience." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
-
 <body>
 
-<header class="top-header">
-  <div class="container header-flex">
-    <div class="branding">
-      <h1>Uday Sharma</h1>
-      <p>Full Stack Developer · WordPress Expert · UI/UX · Automation</p>
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="wrap header-inner">
+      <div class="brand-left">
+        <h1 class="brand-title">Uday Sharma</h1>
+        <p class="brand-sub tagline">Full Stack Developer | WordPress Expert | UI/UX Designer | Automation Specialist</p>
+      </div>
+
+      <!-- Nav on the RIGHT for desktop (NO About link) -->
+      <nav class="nav-right" aria-label="Primary">
+        <ul class="nav-right-list" id="navList">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- mobile toggle -->
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navList" title="Toggle navigation">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
     </div>
+  </header>
 
-    <nav class="nav">
-      <button class="menu-toggle" id="menuToggle">☰</button>
-      <ul id="navMenu">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <main>
+    <!-- ABOUT (kept on page but not in nav) -->
+    <section id="about" class="section about-section">
+      <div class="wrap">
+        <h2 class="section-title">About Me</h2>
+        <p class="about-text">
+          I’m a Full Stack Developer with expertise in both frontend and backend technologies. I help businesses and agencies improve performance, automate workflows and build digital experiences that convert. I’m always exploring modern tools, learning new skills and building products that make an impact.
+        </p>
+      </div>
+    </section>
 
-<section class="summary container fade-up">
-  <p>
-    I bring <strong>10+ years of experience</strong> designing and building modern websites,
-    scalable web applications, automation systems, and digital brands.
-    I help businesses transform ideas into reliable, high-performing digital products.
-  </p>
-</section>
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="wrap">
+        <h2 class="section-title">Offered Services</h2>
 
-<section id="services" class="container section">
-  <h2>Offered Services</h2>
-  <div class="service-grid">
-    <div class="service-card">Web Development</div>
-    <div class="service-card">E-commerce Setup</div>
-    <div class="service-card">Custom Web Applications</div>
-    <div class="service-card">UI/UX Design</div>
-    <div class="service-card">Automation & CRM Setup</div>
-    <div class="service-card">Technical Support</div>
-  </div>
-</section>
+        <div class="services-grid">
+          <!-- Web Development -->
+          <article class="svc-card card-in">
+            <div class="svc-head gradient-accent">
+              <div class="svc-icon" aria-hidden="true">🌐</div>
+              <h3>Web Development</h3>
+            </div>
+            <div class="svc-body">
+              <p class="muted">Responsive, fast & maintainable websites.</p>
+              <ul>
+                <li>Frontend: HTML, CSS, React / Angular</li>
+                <li>Backend: Node.js, PHP (WordPress)</li>
+                <li>Performance & accessibility focused</li>
+              </ul>
+            </div>
+          </article>
 
-<section id="skills" class="skills-section section">
-  <div class="container">
-    <h2>Skills & Expertise</h2>
-    <p class="skills-desc">
-      Frameworks, platforms, and tools I actively work with.
-      This list continues to evolve as I learn and adapt.
-    </p>
+          <!-- E-commerce Setup -->
+          <article class="svc-card card-in">
+            <div class="svc-head gradient-peach">
+              <div class="svc-icon" aria-hidden="true">🛒</div>
+              <h3>E-commerce Setup</h3>
+            </div>
+            <div class="svc-body">
+              <p class="muted">Shopify & WooCommerce — optimized for conversion.</p>
+              <ul>
+                <li>Theme customization & checkout UX</li>
+                <li>Payment, shipping & external integrations</li>
+                <li>Catalog & performance tuning</li>
+              </ul>
+            </div>
+          </article>
 
-    <div class="skills-grid">
-      <span>HTML</span><span>JavaScript</span><span>TypeScript</span>
-      <span>React</span><span>Angular</span><span>Node.js</span>
-      <span>PHP</span><span>SQL</span><span>MongoDB</span>
-      <span>Tailwind</span><span>Docker</span><span>Git</span>
-      <span>WordPress</span><span>Shopify</span><span>Webflow</span>
-      <span>Wix</span><span>Squarespace</span><span>Figma</span>
-      <span>ClickFunnels</span><span>GoHighLevel</span>
-      <span>HubSpot</span><span>Keap</span>
+          <!-- Custom Web App -->
+          <article class="svc-card card-in">
+            <div class="svc-head gradient-green">
+              <div class="svc-icon" aria-hidden="true">🧩</div>
+              <h3>Custom Web App</h3>
+            </div>
+            <div class="svc-body">
+              <p class="muted">Scalable single-page apps & APIs.</p>
+              <ul>
+                <li>React / Angular frontends</li>
+                <li>Node.js backends, REST / GraphQL</li>
+                <li>Deployment, CI/CD & monitoring</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- UI / UX Design -->
+          <article class="svc-card card-in">
+            <div class="svc-head gradient-ice">
+              <div class="svc-icon" aria-hidden="true">🎨</div>
+              <h3>UI / UX Design</h3>
+            </div>
+            <div class="svc-body">
+              <p class="muted">High-fidelity UI and brand systems.</p>
+              <ul>
+                <li>Wireframes & prototypes</li>
+                <li>Design systems & motion</li>
+                <li>Marketing assets & video</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Automation & CRM -->
+          <article class="svc-card card-in">
+            <div class="svc-head gradient-pink">
+              <div class="svc-icon" aria-hidden="true">⚙️</div>
+              <h3>Automation & CRM</h3>
+            </div>
+            <div class="svc-body">
+              <p class="muted">Lead flows, automations & integrations.</p>
+              <ul>
+                <li>GHL, HubSpot, webhooks</li>
+                <li>Sequences & funnel automation</li>
+                <li>Reporting & data hygiene</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Technical Support -->
+          <article class="svc-card card-in">
+            <div class="svc-head gradient-sky">
+              <div class="svc-icon" aria-hidden="true">🔧</div>
+              <h3>Technical Support</h3>
+            </div>
+            <div class="svc-body">
+              <p class="muted">Maintenance, backups and security.</p>
+              <ul>
+                <li>Monitoring & incident response</li>
+                <li>Performance tuning & updates</li>
+                <li>Architecture reviews</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section alt">
+      <div class="wrap">
+        <h2 class="section-title">Skills & Expertise</h2>
+        <p class="skills-lead">Here are the frameworks, libraries, services and platforms I have experience with. This is not a complete list — I'm constantly gaining new skills.</p>
+
+        <div class="skills-icons-grid card-in" aria-hidden="false">
+          <!-- Simple Icons CDN for most logos -->
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" class="skill-img"><div class="skill-label">HTML</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="Next.js" class="skill-img"><div class="skill-label">Next.js</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" class="skill-img"><div class="skill-label">TypeScript</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" class="skill-img"><div class="skill-label">JavaScript</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP" class="skill-img"><div class="skill-label">PHP</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" class="skill-img"><div class="skill-label">React</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/angular/DD0031" alt="Angular" class="skill-img"><div class="skill-label">Angular</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" class="skill-img"><div class="skill-label">Node</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind" class="skill-img"><div class="skill-label">Tailwind</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/postgresql/336791" alt="SQL" class="skill-img"><div class="skill-label">SQL</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/mongodb/47A248" alt="MongoDB" class="skill-img"><div class="skill-label">MongoDB</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" class="skill-img"><div class="skill-label">Docker</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/git/F05032" alt="Git" class="skill-img"><div class="skill-label">Git</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="skill-img"><div class="skill-label">GitHub</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress" class="skill-img"><div class="skill-label">WordPress</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify" class="skill-img"><div class="skill-label">Shopify</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/webflow/FF3E00" alt="Webflow" class="skill-img"><div class="skill-label">Webflow</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/wix/000000" alt="Wix" class="skill-img"><div class="skill-label">Wix</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/squarespace/111827" alt="Squarespace" class="skill-img"><div class="skill-label">Squarespace</div></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" class="skill-img"><div class="skill-label">Figma</div></div>
+
+          <!-- Use uploaded local logos for these (GHL, ClickFunnels, Keap) -->
+          <div class="skill-item">
+            <img src="/mnt/data/idnUrjuiFj_logos.png" alt="GoHighLevel (GHL)" class="skill-img">
+            <div class="skill-label">GHL</div>
+          </div>
+
+          <div class="skill-item">
+            <img src="/mnt/data/idFnGCuUre_1763755081560.png" alt="ClickFunnels" class="skill-img">
+            <div class="skill-label">ClickFunnels</div>
+          </div>
+
+          <div class="skill-item">
+            <img src="/mnt/data/Keap_iduNF9BOQP_1.png" alt="Keap" class="skill-img">
+            <div class="skill-label">Keap</div>
+          </div>
+
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot" class="skill-img"><div class="skill-label">HubSpot</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects: free-scroll -->
+    <section id="projects" class="section projects-section">
+      <div class="wrap">
+        <h2 class="section-title">Portfolio / Recent Projects</h2>
+
+        <div class="projects-wrap">
+          <button class="proj-nav prev" aria-label="Previous">‹</button>
+
+          <div class="projects-track-free" id="projectsTrack" tabindex="0" role="list" aria-live="polite">
+            <!-- 8 project cards (your list) -->
+            <article class="proj-card card-in">
+              <div class="proj-header gradient-accent"><h3>My Global Shield</h3></div>
+              <div class="proj-body">
+                <p class="muted">Security services website</p>
+                <p class="meta"><strong>Back-end:</strong> WordPress (Custom Theme) · ACF · PHP · CDN</p>
+                <a class="cta" href="https://www.myglobalshield.com/" target="_blank" rel="noopener">View project</a>
+              </div>
+            </article>
+
+            <article class="proj-card card-in">
+              <div class="proj-header gradient-peach"><h3>Doggy Doo Little Shop</h3></div>
+              <div class="proj-body">
+                <p class="muted">E-commerce store</p>
+                <p class="meta"><strong>Back-end:</strong> WooCommerce · Custom plugins</p>
+                <a class="cta" href="https://doggydoolittleshop.com/" target="_blank" rel="noopener">View project</a>
+              </div>
+            </article>
+
+            <article class="proj-card card-in">
+              <div class="proj-header gradient-green"><h3>Reposition</h3></div>
+              <div class="proj-body">
+                <p class="muted">Agency site rebuild</p>
+                <p class="meta"><strong>Back-end:</strong> WordPress + bespoke API integrations</p>
+                <a class="cta" href="https://www.reposition.co.uk/" target="_blank" rel="noopener">View project</a>
+              </div>
+            </article>
+
+            <article class="proj-card card-in">
+              <div class="proj-header gradient-ice"><h3>Caprese</h3></div>
+              <div class="proj-body">
+                <p class="muted">Retail & catalog</p>
+                <p class="meta"><strong>Back-end:</strong> Shopify (theme fixes)</p>
+                <a class="cta" href="https://www.capresebags.com/" target="_blank" rel="noopener">View project</a>
+              </div>
+            </article>
+
+            <article class="proj-card card-in">
+              <div class="proj-header gradient-pink"><h3>Rose Cole</h3></div>
+              <div class="proj-body">
+                <p class="muted">Brand & e-commerce</p>
+                <p class="meta"><strong>Back-end:</strong> WordPress & WooCommerce</p>
+                <a class="cta" href="https://rosecole.com/" target="_blank" rel="noopener">View project</a>
+              </div>
+            </article>
+
+            <article class="proj-card card-in">
+              <div class="proj-header gradient-accent"><h3>Romedia Digital</h3></div>
+              <div class="proj-body">
+                <p class="muted">Agency & CMS tooling</p>
+                <p class="meta"><strong>Back-end:</strong> WordPress (custom admin)</p>
+                <a class="cta" href="https://romediadigital.com/" target="_blank" rel="noopener">View project</a>
+              </div>
+            </article>
+
+            <article class="proj-card card-in">
+              <div class="proj-header gradient-sky"><h3>OverNight Smile</h3></div>
+              <div class="proj-body">
+                <p class="muted">Product funnel & marketing</p>
+                <p class="meta"><strong>Back-end:</strong> WordPress + funnel integrations</p>
+                <a class="cta" href="https://overnightsmile.com/" target="_blank" rel="noopener">View project</a>
+              </div>
+            </article>
+
+            <article class="proj-card card-in">
+              <div class="proj-header gradient-ice"><h3>DesignXpand</h3></div>
+              <div class="proj-body">
+                <p class="muted">Creative studio portfolio</p>
+                <p class="meta"><strong>Back-end:</strong> WordPress custom theme</p>
+                <a class="cta" href="https://designxpand.com/" target="_blank" rel="noopener">View project</a>
+              </div>
+            </article>
+          </div>
+
+          <button class="proj-nav next" aria-label="Next">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="wrap contact-wrap">
+        <div class="contact-left">
+          <h2 class="section-title">Get in touch</h2>
+          <p class="contact-note">We read and respond to every inquiry — we'll get back to you within 24 hours.</p>
+
+          <form id="contactForm" class="contact-form full" novalidate>
+            <input type="hidden" id="access_key" name="access_key" value="">
+            <input type="hidden" name="subject" value="Portfolio inquiry">
+
+            <label class="field">
+              <span class="label">Name</span>
+              <input name="name" type="text" required />
+            </label>
+
+            <div class="row-2">
+              <label class="field">
+                <span class="label">Email</span>
+                <input name="email" type="email" required />
+              </label>
+
+              <label class="field">
+                <span class="label">Phone</span>
+                <input name="phone" type="tel" inputmode="tel" required />
+              </label>
+            </div>
+
+            <label class="field">
+              <span class="label">Choose Service</span>
+              <select name="service" required>
+                <option value="">— Select a service —</option>
+                <option>Web Development</option>
+                <option>E-commerce Setup</option>
+                <option>Custom Web App</option>
+                <option>UI/UX Design</option>
+                <option>Automation & CRM Setup</option>
+                <option>Technical Support</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="label">Message</span>
+              <textarea name="message" rows="6" required></textarea>
+            </label>
+
+            <div class="form-row">
+              <button class="btn primary" type="submit">Send message</button>
+              <div id="formStatus" class="form-status" aria-live="polite"></div>
+            </div>
+          </form>
+        </div>
+
+        <div class="contact-right blank-side"></div>
+      </div>
+    </section>
+  </main>
+
+  <button id="toTop" class="to-top" aria-label="Back to top">↑</button>
+
+  <footer class="footer" role="contentinfo">
+    <div class="wrap">
+      <div class="footer-row">
+        <div class="footer-center">We build products that scale — modern web, automation & design.</div>
+      </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section id="projects" class="section container">
-  <h2>Selected Projects</h2>
+  <!-- GSAP (optional for animations) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
 
-  <div class="project-slider">
-    <div class="project-track">
-      <a href="https://www.myglobalshield.com/" target="_blank">My Global Shield</a>
-      <a href="https://doggydoolittleshop.com/" target="_blank">Doggy Doo Little Shop</a>
-      <a href="https://www.reposition.co.uk/" target="_blank">Reposition</a>
-      <a href="https://www.capresebags.com/" target="_blank">Caprese</a>
-      <a href="https://rosecole.com/" target="_blank">Rose Cole</a>
-      <a href="https://romediadigital.com/" target="_blank">Romedia Digital</a>
-      <a href="https://overnightsmile.com/" target="_blank">OverNight Smile</a>
-      <a href="https://designxpand.com/" target="_blank">DesignXpand</a>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section container">
-  <h2>Contact</h2>
-
-  <form class="contact-form">
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Email Address" required />
-    <input type="tel" placeholder="Phone Number" />
-
-    <select required>
-      <option value="">Choose Service</option>
-      <option>Web Development</option>
-      <option>E-commerce Setup</option>
-      <option>Custom Web App</option>
-      <option>UI/UX Design</option>
-      <option>Automation & CRM</option>
-      <option>Technical Support</option>
-    </select>
-
-    <textarea placeholder="Project Details"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<footer class="footer">
-  © 2025 Uday Sharma. All Rights Reserved.
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js?v=7" defer></script>
 </body>
 </html>
