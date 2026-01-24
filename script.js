@@ -1,33 +1,21 @@
-// Typing animation
-const text = "Websites • E-commerce • UX/UI • CRM • Automation";
-let i = 0;
-const typing = document.getElementById("typing");
+const slides = document.querySelector('.slides');
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
 
-function type() {
-  if (i < text.length) {
-    typing.innerHTML += text.charAt(i);
-    i++;
-    setTimeout(type, 80);
-  }
+let index = 0;
+
+function moveSlide(dir) {
+  index += dir;
+  if (index < 0) index = slides.children.length - 1;
+  if (index >= slides.children.length) index = 0;
+  slides.style.transform = `translateX(-${index * 320}px)`;
 }
-type();
 
-// Dark mode
-document.getElementById("darkToggle").onclick = () => {
-  document.body.classList.toggle("dark");
-};
+next.onclick = () => moveSlide(1);
+prev.onclick = () => moveSlide(-1);
 
-// Mobile menu
-document.getElementById("hamburger").onclick = () => {
-  document.getElementById("menu").classList.toggle("open");
-};
+setInterval(() => moveSlide(1), 4000);
 
-// Project slider
-const slides = document.querySelector(".slides");
-document.querySelector(".next").onclick = () => slides.scrollBy(320, 0);
-document.querySelector(".prev").onclick = () => slides.scrollBy(-320, 0);
-
-// Auto-play
-setInterval(() => {
-  slides.scrollBy(320, 0);
-}, 3000);
+function scrollToContact() {
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+}
