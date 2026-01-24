@@ -1,70 +1,97 @@
-:root {
-  --bg: #ffffff;
-  --text: #111111;
-  --accent: #2563eb;
-  --light: #f8fafc;
-  --border: #e5e7eb;
-}
-
-body.dark {
-  --bg: #0f172a;
-  --text: #e5e7eb;
-  --light: #020617;
-  --border: #1e293b;
-}
-
-/* ===== RESET ===== */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Calibri, Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
+  background: #fff;
+  color: #111;
 }
 
-/* ===== GLOBAL ===== */
-.container {
+section {
   max-width: 1100px;
   margin: auto;
   padding: 70px 20px;
 }
 
-h2 {
-  font-size: 32px;
-  margin-bottom: 25px;
+h1, h2 {
+  margin-bottom: 30px;
 }
 
-/* ===== NAV ===== */
-header {
-  border-bottom: 1px solid var(--border);
-}
-
-.nav {
+/* HEADER */
+.header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
+  padding: 20px 40px;
 }
 
-.logo {
-  font-weight: bold;
-}
-
-nav a {
-  margin-left: 24px;
+.header nav a {
+  margin-left: 20px;
   text-decoration: none;
-  color: var(--text);
-  font-weight: 500;
+  color: #111;
 }
 
-.nav-icons {
+/* HERO */
+.hero {
+  padding: 80px 40px;
+}
+
+/* SERVICES */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.service-card {
+  border: 1px solid #ddd;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.service-card i {
+  font-size: 28px;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.cta {
+  margin-top: 40px;
+  padding: 14px 28px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* SKILLS */
+.marquee {
+  overflow: hidden;
+}
+
+.track {
   display: flex;
-  gap: 15px;
+  gap: 40px;
+  animation: scroll 20s linear infinite;
 }
 
-#hamb
+.track i {
+  font-size: 40px;
+  color: #2563eb;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* PROJECTS */
+.slider {
+  display: flex;
+  align-items: center;
+}
+
+.slides {
+  disp
