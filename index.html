@@ -2,208 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Uday Sharma | Web Developer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
 <!-- HEADER -->
-<header class="header">
-  <div class="logo">Uday.dev</div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">HIRE ME</a>
-  </nav>
-</header>
+<header>
+  <div class="container nav">
+    <div class="logo">Uday.</div>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Hi, I'm Uday Sharma</h1>
-  <p class="typing" id="typing"></p>
-  <p class="desc">
-    I design and develop high-converting Websites, ECommerce stores, CRMs, and Marketing Automation that drive growth—trusted by global clients for over 10 years.
-  </p>
-  <a href="#contact" class="hero-btn">CREATE YOUR WEBSITE NOW!!!</a>
-</section>
+    <nav>
+      <ul id="navMenu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Hire Me</a></li>
+      </ul>
+    </nav>
 
-<!-- SERVICES -->
-<section id="services">
-  <h2>Services</h2>
-
-  <div class="services-grid">
-    <div class="service-card">
-      <i class="fa-solid fa-code"></i>
-      <h3>Website Development</h3>
-      <p>Fast, SEO-optimized and scalable websites using modern technologies.</p>
-    </div>
-
-    <div class="service-card">
-      <i class="fa-solid fa-cart-shopping"></i>
-      <h3>E-commerce Stores</h3>
-      <p>High-conversion Shopify & WooCommerce stores tailored for growth.</p>
-    </div>
-
-    <div class="service-card">
-      <i class="fa-solid fa-layer-group"></i>
-      <h3>Full Stack Development</h3>
-      <p>Secure APIs, databases and complete front-end & back-end solutions.</p>
-    </div>
-
-    <div class="service-card">
-      <i class="fa-solid fa-pen-nib"></i>
-      <h3>UX / UI Design</h3>
-      <p>User-focused designs that improve engagement and usability.</p>
-    </div>
-
-    <div class="service-card">
-      <i class="fa-solid fa-database"></i>
-      <h3>CRM Solutions</h3>
-      <p>HubSpot, GHL & custom CRM setups with automation workflows.</p>
-    </div>
-
-    <div class="service-card">
-      <i class="fa-solid fa-robot"></i>
-      <h3>Marketing Automation</h3>
-      <p>Email campaigns, funnels and lead tracking systems.</p>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
     </div>
   </div>
-
-  <a href="#contact" class="cta">Let’s Talk About Your Project</a>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Skills</h2>
-
-  <div class="marquee">
-    <div class="track">
-      <i class="fa-brands fa-html5"></i>
-      <i class="fa-brands fa-css3-alt"></i>
-      <i class="fa-brands fa-js"></i>
-      <i class="fa-brands fa-php"></i>
-      <i class="fa-brands fa-react"></i>
-      <i class="fa-brands fa-angular"></i>
-      <i class="fa-brands fa-node-js"></i>
-      <i class="fa-solid fa-database"></i>
-      <i class="fa-brands fa-github"></i>
-      <i class="fa-brands fa-wordpress"></i>
-      <i class="fa-brands fa-shopify"></i>
-      <i class="fa-brands fa-figma"></i>
-      <!-- duplicate for smooth loop -->
-      <i class="fa-brands fa-html5"></i>
-      <i class="fa-brands fa-css3-alt"></i>
-      <i class="fa-brands fa-js"></i>
-      <i class="fa-brands fa-php"></i>
-      <i class="fa-brands fa-react"></i>
-      <i class="fa-brands fa-angular"></i>
-      <i class="fa-brands fa-node-js"></i>
-      <i class="fa-solid fa-database"></i>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="carousel">
-    <button class="carousel-btn prev">&#10094;</button>
-
-    <div class="carousel-track-wrapper">
-      <div class="carousel-track" id="carouselTrack">
-
-        <div class="project-card">
-          <h3>My Global Shield</h3>
-          <p>Security services platform with modern UI.</p>
-          <a href="https://www.myglobalshield.com/" target="_blank">View Project</a>
-        </div>
-
-        <div class="project-card">
-          <h3>Doggy Doo Little Shop</h3>
-          <p>High-conversion eCommerce pet store.</p>
-          <a href="https://doggydoolittleshop.com/" target="_blank">View Project</a>
-        </div>
-
-        <div class="project-card">
-          <h3>Reposition</h3>
-          <p>Corporate branding & website.</p>
-          <a href="https://www.reposition.co.uk/" target="_blank">View Project</a>
-        </div>
-
-        <div class="project-card">
-          <h3>Caprese</h3>
-          <p>Fashion & lifestyle brand website.</p>
-          <a href="https://www.capresebags.com/" target="_blank">View Project</a>
-        </div>
-
-        <div class="project-card">
-          <h3>Romedia Digital</h3>
-          <p>Fashion & lifestyle brand website.</p>
-          <a href="https://romediadigital.com/" target="_blank">View Project</a>
-        </div>
-
-        <div class="project-card">
-          <h3>OverNight Smile</h3>
-          <p>Fashion & lifestyle brand website.</p>
-          <a href="https://overnightsmile.com/" target="_blank">View Project</a>
-        </div>
-
-        <div class="project-card">
-          <h3>DesignXpand</h3>
-          <p>Fashion & lifestyle brand website.</p>
-          <a href="https://designxpand.com/" target="_blank">View Project</a>
-        </div>
-
-      </div>
-    </div>
-
-    <button class="carousel-btn next">&#10095;</button>
-  </div>
-</section>
-
-  
-  <!-- CONTACT -->
-<section id="contact">
-  <h2>Let’s Talk About Your Project</h2>
-  <div class="contact-grid">
-    <div>
-      <p>Scale your business or launch your eCommerce store—get started today!</p>
-      <p><i class="fa-solid fa-user"></i> Uday Sharma</p>
-      <p><i class="fa-solid fa-envelope"></i> Udaysharma561@gmail.com</p>
-      <p><i class="fa-solid fa-phone"></i> +91 867-989-1989</p>
-    </div>
-
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Email" required>
-      <input type="text" placeholder="Phone Number">
-      <select>
-        <option>Choose Service</option>
-        <option>Website Development</option>
-        <option>E-commerce Stores</option>
-        <option>Full Stack Development</option>
-        <option>UX / UI Design</option>
-        <option>CRM & Automation</option>
-      </select>
-      <textarea placeholder="Project Details"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  © 2026 Uday Sharma. All rights reserved.
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+</heade
