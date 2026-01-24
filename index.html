@@ -9,77 +9,121 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container">
-      <h1 class="logo">Uday Sharma</h1>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Hire Me</a>
-      </nav>
+<!-- HEADER -->
+<header class="header">
+  <div class="container nav">
+    <h1 class="logo">Uday Sharma</h1>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <nav id="navMenu">
+      <a href="#services">Services</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Hire Me</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero container">
+  <h2 id="typing"></h2>
+  <p class="subtitle">Websites • E-commerce • UX/UI • CRM • Automation</p>
+  <a href="#contact" class="btn">CREATE YOUR WEBSITE NOW!!!</a>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section container reveal">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card">Website Development</div>
+    <div class="card">E-commerce Stores</div>
+    <div class="card">Full Stack Development</div>
+    <div class="card">UX & UI Design</div>
+    <div class="card">CRM Solutions</div>
+    <div class="card">Marketing Automation</div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section light reveal">
+  <h2 class="container">Skills</h2>
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>🌐 HTML</span>
+      <span>🎨 CSS</span>
+      <span>⚡ JavaScript</span>
+      <span>🅱️ Bootstrap</span>
+      <span>⚛️ React</span>
+      <span>🅰️ Angular</span>
+      <span>🟢 Node</span>
+      <span>🐘 PHP</span>
+      <span>🛢️ MySQL</span>
+      <span>🍃 MongoDB</span>
+      <span>📝 WordPress</span>
+      <span>🛍️ Shopify</span>
+      <span>🎨 Figma</span>
+
+      <!-- duplicate for loop -->
+      <span>🌐 HTML</span>
+      <span>🎨 CSS</span>
+      <span>⚡ JavaScript</span>
+      <span>⚛️ React</span>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero container">
-    <h2 id="typing"></h2>
-    <p class="subtitle">
-      Websites • E-commerce • UX/UI • CRM • Automation
-    </p>
-    <a href="#contact" class="btn">CREATE YOUR WEBSITE NOW!!!</a>
-  </section>
+<!-- PROJECTS -->
+<section id="projects" class="section container reveal">
+  <h2>Projects</h2>
 
-  <!-- SERVICES -->
-  <section id="services" class="section container reveal">
-    <h2>Services</h2>
-    <div class="grid">
-      <div class="card">Website Development</div>
-      <div class="card">E-commerce Stores</div>
-      <div class="card">Full Stack Development</div>
-      <div class="card">UX & UI Design</div>
-      <div class="card">CRM Solutions</div>
-      <div class="card">Marketing Automation</div>
+  <div class="slider">
+    <div class="slides" id="slides">
+      <div class="slide">My Global Shield</div>
+      <div class="slide">Doggy Doo Little Shop</div>
+      <div class="slide">Reposition</div>
+      <div class="slide">Caprese</div>
+      <div class="slide">Romedia Digital</div>
+      <div class="slide">OverNight Smile</div>
+      <div class="slide">DesignXpand</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section light reveal">
-    <div class="container">
-      <h2>Skills</h2>
-      <p class="skills">
-        HTML · CSS · JavaScript · Bootstrap · React · Angular · Node · PHP · MySQL · MongoDB · WordPress · Shopify · Figma
-      </p>
-    </div>
-  </section>
+<!-- CONTACT -->
+<section id="contact" class="section light reveal">
+  <div class="container">
+    <h2>Hire Me</h2>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section container reveal">
-    <h2>Projects</h2>
-    <ul class="projects">
-      <li><a href="https://www.myglobalshield.com/" target="_blank">My Global Shield</a></li>
-      <li><a href="https://doggydoolittleshop.com/" target="_blank">Doggy Doo Little Shop</a></li>
-      <li><a href="https://www.reposition.co.uk/" target="_blank">Reposition</a></li>
-      <li><a href="https://www.capresebags.com/" target="_blank">Caprese</a></li>
-      <li><a href="https://romediadigital.com/" target="_blank">Romedia Digital</a></li>
-      <li><a href="https://overnightsmile.com/" target="_blank">OverNight Smile</a></li>
-    </ul>
-  </section>
+    <form action="https://formsubmit.co/udaysharma561@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
 
-  <!-- CONTACT -->
-  <section id="contact" class="section light reveal">
-    <div class="container">
-      <h2>Hire Me</h2>
-      <p><strong>Email:</strong> udaysharma561@gmail.com</p>
-      <p><strong>Phone:</strong> 867-989-1989</p>
-    </div>
-  </section>
+      <select name="service">
+        <option>Choose Service</option>
+        <option>Website Development</option>
+        <option>E-commerce</option>
+        <option>Full Stack</option>
+        <option>UX/UI</option>
+        <option>CRM</option>
+        <option>Marketing Automation</option>
+      </select>
 
-  <footer>
-    © 2026 Uday Sharma
-  </footer>
+      <textarea name="message" placeholder="Your message"></textarea>
 
-  <script src="script.js"></script>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/918679891989" class="whatsapp">💬</a>
+
+<footer>
+  © 2026 Uday Sharma
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
