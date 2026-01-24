@@ -2,34 +2,189 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Uday Sharma | Web Developer</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+<!-- ================= HEADER ================= -->
 <header class="header">
-  <div class="logo">Uday.</div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact" class="btn">Hire Me</a>
-  </nav>
+  <div class="container nav">
+    <div class="logo">Uday.</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="btn">Hire Me</a>
+    </nav>
+  </div>
 </header>
 
+<!-- ================= HERO ================= -->
 <section class="hero">
-  <h1>Hi, I'm Uday Sharma</h1>
-  <p class="subtitle">Websites • E-commerce • UX/UI • CRM • Automation</p>
-  <p>I design and develop high-converting websites, eCommerce stores, CRM systems and marketing automation.</p>
-  <a href="#contact" class="btn">Let’s Talk About Your Project</a>
+  <div class="container">
+    <h1>Hi, I'm Uday Sharma</h1>
+    <p class="sub">
+      Websites • E-commerce • UX/UI • CRM • Automation
+    </p>
+    <p>
+      I design and develop high-converting websites, eCommerce stores,
+      CRM systems and marketing automation.
+    </p>
+    <a href="#contact" class="btn primary">Let’s Talk About Your Project</a>
+  </div>
 </section>
 
+<!-- ================= SERVICES ================= -->
 <section id="services" class="section">
-  <h2>Services</h2>
-  <div class="grid">
-    <div class="card"><h3>Website Development</h3><p>Fast, SEO-optimized modern websites.</p></div>
-    <div class="card"><h3>E-commerce Stores</h3><p>Shopify & WooCommerce stores built to convert.</p></div>
-    <div class="card"><h3>Full Stack Development</h3><p>Secure APIs, databases & scalable systems.</p></div>
-    <div class="card"><h3>UX / UI Design</h3><p>User-focused, conversion-driven interfaces.</p></div>
-    <div class="card"
+  <div class="container">
+    <h2>Services</h2>
+
+    <div class="grid services-grid">
+      <div class="card">
+        <h3>Website Development</h3>
+        <p>Fast, SEO-optimized modern websites.</p>
+      </div>
+      <div class="card">
+        <h3>E-commerce Stores</h3>
+        <p>Shopify & WooCommerce stores built to convert.</p>
+      </div>
+      <div class="card">
+        <h3>Full Stack Development</h3>
+        <p>Secure APIs, databases & scalable systems.</p>
+      </div>
+      <div class="card">
+        <h3>UX / UI Design</h3>
+        <p>User-focused, conversion-driven interfaces.</p>
+      </div>
+      <div class="card">
+        <h3>CRM Solutions</h3>
+        <p>HubSpot, GHL & custom CRM automation.</p>
+      </div>
+      <div class="card">
+        <h3>Marketing Automation</h3>
+        <p>Email, funnels & lead tracking systems.</p>
+      </div>
+    </div>
+
+    <a href="#contact" class="btn primary center">Let’s Talk About Your Project</a>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="section light">
+  <div class="container">
+    <h2>Skills & Tools</h2>
+
+    <div class="skills-marquee">
+      <div class="skills-track">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2>Featured Projects</h2>
+
+    <div class="project-slider">
+      <div class="project-track">
+
+        <div class="project-card">
+          <h3>Doggy Doo Little Shop</h3>
+          <p>E-commerce pet store with conversion-focused design.</p>
+          <a href="https://doggydoolittleshop.com/" target="_blank">Visit Website</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Reposition</h3>
+          <p>Corporate consulting website with modern UI/UX.</p>
+          <a href="https://www.reposition.co.uk/" target="_blank">Visit Website</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Caprese</h3>
+          <p>Luxury fashion brand website.</p>
+          <a href="https://www.capresebags.com/" target="_blank">Visit Website</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Romedia Digital</h3>
+          <p>Marketing agency lead-gen website.</p>
+          <a href="https://romediadigital.com/" target="_blank">Visit Website</a>
+        </div>
+
+        <div class="project-card">
+          <h3>OverNight Smile</h3>
+          <p>Healthcare landing pages with strong CTAs.</p>
+          <a href="https://overnightsmile.com/" target="_blank">Visit Website</a>
+        </div>
+
+        <div class="project-card">
+          <h3>DesignXpand</h3>
+          <p>Creative digital agency portfolio.</p>
+          <a href="https://designxpand.com/" target="_blank">Visit Website</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section light">
+  <div class="container contact-grid">
+
+    <div>
+      <h2>Let’s Talk About Your Project</h2>
+      <p>Scale your business or launch your eCommerce store—get started today!</p>
+      <p><i class="fa fa-user"></i> Uday Sharma</p>
+      <p><i class="fa fa-envelope"></i> Udaysharma561@gmail.com</p>
+      <p><i class="fa fa-phone"></i> 867-989-1989</p>
+    </div>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Phone">
+      <select>
+        <option>Choose Service</option>
+        <option>Website Development</option>
+        <option>E-commerce Stores</option>
+        <option>Full Stack Development</option>
+        <option>UX / UI Design</option>
+        <option>CRM & Marketing Automation</option>
+      </select>
+      <textarea placeholder="Your Message"></textarea>
+      <button class="btn primary">Submit</button>
+    </form>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>© 2025 Uday Sharma. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
