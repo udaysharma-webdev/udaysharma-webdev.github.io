@@ -12,13 +12,15 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="container nav">
     <h1 class="logo">Uday Sharma</h1>
 
-    <div class="hamburger" id="hamburger">
-      <i class="fas fa-bars"></i>
+    <div class="right-nav">
+      <div class="theme-toggle" id="themeToggle">🌙</div>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
     </div>
 
     <nav id="navMenu">
@@ -32,4 +34,140 @@
 
 <!-- HERO -->
 <section class="hero container">
-  <div class="h
+  <div class="hero-text">
+    <h2>Hi, I'm <span>Uday Sharma</span></h2>
+    <p id="typing"></p>
+    <a href="#contact" class="btn">CREATE YOUR WEBSITE NOW!!!</a>
+  </div>
+
+  <div class="hero-image">
+    <!-- Image can be added later -->
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section container reveal">
+  <h2>Services</h2>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <i class="fas fa-code"></i>
+      <h3>Website Development</h3>
+      <p>Fast, responsive & SEO-friendly websites.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-cart-shopping"></i>
+      <h3>E-commerce Stores</h3>
+      <p>High-converting online stores.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-layer-group"></i>
+      <h3>Full Stack Development</h3>
+      <p>Frontend + backend solutions.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-pen-nib"></i>
+      <h3>UX & UI Design</h3>
+      <p>User-focused clean designs.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-database"></i>
+      <h3>CRM</h3>
+      <p>Customer & sales systems.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-robot"></i>
+      <h3>Marketing Automation</h3>
+      <p>Automated workflows & leads.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section light reveal">
+  <h2 class="container">Skills</h2>
+
+  <div class="skills container">
+    <i class="fab fa-html5 html"></i>
+    <i class="fab fa-css3-alt css"></i>
+    <i class="fab fa-bootstrap bootstrap"></i>
+    <i class="fab fa-js js"></i>
+    <i class="fas fa-bolt ajax"></i>
+    <i class="fas fa-code jquery"></i>
+    <i class="fab fa-php php"></i>
+    <i class="fab fa-angular angular"></i>
+    <i class="fab fa-react react"></i>
+    <i class="fab fa-node node"></i>
+    <i class="fas fa-database mysql"></i>
+    <i class="fas fa-leaf mongo"></i>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section container reveal">
+  <h2>Projects</h2>
+
+  <div class="project-slider">
+    <button class="arrow" onclick="slide(-1)">‹</button>
+
+    <div class="project-window">
+      <div class="project-track" id="projectTrack">
+        <div class="project-card"><h3>My Global Shield</h3><p>Security services</p><a href="https://www.myglobalshield.com/" target="_blank">Visit</a></div>
+        <div class="project-card"><h3>Doggy Doo Little Shop</h3><p>E-commerce store</p><a href="https://doggydoolittleshop.com/" target="_blank">Visit</a></div>
+        <div class="project-card"><h3>Reposition</h3><p>Marketing agency</p><a href="https://www.reposition.co.uk/" target="_blank">Visit</a></div>
+        <div class="project-card"><h3>Caprese</h3><p>Fashion brand</p><a href="https://www.capresebags.com/" target="_blank">Visit</a></div>
+        <div class="project-card"><h3>Romedia Digital</h3><p>Digital agency</p><a href="https://romediadigital.com/" target="_blank">Visit</a></div>
+        <div class="project-card"><h3>OverNight Smile</h3><p>Dental brand</p><a href="https://overnightsmile.com/" target="_blank">Visit</a></div>
+        <div class="project-card"><h3>DesignXpand</h3><p>Design services</p><a href="https://designxpand.com/" target="_blank">Visit</a></div>
+      </div>
+    </div>
+
+    <button class="arrow" onclick="slide(1)">›</button>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section light reveal">
+  <div class="container contact">
+    <div class="contact-info">
+      <h2>Hire Me</h2>
+      <p><i class="fas fa-user"></i> Uday Sharma</p>
+      <p><i class="fas fa-envelope"></i> Udaysharma561@gmail.com</p>
+      <p><i class="fas fa-phone"></i> 867-989-1989</p>
+    </div>
+
+    <form action="https://formsubmit.co/udaysharma561@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+
+      <select name="service">
+        <option>Choose Service</option>
+        <option>Website Development</option>
+        <option>E-commerce stores</option>
+        <option>Full Stack development</option>
+        <option>UX & UI Design</option>
+        <option>CRM</option>
+        <option>Marketing Automation</option>
+      </select>
+
+      <textarea name="message" placeholder="Your message"></textarea>
+      <button class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/918679891989" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<footer>© 2026 Uday Sharma</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
