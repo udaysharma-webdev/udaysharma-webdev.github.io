@@ -1,11 +1,9 @@
-const slides = document.querySelector(".slides");
-const left = document.querySelector(".left");
-const right = document.querySelector(".right");
+const slider = document.querySelector(".project-track");
 
-right.addEventListener("click", () => {
-  slides.scrollBy({ left: 300, behavior: "smooth" });
+slider.addEventListener("mouseenter", () => {
+  slider.style.animationPlayState = "paused";
 });
 
-left.addEventListener("click", () => {
-  slides.scrollBy({ left: -300, behavior: "smooth" });
+slider.addEventListener("mouseleave", () => {
+  slider.style.animationPlayState = "running";
 });
