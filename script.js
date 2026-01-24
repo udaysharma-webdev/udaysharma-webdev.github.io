@@ -1,21 +1,33 @@
-const slides = document.querySelector('.slides');
-const next = document.querySelector('.next');
-const prev = document.querySelector('.prev');
+/* Typing Animation */
+const text = "Websites • E-commerce • UX/UI • CRM • Automation";
+let i = 0;
+const typingEl = document.getElementById("typing");
 
+function type() {
+  if (i < text.length) {
+    typingEl.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 80);
+  }
+}
+type();
+
+/* Project Slider */
+const slides = document.getElementById("slides");
 let index = 0;
 
-function moveSlide(dir) {
-  index += dir;
-  if (index < 0) index = slides.children.length - 1;
-  if (index >= slides.children.length) index = 0;
-  slides.style.transform = `translateX(-${index * 320}px)`;
-}
+document.querySelector(".next").onclick = () => {
+  index++;
+  slides.style.transform = `translateX(-${index * 340}px)`;
+};
 
-next.onclick = () => moveSlide(1);
-prev.onclick = () => moveSlide(-1);
+document.querySelector(".prev").onclick = () => {
+  index = Math.max(0, index - 1);
+  slides.style.transform = `translateX(-${index * 340}px)`;
+};
 
-setInterval(() => moveSlide(1), 4000);
-
-function scrollToContact() {
-  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-}
+/* Auto play */
+setInterval(() => {
+  index++;
+  slides.style.transform = `translateX(-${index * 340}px)`;
+}, 4000);
