@@ -1,113 +1,167 @@
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-  font-family:Calibri,Arial,sans-serif;
-  color:#111827;
-  transition:background 0.3s,color 0.3s;
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --accent: #2563eb;
 }
 
-html{scroll-behavior:smooth}
-
-.container{max-width:1100px;margin:auto;padding:1.5rem}
-
-/* HEADER */
-header{border-bottom:1px solid #e5e7eb;position:sticky;top:0;background:white;z-index:10}
-.nav{display:flex;justify-content:space-between;align-items:center}
-.right-nav{display:flex;align-items:center;gap:1rem}
-nav a{margin-left:1.5rem;text-decoration:none;color:#1f2937;font-weight:600}
-.hamburger{display:none;font-size:1.8rem;cursor:pointer}
-
-/* HERO */
-.hero{display:flex;gap:2rem;padding:4rem 1.5rem}
-.hero-text{flex:1}
-.hero-text h2 span{color:#2563eb}
-.hero-image{flex:1;border:2px dashed #d1d5db;height:260px}
-
-/* BUTTON */
-.btn{
-  display:inline-block;
-  margin-top:1.5rem;
-  background:#2563eb;
-  color:white;
-  padding:0.9rem 1.5rem;
-  border-radius:6px;
-  text-decoration:none;
-  transition:0.3s;
-}
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(37,99,235,0.3)}
-
-/* SECTIONS */
-.section{padding:4rem 0}
-.light{background:#f3f4f6}
-
-/* SERVICES */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
-.service-card{
-  border:1px solid #e5e7eb;
-  padding:1.5rem;
-  border-radius:8px;
-  transition:0.3s;
-}
-.service-card:hover{transform:translateY(-6px);box-shadow:0 12px 25px rgba(0,0,0,0.08)}
-.service-card i{font-size:2rem;color:#2563eb;margin-bottom:0.5rem}
-
-/* SKILLS */
-.skills{display:flex;flex-wrap:wrap;gap:1.5rem;font-size:3rem}
-.html{color:#e34c26}.css{color:#264de4}.bootstrap{color:#7952b3}
-.js{color:#f7df1e}.ajax{color:#2563eb}.jquery{color:#0769ad}
-.php{color:#8892be}.angular{color:#dd0031}.react{color:#61dafb}
-.node{color:#3c873a}.mysql{color:#00758f}.mongo{color:#4db33d}
-
-/* PROJECTS */
-.project-slider{display:flex;align-items:center;gap:1rem}
-.project-window{overflow:hidden;width:100%}
-.project-track{display:flex;gap:1rem;transition:0.6s ease}
-.project-card{
-  min-width:300px;
-  border:1px solid #e5e7eb;
-  padding:1.2rem;
-  border-radius:8px;
-  transition:0.3s;
-}
-.project-card:hover{transform:translateY(-6px);box-shadow:0 12px 25px rgba(0,0,0,0.08)}
-.arrow{background:none;border:none;font-size:2rem;cursor:pointer}
-
-/* CONTACT */
-.contact{display:flex;gap:2rem}
-.contact-info i{color:#2563eb;margin-right:0.5rem}
-form{flex:1;display:grid;gap:1rem}
-input,select,textarea{padding:0.7rem;border:1px solid #d1d5db;border-radius:6px}
-
-/* WHATSAPP */
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25d366;
-  color:white;
-  padding:0.8rem;
-  border-radius:50%;
-  font-size:1.8rem;
+body.dark {
+  --bg: #0f172a;
+  --text: #e5e7eb;
 }
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(40px) scale(0.96);transition:0.9s}
-.reveal.active{opacity:1;transform:none}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Calibri, Arial, sans-serif;
+}
 
-/* DARK MODE */
-body.dark{background:#0f172a;color:#e5e7eb}
-body.dark header,body.dark .light{background:#020617}
-body.dark nav a{color:#e5e7eb}
-body.dark .service-card,
-body.dark .project-card,
-body.dark input,
-body.dark textarea,
-body.dark select{background:#020617;color:#e5e7eb;border-color:#1e293b}
+body {
+  background: var(--bg);
+  color: var(--text);
+}
 
-/* MOBILE */
-@media(max-width:768px){
-  nav{display:none;flex-direction:column;position:absolute;top:60px;left:0;width:100%;background:white}
-  nav.active{display:flex}
-  .hamburger{display:block}
-  .hero,.contact{flex-direction:column}
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+header {
+  border-bottom: 1px solid #ddd;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+#hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hero {
+  padding: 80px 0;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.btn, .btn-outline {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  text-decoration: none;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-outline {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.marquee {
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  gap: 40px;
+  animation: scroll 20s linear infinite;
+}
+
+.track i {
+  font-size: 40px;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.slider {
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.project {
+  min-width: 300px;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 40%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px;
+}
+
+.prev { left: -10px; }
+.next { right: -10px; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    display: none;
+  }
+
+  #hamburger {
+    display: block;
+  }
 }
