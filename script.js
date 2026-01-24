@@ -1,9 +1,10 @@
-const slider = document.querySelector(".project-track");
+const tracks = document.querySelectorAll(".project-track, .skills-track");
 
-slider.addEventListener("mouseenter", () => {
-  slider.style.animationPlayState = "paused";
-});
-
-slider.addEventListener("mouseleave", () => {
-  slider.style.animationPlayState = "running";
+tracks.forEach(track => {
+  track.addEventListener("mouseenter", () => {
+    track.style.animationPlayState = "paused";
+  });
+  track.addEventListener("mouseleave", () => {
+    track.style.animationPlayState = "running";
+  });
 });
