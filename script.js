@@ -1,3 +1,12 @@
+// ===== WORK SCROLLER =====
+const scroller = document.getElementById('workScroller');
+const prevBtn = document.getElementById('workPrev');
+const nextBtn = document.getElementById('workNext');
+const cardWidth = 364; // card width + gap
+
+prevBtn.addEventListener('click', () => scroller.scrollBy({ left: -cardWidth, behavior: 'smooth' }));
+nextBtn.addEventListener('click', () => scroller.scrollBy({ left: cardWidth, behavior: 'smooth' }));
+
 // ===== NAV SCROLL =====
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
