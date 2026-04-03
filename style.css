@@ -277,6 +277,7 @@ img { max-width: 100%; display: block; }
 /* ===== SECTIONS ===== */
 .section { padding: 96px 0; }
 .section--dark { background: var(--clr-surface); }
+.section--services { background: #0e0e1a; border-top: 1px solid rgba(108,99,255,0.15); border-bottom: 1px solid rgba(108,99,255,0.15); }
 .section--accent {
   background: linear-gradient(135deg, #0d0d1a 0%, #12102a 100%);
   border-top: 1px solid var(--clr-border);
@@ -347,7 +348,7 @@ img { max-width: 100%; display: block; }
 
 .card p {
   font-size: 0.9rem;
-  color: var(--clr-muted);
+  color: #b0b0cc;
   line-height: 1.7;
 }
 
@@ -650,8 +651,23 @@ img { max-width: 100%; display: block; }
   .btn--nav { font-size: 1.1rem; padding: 14px 32px; }
   .nav__burger { display: flex; z-index: 101; }
 
+  .nav__title { font-size: 0.65rem; color: var(--clr-accent2); }
+
   .hero { padding: 100px 0 60px; }
   .hero__stats { gap: 24px; }
+
+  /* Card text on mobile */
+  .card h3 { font-size: 1rem; color: var(--clr-white); }
+  .card p { font-size: 0.9rem; color: #b0b0cc; }
+  .card__icon { font-size: 1.6rem; }
+
+  /* Work cards on mobile */
+  .work__title-overlay { font-size: 1.1rem; }
+  .work__desc-overlay { font-size: 0.85rem; color: rgba(255,255,255,0.85); }
+
+  /* Section text */
+  .section__title { font-size: 1.8rem; }
+  .section__sub { font-size: 0.95rem; color: #b0b0cc; }
 
   .contact__inner { grid-template-columns: 1fr; gap: 40px; }
 
