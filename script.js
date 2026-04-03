@@ -1,3 +1,33 @@
+// ===== TYPING ANIMATION =====
+const typingEl = document.getElementById('typingText');
+const phrases = [
+  'Websites · E-commerce · UX/UI',
+  'CRM Systems · Automation',
+  'Shopify · WordPress · Webflow',
+  'Full Stack · React · Node.js',
+];
+let phraseIndex = 0, charIndex = 0, deleting = false;
+
+function type() {
+  const current = phrases[phraseIndex];
+  if (!deleting) {
+    typingEl.textContent = current.slice(0, ++charIndex);
+    if (charIndex === current.length) {
+      deleting = true;
+      setTimeout(type, 1800);
+      return;
+    }
+  } else {
+    typingEl.textContent = current.slice(0, --charIndex);
+    if (charIndex === 0) {
+      deleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+    }
+  }
+  setTimeout(type, deleting ? 40 : 70);
+}
+type();
+
 // ===== NAV SCROLL =====
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
