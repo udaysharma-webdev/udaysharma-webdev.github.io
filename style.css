@@ -308,13 +308,26 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===== WORK ===== */
-.work__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
+.work__scroller-wrap {
+  position: relative;
+  padding: 0 24px;
 }
 
+.work__scroller {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 8px 48px 24px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.work__scroller::-webkit-scrollbar { display: none; }
+
 .work__card {
+  flex: 0 0 340px;
+  scroll-snap-align: start;
   background: var(--clr-surface2);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
@@ -326,20 +339,17 @@ img { max-width: 100%; display: block; }
 
 .work__img {
   height: 200px;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
-  position: relative;
   overflow: hidden;
+  background: var(--clr-surface);
 }
-.work__img::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(108,99,255,0.3), rgba(167,139,250,0.2));
+.work__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.4s ease;
 }
-
-.work__img--1 { background: linear-gradient(135deg, #1a2a1a, #0f2010); }
-.work__img--2 { background: linear-gradient(135deg, #1a1a2e, #0d0d20); }
-.work__img--3 { background: linear-gradient(135deg, #2a1a1a, #200f0f); }
+.work__card:hover .work__img img { transform: scale(1.04); }
 
 .work__info { padding: 24px; }
 
@@ -371,9 +381,31 @@ img { max-width: 100%; display: block; }
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--clr-accent2);
-  transition: gap var(--transition);
+  transition: color var(--transition);
 }
 .work__card:hover .work__link { color: var(--clr-accent); }
+
+.work__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--clr-surface2);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  z-index: 2;
+}
+.work__arrow:hover { background: var(--clr-accent); border-color: var(--clr-accent); color: #fff; }
+.work__arrow--prev { left: 0; }
+.work__arrow--next { right: 0; }
 
 /* ===== SKILLS ===== */
 .skills__grid {
