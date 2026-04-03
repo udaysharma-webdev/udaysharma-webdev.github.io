@@ -1,12 +1,3 @@
-// ===== WORK SCROLLER =====
-const scroller = document.getElementById('workScroller');
-const prevBtn = document.getElementById('workPrev');
-const nextBtn = document.getElementById('workNext');
-const cardWidth = 364; // card width + gap
-
-prevBtn.addEventListener('click', () => scroller.scrollBy({ left: -cardWidth, behavior: 'smooth' }));
-nextBtn.addEventListener('click', () => scroller.scrollBy({ left: cardWidth, behavior: 'smooth' }));
-
 // ===== NAV SCROLL =====
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -22,13 +13,73 @@ burger.addEventListener('click', () => {
   document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
 });
 
-// Close menu on link click
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
     document.body.style.overflow = '';
   });
 });
+
+// ===== WORK SCROLLER =====
+const scroller = document.getElementById('workScroller');
+const prevBtn = document.getElementById('workPrev');
+const nextBtn = document.getElementById('workNext');
+const dotsContainer = document.getElementById('workDots');
+const cards = scroller.querySelectorAll('.work__card');
+const cardWidth = cards[0].offsetWidth + 24; // card + gap
+let autoTimer;
+
+// Build dots
+cards.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'work__dot' + (i === 0 ? ' active' : '');
+  dot.setAttribute('aria-label', `Go to project ${i + 1}`);
+  dot.addEventListener('click', () => scrollToCard(i));
+  dotsContainer.appendChild(dot);
+});
+
+function scrollToCard(index) {
+  scroller.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+}
+
+function updateDots() {
+  const index = Math.round(scroller.scrollLeft / cardWidth);
+  dotsContainer.querySelectorAll('.work__dot').forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+function scrollBy(dir) {
+  scroller.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
+  resetAuto();
+}
+
+prevBtn.addEventListener('click', () => scrollBy(-1));
+nextBtn.addEventListener('click', () => scrollBy(1));
+scroller.addEventListener('scroll', updateDots);
+
+// Auto scroll
+function startAuto() {
+  autoTimer = setInterval(() => {
+    const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+    if (scroller.scrollLeft >= maxScroll - 10) {
+      scroller.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      scroller.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    }
+  }, 3000);
+}
+
+function resetAuto() {
+  clearInterval(autoTimer);
+  startAuto();
+}
+
+// Pause on hover
+scroller.addEventListener('mouseenter', () => clearInterval(autoTimer));
+scroller.addEventListener('mouseleave', startAuto);
+
+startAuto();
 
 // ===== CONTACT FORM =====
 const form = document.getElementById('contactForm');
@@ -46,7 +97,6 @@ form.addEventListener('submit', (e) => {
     return;
   }
 
-  // Replace this with your actual form handler (Formspree, EmailJS, etc.)
   status.style.color = '#4ade80';
   status.textContent = "Thanks! I'll get back to you within 24 hours.";
   form.reset();
@@ -62,7 +112,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.card, .work__card, .skill').forEach(el => {
+document.querySelectorAll('.card, .skill').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
