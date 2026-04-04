@@ -274,20 +274,30 @@ img { max-width: 100%; display: block; }
   border-color: rgba(108,99,255,0.4);
 }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE OVERLAY ===== */
+.mobile__overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(10,10,15,0.99);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  z-index: 9999;
+}
+.mobile__overlay.open { display: flex; }
+.mobile__overlay a {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--clr-text);
+  transition: color var(--transition);
+}
+.mobile__overlay a:hover { color: var(--clr-accent2); }
 @media (max-width: 768px) {
   .nav { z-index: 100; }
-
-  .nav__links {
-    display: none;
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(10,10,15,0.99);
-    flex-direction: column; justify-content: center; align-items: center;
-    gap: 40px; z-index: 9999;
-  }
-  .nav__links.open { display: flex; }
-  .nav__links a { font-size: 1.2rem; color: var(--clr-text); }
-  .btn--nav { font-size: 1.1rem; padding: 14px 32px; width: auto; }
+  .nav__links { display: none !important; }
   .nav__burger { display: flex; z-index: 10000; position: relative; }
 
   .hero { padding: 100px 0 60px; }
