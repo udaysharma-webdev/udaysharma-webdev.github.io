@@ -322,25 +322,27 @@ img { max-width: 100%; display: block; }
   .card h3 { font-size: 1rem; }
   .card p { font-size: 0.9rem; color: #b8b8d0; }
 
-  .process__row, .process__row--right { grid-template-columns: 1fr; }
+  .process__row, .process__row--right { grid-template-columns: 1fr; gap: 0; }
   .process__row--right .process__card,
   .process__row--right .process__line,
   .process__row--right .process__spacer { order: unset; }
-  .process__empty { display: none; }
   .process__spacer { display: none; }
-  .process__line {
-    height: 48px;
-    width: 2px;
-    margin: 0 auto;
-    background: transparent;
-    border: none;
-  }
-  .process__line::before {
-    top: 0; bottom: 0; left: 50%;
-    transform: translateX(-50%);
-  }
+  .process__line { display: none; }
   .process__card { text-align: center; align-items: center; display: flex; flex-direction: column; }
   .process__icon { margin-left: auto; margin-right: auto; }
+  /* Simple connector between cards on mobile */
+  .process__row + .process__row::before,
+  .process__row + .process__row--right::before,
+  .process__row--right + .process__row::before,
+  .process__row--right + .process__row--right::before {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(180deg, var(--clr-accent), var(--clr-accent2));
+    opacity: 0.4;
+    margin: 0 auto;
+  }
 
   .skills__grid { justify-content: center; }
 
