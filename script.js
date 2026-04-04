@@ -42,7 +42,6 @@ burger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
   document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
 });
-
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
@@ -56,59 +55,40 @@ const prevBtn = document.getElementById('workPrev');
 const nextBtn = document.getElementById('workNext');
 const dotsContainer = document.getElementById('workDots');
 const cards = scroller.querySelectorAll('.work__card');
-const cardWidth = cards[0].offsetWidth + 24; // card + gap
+const cardWidth = () => cards[0].offsetWidth + 24;
 let autoTimer;
 
-// Build dots
 cards.forEach((_, i) => {
   const dot = document.createElement('button');
   dot.className = 'work__dot' + (i === 0 ? ' active' : '');
-  dot.setAttribute('aria-label', `Go to project ${i + 1}`);
-  dot.addEventListener('click', () => scrollToCard(i));
+  dot.setAttribute('aria-label', 'Go to project ' + (i + 1));
+  dot.addEventListener('click', () => { scroller.scrollTo({ left: i * cardWidth(), behavior: 'smooth' }); resetAuto(); });
   dotsContainer.appendChild(dot);
 });
 
-function scrollToCard(index) {
-  scroller.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
-}
-
 function updateDots() {
-  const index = Math.round(scroller.scrollLeft / cardWidth);
-  dotsContainer.querySelectorAll('.work__dot').forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
-  });
+  const index = Math.round(scroller.scrollLeft / cardWidth());
+  dotsContainer.querySelectorAll('.work__dot').forEach((dot, i) => dot.classList.toggle('active', i === index));
 }
 
-function scrollBy(dir) {
-  scroller.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
-  resetAuto();
-}
-
-prevBtn.addEventListener('click', () => scrollBy(-1));
-nextBtn.addEventListener('click', () => scrollBy(1));
-scroller.addEventListener('scroll', updateDots);
-
-// Auto scroll
 function startAuto() {
   autoTimer = setInterval(() => {
     const maxScroll = scroller.scrollWidth - scroller.clientWidth;
     if (scroller.scrollLeft >= maxScroll - 10) {
       scroller.scrollTo({ left: 0, behavior: 'smooth' });
     } else {
-      scroller.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      scroller.scrollBy({ left: cardWidth(), behavior: 'smooth' });
     }
   }, 3000);
 }
 
-function resetAuto() {
-  clearInterval(autoTimer);
-  startAuto();
-}
+function resetAuto() { clearInterval(autoTimer); startAuto(); }
 
-// Pause on hover
+prevBtn.addEventListener('click', () => { scroller.scrollBy({ left: -cardWidth(), behavior: 'smooth' }); resetAuto(); });
+nextBtn.addEventListener('click', () => { scroller.scrollBy({ left: cardWidth(), behavior: 'smooth' }); resetAuto(); });
+scroller.addEventListener('scroll', updateDots);
 scroller.addEventListener('mouseenter', () => clearInterval(autoTimer));
 scroller.addEventListener('mouseleave', startAuto);
-
 startAuto();
 
 // ===== CONTACT FORM =====
@@ -120,13 +100,11 @@ form.addEventListener('submit', (e) => {
   const name = form.name.value.trim();
   const email = form.email.value.trim();
   const message = form.message.value.trim();
-
   if (!name || !email || !message) {
     status.style.color = '#f87171';
     status.textContent = 'Please fill in all required fields.';
     return;
   }
-
   status.style.color = '#4ade80';
   status.textContent = "Thanks! I'll get back to you within 24 hours.";
   form.reset();
