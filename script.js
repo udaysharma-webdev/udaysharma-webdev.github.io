@@ -37,17 +37,22 @@ window.addEventListener('scroll', () => {
 // ===== MOBILE MENU =====
 const burger = document.getElementById('burger');
 const mobileOverlay = document.getElementById('mobileOverlay');
+const mobileClose = document.getElementById('mobileClose');
+
+function closeMenu() {
+  mobileOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
 
 burger.addEventListener('click', () => {
   const isOpen = mobileOverlay.classList.toggle('open');
   document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
+mobileClose.addEventListener('click', closeMenu);
+
 mobileOverlay.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileOverlay.classList.remove('open');
-    document.body.style.overflow = '';
-  });
+  link.addEventListener('click', closeMenu);
 });
 
 // ===== WORK SCROLLER =====
