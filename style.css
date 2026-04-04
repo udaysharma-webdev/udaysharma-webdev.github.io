@@ -295,9 +295,18 @@ img { max-width: 100%; display: block; }
   transition: color var(--transition);
 }
 .mobile__overlay a:hover { color: var(--clr-accent2); }
+.mobile__close {
+  position: absolute;
+  top: 24px; right: 24px;
+  background: none; border: none;
+  color: var(--clr-text); font-size: 1.5rem;
+  cursor: pointer; padding: 8px; line-height: 1;
+  transition: color var(--transition);
+}
+.mobile__close:hover { color: var(--clr-accent2); }
 @media (max-width: 768px) {
   .nav { z-index: 100; }
-  .nav__links { display: none !important; }
+  .nav__links { display: none; }
   .nav__burger { display: flex; z-index: 10000; position: relative; }
 
   .hero { padding: 100px 0 60px; }
