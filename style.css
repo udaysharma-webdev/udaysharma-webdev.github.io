@@ -247,6 +247,96 @@ img { max-width: 100%; display: block; }
 .card h3 { font-size: 1.1rem; font-weight: 700; color: var(--clr-white); margin-bottom: 10px; }
 .card p { font-size: 0.9rem; color: var(--clr-muted); line-height: 1.7; }
 
+.card__list {
+  list-style: none;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card__list li {
+  font-size: 0.82rem;
+  color: var(--clr-muted);
+  padding-left: 16px;
+  position: relative;
+}
+.card__list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--clr-accent);
+  font-size: 0.75rem;
+}
+
+/* ===== PROCESS ===== */
+.process__grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.process__step {
+  flex: 1;
+  min-width: 200px;
+  max-width: 240px;
+  text-align: center;
+  padding: 32px 20px;
+  background: var(--clr-surface2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  position: relative;
+  transition: var(--transition);
+}
+.process__step:hover {
+  border-color: rgba(108,99,255,0.4);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.process__num {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--clr-accent);
+  margin-bottom: 12px;
+}
+
+.process__icon {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.process__step h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--clr-white);
+  margin-bottom: 10px;
+}
+
+.process__step p {
+  font-size: 0.85rem;
+  color: var(--clr-muted);
+  line-height: 1.7;
+}
+
+.process__connector {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--clr-accent), var(--clr-accent2));
+  align-self: center;
+  flex-shrink: 0;
+  margin: 0 4px;
+  opacity: 0.5;
+}
+
+@media (max-width: 900px) {
+  .process__grid { flex-direction: column; align-items: center; }
+  .process__connector { width: 2px; height: 32px; margin: 4px 0; background: linear-gradient(180deg, var(--clr-accent), var(--clr-accent2)); }
+  .process__step { max-width: 100%; width: 100%; }
+}
+
 /* ===== WORK ===== */
 .work__scroller-wrap { position: relative; padding: 0 24px; }
 
