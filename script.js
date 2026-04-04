@@ -95,19 +95,44 @@ startAuto();
 const form = document.getElementById('contactForm');
 const status = document.getElementById('formStatus');
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const name = form.name.value.trim();
   const email = form.email.value.trim();
   const message = form.message.value.trim();
+
   if (!name || !email || !message) {
     status.style.color = '#f87171';
     status.textContent = 'Please fill in all required fields.';
     return;
   }
-  status.style.color = '#4ade80';
-  status.textContent = "Thanks! I'll get back to you within 24 hours.";
-  form.reset();
+
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      status.style.color = '#4ade80';
+      status.textContent = "Thanks! I'll get back to you within 24 hours.";
+      form.reset();
+    } else {
+      status.style.color = '#f87171';
+      status.textContent = 'Something went wrong. Please email me directly.';
+    }
+  } catch {
+    status.style.color = '#f87171';
+    status.textContent = 'Network error. Please try again.';
+  }
+
+  btn.textContent = 'Send Message';
+  btn.disabled = false;
 });
 
 // ===== SCROLL REVEAL =====
