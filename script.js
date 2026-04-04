@@ -36,19 +36,16 @@ window.addEventListener('scroll', () => {
 
 // ===== MOBILE MENU =====
 const burger = document.getElementById('burger');
-const navLinks = document.getElementById('navLinks');
-
-// Move navLinks to body so it's not clipped by the fixed nav stacking context
-document.body.appendChild(navLinks);
+const mobileOverlay = document.getElementById('mobileOverlay');
 
 burger.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
+  const isOpen = mobileOverlay.classList.toggle('open');
   document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
-navLinks.querySelectorAll('a').forEach(link => {
+mobileOverlay.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
+    mobileOverlay.classList.remove('open');
     document.body.style.overflow = '';
   });
 });
